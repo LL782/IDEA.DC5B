@@ -15,22 +15,26 @@ export default function Home() {
         <h1 className={styles.title}>DC5B Odd Shop</h1>
 
         <p className={styles.description}>
-          Colour in imagination aids from the surreal depths of the interwebs!
+          Imagination aids for the younger generation
         </p>
 
         <ul className={styles.grid}>
           {products.map((product) => {
             const { title, description, image, alt, price, id } = product;
+            const displayPrice =
+              price >= 1 ? `£${price.toFixed(2)}` : `${price * 100}p`;
             return (
               <li key={id} className={styles.card}>
-                <a href="https://nextjs.org/docs">
-                  <h3>{title}</h3>
-                  <div className={styles.imageHolder}>
-                    <img src={image} alt={alt} />
-                  </div>
-                  <p>£{price.toFixed(2)}</p>
-                  <p>{description}</p>
-                </a>
+                <h3>{title}</h3>
+                <div className={styles.imageHolder}>
+                  <img src={image} alt={alt} />
+                </div>
+                <p className={styles.price}>
+                  From {displayPrice}{" "}
+                  <span className={styles.priceType}>download</span>
+                </p>
+                <p className={styles.cardDescription}>{description}</p>
+                <button className={styles.button}>Buy now</button>
               </li>
             );
           })}
