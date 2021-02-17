@@ -1,7 +1,7 @@
 import Head from "next/head";
 import styles from "../styles/Home.module.css";
-
-import products from "../products.json";
+import products from "../data/products";
+import { initiateCheckout } from "../stripe/initiateCheckout";
 
 export default function Home() {
   return (
@@ -22,19 +22,30 @@ export default function Home() {
           {products.map((product) => {
             const { title, description, image, alt, price, id } = product;
             const displayPrice =
-              price >= 1 ? `£${price.toFixed(2)}` : `${price * 100}p`;
+              price.amount >= 1
+                ? `£${price.amount.toFixed(2)}`
+                : `Only ${price.amount * 100}p`;
             return (
-              <li key={id} className={styles.card}>
+              <li key={price.id} className={styles.card}>
                 <h3>{title}</h3>
                 <div className={styles.imageHolder}>
                   <img src={image} alt={alt} />
                 </div>
                 <p className={styles.price}>
-                  From {displayPrice}{" "}
+                  {displayPrice}{" "}
                   <span className={styles.priceType}>download</span>
                 </p>
                 <p className={styles.cardDescription}>{description}</p>
-                <button className={styles.button}>Buy now</button>
+                <button
+                  className={styles.button}
+                  onClick={() => {
+                    initiateCheckout({
+                      lineItems: [{ price: price.id, quantity: 1 }],
+                    });
+                  }}
+                >
+                  Buy now
+                </button>
               </li>
             );
           })}
