@@ -15,7 +15,7 @@ export default function Home() {
         <h1 className={styles.title}>DC5B Odd Shop</h1>
 
         <p className={styles.description}>
-          Surreal imagination adds from the surreal depths of the interwebs!
+          Surreal imagination aids from the surreal depths of the interwebs!
         </p>
 
         <ul className={styles.grid}>
