@@ -1,18 +1,9 @@
 import Head from "next/head";
+import { MdShoppingCart } from "react-icons/md";
 import styles from "../styles/Home.module.css";
 import products from "../data/products";
-import { useBag } from "../hooks/useBag";
-
-const displayPrice = (amount) => {
-  if (Number.isInteger(amount)) {
-    return `£${amount}`;
-  }
-  if (amount < 1) {
-    return `${amount * 100}p`;
-  }
-
-  return `£${amount.toFixed(2)}`;
-};
+import { useBag } from "../bag/useBag";
+import { displayPrice } from "../bag/displayPrice";
 
 export default function Home() {
   const {
@@ -26,15 +17,26 @@ export default function Home() {
   return (
     <div className={styles.container}>
       <Head>
-        <title>DC5B Odd Shop</title>
+        <title>DC5B Shop</title>
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
+      <nav className={styles.nav}>
+        <a href="/" className={styles.homeLink}>
+          DC5B Shop
+        </a>
+        {totalCost > 0 && (
+          <span className={styles.miniBag}>
+            {displayPrice(totalCost)} <MdShoppingCart />
+          </span>
+        )}
+      </nav>
+
       <main className={styles.main}>
-        <h1 className={styles.title}>DC5B Odd Shop</h1>
+        <h1 className={styles.title}>DC5B Shop</h1>
 
         <p className={styles.description}>
-          Imagination aids for now and the future
+          Imagination aids for now and in the future
         </p>
 
         <p className={styles.description}>
