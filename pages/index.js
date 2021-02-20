@@ -2,8 +2,68 @@ import Head from "next/head";
 import styles from "../styles/Home.module.css";
 import products from "../data/products";
 import { initiateCheckout } from "../stripe/initiateCheckout";
+import { useState } from "react";
+
+const displayPrice = (amount) => {
+  if (Number.isInteger(amount)) {
+    return `£${amount}`;
+  }
+  if (amount < 1) {
+    return `${amount * 100}p`;
+  }
+
+  return `£${amount.toFixed(2)}`;
+};
+
+const defaultBag = {
+  products: {},
+};
 
 export default function Home() {
+  const [bag, updateBag] = useState(defaultBag);
+
+  const bagItems = Object.keys(bag.products).map((key) => {
+    const product = products.find(({ price: { id } }) => id === key);
+    return {
+      ...bag.products[key],
+      pricePerItem: product.price.amount,
+    };
+  });
+
+  const totalItems = bagItems.reduce((accumulator, { quantity }) => {
+    return accumulator + quantity;
+  }, 0);
+
+  const totalCost = bagItems.reduce(
+    (accumulator, { quantity, pricePerItem }) => {
+      return accumulator + pricePerItem * quantity;
+    },
+    0
+  );
+
+  const checkoutDisabled = totalItems < 1;
+
+  const addToBag = ({ id }) => {
+    const prevBag = bag;
+    const products = { ...bag.products };
+
+    if (products[id]) {
+      products[id].quantity++;
+    } else {
+      products[id] = { id, quantity: 1 };
+    }
+
+    updateBag({ ...prevBag, products });
+  };
+
+  const checkout = () => {
+    const lineItems = bagItems.map(({ id, quantity }) => {
+      return { price: id, quantity };
+    });
+
+    initiateCheckout({ lineItems });
+  };
+
   return (
     <div className={styles.container}>
       <Head>
@@ -18,13 +78,23 @@ export default function Home() {
           Imagination aids for now and the future
         </p>
 
+        <p className={styles.description}>
+          <strong>Total Items:</strong> {totalItems}
+          <br />
+          <strong>Total Cost:</strong> {displayPrice(totalCost)}
+          <br />
+          <button
+            className={styles.button}
+            onClick={checkout}
+            disabled={checkoutDisabled}
+          >
+            Checkout
+          </button>
+        </p>
+
         <ul className={styles.grid}>
           {products.map((product) => {
-            const { title, description, image, alt, price, id } = product;
-            const displayPrice =
-              price.amount >= 1
-                ? `£${price.amount.toFixed(2)}`
-                : `${price.amount * 100}p`;
+            const { title, description, image, alt, price } = product;
             return (
               <li key={price.id} className={styles.card}>
                 <h3>{title}</h3>
@@ -32,18 +102,17 @@ export default function Home() {
                   <img src={image} alt={alt} />
                 </div>
                 <p className={styles.price}>
-                  {displayPrice} <span className={styles.priceType}>PDF</span>
+                  {displayPrice(price.amount)}{" "}
+                  <span className={styles.priceType}>PDF</span>
                 </p>
                 <p className={styles.cardDescription}>{description}</p>
                 <button
                   className={styles.button}
                   onClick={() => {
-                    initiateCheckout({
-                      lineItems: [{ price: price.id, quantity: 1 }],
-                    });
+                    addToBag({ id: price.id });
                   }}
                 >
-                  Buy now
+                  Add to bag
                 </button>
               </li>
             );
