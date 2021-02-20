@@ -1,0 +1,30 @@
+.nav {
+  align-items: center;
+  background: #fffe linear-gradient(330deg, #f0f3, #0f03);
+  border-bottom: 1px solid #fffe;
+  display: flex;
+  justify-content: space-between;
+  padding: 0.25rem 0.5rem;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 100;
+}
+
+.homeLink {
+  font-weight: bold;
+}
+
+.miniBag {
+  align-items: center;
+  display: flex;
+  appearance: none;
+  border: 0 none;
+  font-size: 1rem;
+  background: none;
+  cursor: pointer;
+}
+
+.miniBag svg {
+  margin-left: 5px;
+}

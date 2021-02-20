@@ -244,30 +244,3 @@
   transition: background-image 0.1s;
   background-image: linear-gradient(330deg, #0f09, #f0f9);
 }
-
-/* nav */
-.nav {
-  align-items: center;
-  background: #fffe linear-gradient(330deg, #f0f3, #0f03);
-  border-bottom: 1px solid #fffe;
-  display: flex;
-  justify-content: space-between;
-  padding: 0.25rem 0.5rem;
-  position: fixed;
-  top: 0;
-  width: 100%;
-  z-index: 100;
-}
-
-.homeLink {
-  font-weight: bold;
-}
-
-.miniBag {
-  align-items: center;
-  display: flex;
-}
-
-.miniBag svg {
-  margin-left: 5px;
-}

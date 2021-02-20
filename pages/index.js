@@ -1,9 +1,9 @@
 import Head from "next/head";
-import { MdShoppingCart } from "react-icons/md";
 import styles from "../styles/Home.module.css";
 import products from "../data/products";
 import { useBag } from "../bag/useBag";
 import { displayPrice } from "../bag/displayPrice";
+import { Navigation } from "../navigation/Navigation";
 
 export default function Home() {
   const {
@@ -21,16 +21,7 @@ export default function Home() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
-      <nav className={styles.nav}>
-        <a href="/" className={styles.homeLink}>
-          DC5B Shop
-        </a>
-        {totalCost > 0 && (
-          <span className={styles.miniBag}>
-            {displayPrice(totalCost)} <MdShoppingCart />
-          </span>
-        )}
-      </nav>
+      <Navigation />
 
       <main className={styles.main}>
         <h1 className={styles.title}>DC5B Shop</h1>
