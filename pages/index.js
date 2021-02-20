@@ -15,7 +15,7 @@ export default function Home() {
         <h1 className={styles.title}>DC5B Odd Shop</h1>
 
         <p className={styles.description}>
-          Imagination aids for the younger generation
+          Imagination aids for now and the future
         </p>
 
         <ul className={styles.grid}>
@@ -24,7 +24,7 @@ export default function Home() {
             const displayPrice =
               price.amount >= 1
                 ? `£${price.amount.toFixed(2)}`
-                : `Only ${price.amount * 100}p`;
+                : `${price.amount * 100}p`;
             return (
               <li key={price.id} className={styles.card}>
                 <h3>{title}</h3>
@@ -32,8 +32,7 @@ export default function Home() {
                   <img src={image} alt={alt} />
                 </div>
                 <p className={styles.price}>
-                  {displayPrice}{" "}
-                  <span className={styles.priceType}>download</span>
+                  {displayPrice} <span className={styles.priceType}>PDF</span>
                 </p>
                 <p className={styles.cardDescription}>{description}</p>
                 <button
@@ -54,12 +53,36 @@ export default function Home() {
 
       <footer className={styles.footer}>
         <a
-          href="https://vercel.com?utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app"
+          className={styles.footerLink}
+          href="https://dc5b.com"
           target="_blank"
           rel="noopener noreferrer"
         >
-          Powered by{" "}
-          <img src="/vercel.svg" alt="Vercel Logo" className={styles.logo} />
+          &copy; {new Date().getFullYear()}{" "}
+          <i className={styles.logo}>
+            <svg
+              className={styles.logoShadow0}
+              xmlns="http://www.w3.org/2000/svg"
+              viewBox="0 0 1000 1000"
+            >
+              <path d="M160,208V689l100,5v306H360V698l90,4V840H550V707l290,13V160ZM310,580V300l380,16.2V574Z" />
+            </svg>
+            <svg
+              className={styles.logoShadow1}
+              xmlns="http://www.w3.org/2000/svg"
+              viewBox="0 0 1000 1000"
+            >
+              <path d="M160,208V689l100,5v306H360V698l90,4V840H550V707l290,13V160ZM310,580V300l380,16.2V574Z" />
+            </svg>
+            <svg
+              className={styles.logoShadow2}
+              xmlns="http://www.w3.org/2000/svg"
+              viewBox="0 0 1000 1000"
+            >
+              <path d="M160,208V689l100,5v306H360V698l90,4V840H550V707l290,13V160ZM310,580V300l380,16.2V574Z" />
+            </svg>
+          </i>
+          DC5B
         </a>
       </footer>
     </div>

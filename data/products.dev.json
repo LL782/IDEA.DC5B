@@ -2,7 +2,7 @@
   {
     "alt": "A coloured in drawing of a strange bearded face.",
     "description": "Entertain you little one colouring in this bearded face with ambigious adornments.",
-    "image": "/images/orange-splash-01.jpg",
+    "image": "/product-images/orange-splash-01.jpg",
     "price": {
       "amount": 0.5,
       "id": "price_1ILxbyJvxKuslv8gRyvaM2ez"
@@ -12,7 +12,7 @@
   {
     "alt": "Ink drawing of an unusual face with a blindfold covering the eyes, with eyes printed on the blindfold.",
     "description": "Imagine having faces on the front and the back of the head and blindfolding one.",
-    "image": "/images/orange-splash-03.jpg",
+    "image": "/product-images/orange-splash-03.jpg",
     "price": {
       "amount": 0.5,
       "id": "price_1ILxbXJvxKuslv8gtLk0vtky"
@@ -22,7 +22,7 @@
   {
     "alt": "Black and white artists impression of a Toltec warrior standing in from of Los Atlantis statues with a flying saucer hovering above.",
     "description": "In Mexico, in Hidalgo, in Tula, look up from town and you'll see them. Very strange!",
-    "image": "/images/los-atlantic-02.jpg",
+    "image": "/product-images/los-atlantic-02.jpg",
     "price": {
       "amount": 0.5,
       "id": "price_1ILxZ4JvxKuslv8godvKlBvt"
