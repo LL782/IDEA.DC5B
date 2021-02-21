@@ -1,4 +1,4 @@
-import { useState, createContext, useContext } from "react";
+import { useState, createContext, useContext, useEffect } from "react";
 import products from "../data/products";
 import { initiateCheckout } from "../stripe/initiateCheckout";
 
@@ -10,6 +10,19 @@ export const BagContext = createContext({});
 
 export const useBagState = () => {
   const [bag, updateBag] = useState(defaultBag);
+
+  useEffect(() => {
+    const bagFromStorage = window.localStorage.getItem("dc5b_bag");
+    const data = bagFromStorage && JSON.parse(bagFromStorage);
+    if (data) {
+      updateBag(data);
+    }
+  }, []);
+
+  useEffect(() => {
+    const data = JSON.stringify(bag);
+    window.localStorage.setItem("dc5b_bag", data);
+  }, [bag]);
 
   const bagItems = Object.keys(bag.products).map((key) => {
     const product = products.find(({ price: { id } }) => id === key);
