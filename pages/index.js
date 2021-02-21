@@ -30,20 +30,6 @@ export default function Home() {
           Imagination aids for now and in the future
         </p>
 
-        <p className={styles.description}>
-          <strong>Total Items:</strong> {totalItems}
-          <br />
-          <strong>Total Cost:</strong> {displayPrice(totalCost)}
-          <br />
-          <button
-            className={styles.button}
-            onClick={checkout}
-            disabled={checkoutDisabled}
-          >
-            Checkout
-          </button>
-        </p>
-
         <ul className={styles.grid}>
           {products.map((product) => {
             const { title, description, image, alt, price } = product;

@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, createContext, useContext } from "react";
 import products from "../data/products";
 import { initiateCheckout } from "../stripe/initiateCheckout";
 
@@ -6,7 +6,9 @@ const defaultBag = {
   products: {},
 };
 
-export const useBag = () => {
+export const BagContext = createContext({});
+
+export const useBagState = () => {
   const [bag, updateBag] = useState(defaultBag);
 
   const bagItems = Object.keys(bag.products).map((key) => {
@@ -58,4 +60,9 @@ export const useBag = () => {
     totalCost,
     totalItems,
   };
+};
+
+export const useBag = () => {
+  const bag = useContext(BagContext);
+  return bag;
 };
