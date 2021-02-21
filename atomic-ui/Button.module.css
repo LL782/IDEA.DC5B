@@ -1,0 +1,13 @@
+.button {
+  font-size: 1rem;
+  border: 0 none;
+  appearance: none;
+  padding: 0;
+  background: none;
+  color: inherit;
+  cursor: pointer;
+}
+
+.button:disabled {
+  cursor: not-allowed;
+}

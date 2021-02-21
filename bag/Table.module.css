@@ -1,0 +1,35 @@
+.table {
+  border-spacing: 0;
+  width: 100%;
+}
+
+.row {
+  padding: 0;
+  margin: 0;
+  border: 0 none;
+}
+
+.columnHeading,
+.cell {
+  padding: 0;
+  margin: 0;
+  border: 0 none;
+  font-size: 1rem;
+  text-align: center;
+  padding: 1em;
+  border-bottom: solid 1px #000a;
+}
+
+.columnHeading:not(:first-child),
+.cell:not(:first-child) {
+  text-align: center;
+}
+
+.columnHeading {
+  background: #000d;
+  color: white;
+}
+
+tr:last-child .cell {
+  border-bottom: 0;
+}

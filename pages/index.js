@@ -4,15 +4,10 @@ import styles from "../styles/Home.module.css";
 import products from "../data/products";
 import { useBag } from "../bag/useBag";
 import { displayPrice } from "../bag/displayPrice";
+import { PrimaryButton } from "../atomic-ui/PrimaryButton";
 
 export default function Home() {
-  const {
-    addToBag,
-    checkout,
-    checkoutDisabled,
-    totalCost,
-    totalItems,
-  } = useBag();
+  const { addToBag } = useBag();
 
   return (
     <div className={styles.container}>
@@ -46,14 +41,9 @@ export default function Home() {
                     <p className={styles.cardDescription}>{description}</p>
                   </a>
                 </Link>
-                <button
-                  className={styles.button}
-                  onClick={() => {
-                    addToBag({ id: price.id });
-                  }}
-                >
+                <PrimaryButton onClick={() => addToBag({ id: price.id })}>
                   Add to bag
-                </button>
+                </PrimaryButton>
               </li>
             );
           })}
