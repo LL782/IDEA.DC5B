@@ -23,12 +23,13 @@
 
 .miniBag {
   align-items: center;
-  display: flex;
   appearance: none;
-  border: 0 none;
-  font-size: 1rem;
   background: none;
+  border: 0 none;
   cursor: pointer;
+  display: flex;
+  font-size: 1rem;
+  padding: 0;
 }
 
 .miniBag:disabled {
