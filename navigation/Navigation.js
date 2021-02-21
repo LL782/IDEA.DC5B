@@ -1,3 +1,4 @@
+import Link from "next/link";
 import { MdShoppingCart } from "react-icons/md";
 import { displayPrice } from "../bag/displayPrice";
 import { useBag } from "../bag/useBag";
@@ -9,9 +10,9 @@ export const Navigation = () => {
   return (
     <nav className={styles.nav}>
       <div className={styles.container}>
-        <a href="/" className={styles.homeLink}>
-          DC5B Shop
-        </a>
+        <Link href="/">
+          <a className={styles.homeLink}>DC5B Shop</a>
+        </Link>
 
         <button
           className={styles.miniBag}

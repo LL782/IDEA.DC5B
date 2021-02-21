@@ -2,7 +2,7 @@
   background: #fffe linear-gradient(330deg, #f0f3, #0f03);
   border-bottom: 1px solid #fff3;
   padding: 0.25rem 0.5rem;
-  position: fixed;
+  position: sticky;
   top: 0;
   width: 100%;
   z-index: 100;
