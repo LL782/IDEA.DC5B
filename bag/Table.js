@@ -27,7 +27,7 @@ export const Table = ({ columns, rows, footer }) => {
       </tbody>
       <tfoot>
         {Object.keys(footer).map((key) => (
-          <tr>
+          <tr key={key}>
             <th colSpan={Object.keys(columns).length - 1} scope="row">
               {key}
             </th>

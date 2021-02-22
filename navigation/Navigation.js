@@ -1,5 +1,5 @@
 import Link from "next/link";
-import { MdShoppingCart } from "react-icons/md";
+import { BiShoppingBag } from "react-icons/bi";
 import { displayPrice } from "../bag/displayPrice";
 import { useBag } from "../bag/useBag";
 import styles from "./Navigation.module.css";
@@ -9,12 +9,12 @@ const MiniBag = () => {
 
   return checkoutDisabled ? (
     <span className={styles.miniBag}>
-      {displayPrice(totalCost)} <MdShoppingCart />
+      {displayPrice(totalCost)} <BiShoppingBag />
     </span>
   ) : (
     <Link href="/bag">
       <a className={styles.miniBag}>
-        {displayPrice(totalCost)} <MdShoppingCart />
+        {displayPrice(totalCost)} <BiShoppingBag />
       </a>
     </Link>
   );

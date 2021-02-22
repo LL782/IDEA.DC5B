@@ -1,14 +1,14 @@
-import { MdShoppingCart } from "react-icons/md";
+import { BiShoppingBag } from "react-icons/bi";
 import styles from "./Bag.module.css";
-import { PrimaryButton } from "../atomic-ui/PrimaryButton";
+import { PrimaryLink } from "../atomic-ui/PrimaryLink";
 import { useBag } from "./useBag";
 import { Table } from "./Table";
 import products from "../data/products";
 import { displayPrice } from "./displayPrice";
+import { PrimaryButton } from "../atomic-ui/PrimaryButton";
 
 export const Bag = () => {
-  const { bagItems, checkout, checkoutDisabled } = useBag();
-  console.log(`bagItems: `, bagItems);
+  const { bagItems, checkout, checkoutDisabled, updateItem } = useBag();
 
   const columns = {
     title: "Item",
@@ -20,10 +20,29 @@ export const Bag = () => {
   const rows = bagItems.map(({ id, pricePerItem, quantity }) => {
     const product = products.find(({ price }) => price.id === id);
 
+    const handleSubmit = (e) => {
+      e.preventDefault();
+      const newQuantity = e.currentTarget.elements.namedItem("quantity")?.value;
+      updateItem({ id, quantity: newQuantity });
+    };
+
+    const Quantity = () => (
+      <form onSubmit={handleSubmit}>
+        <input
+          defaultValue={quantity}
+          id="quantity"
+          min={0}
+          step={1}
+          type="number"
+        />
+        <button>Update</button>
+      </form>
+    );
+
     return {
       id,
       title: product.title,
-      quantity,
+      quantity: <Quantity />,
       pricePerItem: displayPrice(pricePerItem),
       total: displayPrice(quantity * pricePerItem),
     };
@@ -41,12 +60,22 @@ export const Bag = () => {
   return (
     <div className={styles.container}>
       <h1>
-        <MdShoppingCart />
+        <BiShoppingBag />
       </h1>
-      <Table columns={columns} rows={rows} footer={footer}></Table>
-      <PrimaryButton onClick={checkout} disabled={checkoutDisabled}>
-        Checkout
-      </PrimaryButton>
+      {rows.length > 0 ? (
+        <>
+          <Table columns={columns} rows={rows} footer={footer}></Table>
+          <PrimaryButton onClick={checkout} disabled={checkoutDisabled}>
+            Checkout
+          </PrimaryButton>
+        </>
+      ) : (
+        <>
+          <h2>Your bag is empty</h2>
+          <p>Let's find something to go in it?</p>
+          <PrimaryLink href="/">Go shopping</PrimaryLink>
+        </>
+      )}
     </div>
   );
 };

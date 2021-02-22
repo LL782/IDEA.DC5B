@@ -58,6 +58,23 @@ export const useBagState = () => {
     updateBag({ ...prevBag, products });
   };
 
+  const updateItem = ({ id, quantity }) => {
+    const prevBag = bag;
+    const products = { ...bag.products };
+
+    quantity = parseInt(quantity);
+
+    if (products[id] && quantity === 0) {
+      delete products[id];
+    }
+
+    if (products[id] && quantity) {
+      products[id].quantity = quantity;
+    }
+
+    updateBag({ ...prevBag, products });
+  };
+
   const checkout = () => {
     const lineItems = bagItems.map(({ id, quantity }) => {
       return { price: id, quantity };
@@ -71,6 +88,7 @@ export const useBagState = () => {
     bagItems,
     checkout,
     checkoutDisabled,
+    updateItem,
     totalCost,
     totalItems,
   };
