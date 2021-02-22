@@ -4,6 +4,7 @@ import { PrimaryButton } from "../atomic-ui/PrimaryButton";
 import { useBag } from "./useBag";
 import { Table } from "./Table";
 import products from "../data/products";
+import { displayPrice } from "./displayPrice";
 
 export const Bag = () => {
   const { bagItems, checkout, checkoutDisabled } = useBag();
@@ -23,8 +24,8 @@ export const Bag = () => {
       id,
       title,
       quantity,
-      pricePerItem,
-      total: quantity * pricePerItem,
+      pricePerItem: displayPrice(pricePerItem),
+      total: displayPrice(quantity * pricePerItem),
     };
   });
 
