@@ -20,7 +20,7 @@ export default function Home() {
         <h1 className={styles.title}>DC5B Shop</h1>
 
         <p className={styles.description}>
-          Imagination aids for now and in the future
+          Imagination aids for present and future ages
         </p>
 
         <ul className={styles.grid}>

@@ -6,7 +6,7 @@ export const initiateCheckout = async ({ lineItems = {} }) => {
   const stripe = await stripePromise;
 
   await stripe.redirectToCheckout({
-    cancelUrl: window.location.origin,
+    cancelUrl: `${window.location.origin}/bag`,
     lineItems,
     mode: "payment",
     successUrl: `${window.location.origin}?session_id={CHECKOUT_SESSION_ID}`,

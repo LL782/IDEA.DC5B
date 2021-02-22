@@ -14,27 +14,36 @@ export const Bag = () => {
     title: "Item",
     quantity: "Quantity",
     pricePerItem: "Price",
-    total: "Item Total",
+    total: "Total",
   };
 
   const rows = bagItems.map(({ id, pricePerItem, quantity }) => {
-    const { title } = products.find(({ price }) => price.id === id);
+    const product = products.find(({ price }) => price.id === id);
 
     return {
       id,
-      title,
+      title: product.title,
       quantity,
       pricePerItem: displayPrice(pricePerItem),
       total: displayPrice(quantity * pricePerItem),
     };
   });
 
+  const totalOfRows = bagItems.reduce(
+    (accumulator, { pricePerItem, quantity }) => {
+      return accumulator + quantity * pricePerItem;
+    },
+    0
+  );
+
+  const footer = { Total: displayPrice(totalOfRows) };
+
   return (
     <div className={styles.container}>
       <h1>
         <MdShoppingCart />
       </h1>
-      <Table columns={columns} rows={rows}></Table>
+      <Table columns={columns} rows={rows} footer={footer}></Table>
       <PrimaryButton onClick={checkout} disabled={checkoutDisabled}>
         Checkout
       </PrimaryButton>
