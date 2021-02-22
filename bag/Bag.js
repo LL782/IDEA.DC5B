@@ -3,14 +3,31 @@ import styles from "./Bag.module.css";
 import { PrimaryButton } from "../atomic-ui/PrimaryButton";
 import { useBag } from "./useBag";
 import { Table } from "./Table";
+import products from "../data/products";
 
 export const Bag = () => {
-  const { checkout, checkoutDisabled } = useBag();
-  const columns = ["Item", "Quantity", "Price", "Item Total"];
-  const rows = [
-    ["Foo", "2", "50p", "£1.00"],
-    ["Foo", "2", "50p", "£1.00"],
-  ];
+  const { bagItems, checkout, checkoutDisabled } = useBag();
+  console.log(`bagItems: `, bagItems);
+
+  const columns = {
+    title: "Item",
+    quantity: "Quantity",
+    pricePerItem: "Price",
+    total: "Item Total",
+  };
+
+  const rows = bagItems.map(({ id, pricePerItem, quantity }) => {
+    const { title } = products.find(({ price }) => price.id === id);
+
+    return {
+      id,
+      title,
+      quantity,
+      pricePerItem,
+      total: quantity * pricePerItem,
+    };
+  });
+
   return (
     <div className={styles.container}>
       <h1>

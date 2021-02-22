@@ -68,6 +68,7 @@ export const useBagState = () => {
 
   return {
     addToBag,
+    bagItems,
     checkout,
     checkoutDisabled,
     totalCost,
