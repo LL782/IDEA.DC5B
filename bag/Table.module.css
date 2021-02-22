@@ -25,6 +25,14 @@
   text-align: center;
 }
 
+.columnHeading:first-child {
+  border-radius: 10px 0 0;
+}
+
+.columnHeading:last-child {
+  border-radius: 0 10px 0 0;
+}
+
 .columnHeading {
   background: #000d;
   color: white;
