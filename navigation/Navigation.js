@@ -4,23 +4,30 @@ import { displayPrice } from "../bag/displayPrice";
 import { useBag } from "../bag/useBag";
 import styles from "./Navigation.module.css";
 
-export const Navigation = () => {
-  const { checkout, checkoutDisabled, totalCost } = useBag();
+const MiniBag = () => {
+  const { checkoutDisabled, totalCost } = useBag();
 
+  return checkoutDisabled ? (
+    <span className={styles.miniBag}>
+      {displayPrice(totalCost)} <MdShoppingCart />
+    </span>
+  ) : (
+    <Link href="/bag">
+      <a className={styles.miniBag}>
+        {displayPrice(totalCost)} <MdShoppingCart />
+      </a>
+    </Link>
+  );
+};
+
+export const Navigation = () => {
   return (
     <nav className={styles.nav}>
       <div className={styles.container}>
         <Link href="/">
           <a className={styles.homeLink}>DC5B Shop</a>
         </Link>
-
-        <button
-          className={styles.miniBag}
-          onClick={checkout}
-          disabled={checkoutDisabled}
-        >
-          {displayPrice(totalCost)} <MdShoppingCart />
-        </button>
+        <MiniBag />
       </div>
     </nav>
   );
