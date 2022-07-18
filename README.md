@@ -32,3 +32,6 @@ Everything about the products gets duplicated, price, description, title, image,
 
 The files in `data/products` are arranged to feature toggle unfinished products. We work on products "in dev" (meaning locally) by adding their details to the `dev` data. This means we can have file changes related to them merged into the main branch and deployed without any problems. The new products are only released to the public when we add their details to the `prod` data.
 
+### Issues
+
+We track [issues](/issues) here in GitHub. That's a good intray for anything improvement related.
