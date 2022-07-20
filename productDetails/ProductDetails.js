@@ -8,7 +8,7 @@ import { displayPrice } from "../bag/displayPrice";
 
 export default function ProductDetailPage({ product }) {
   const { addToBag } = useBag();
-  const { title, description, image, alt, price } = product;
+  const { title, type, description, image, alt, price, subTitle } = product;
 
   return (
     <div className={styles.container}>
@@ -26,6 +26,7 @@ export default function ProductDetailPage({ product }) {
 
       <main className={styles.main}>
         <h3 className={styles.title}>{title}</h3>
+        <h4 className={styles.subTitle}>{subTitle}</h4>
         <Image
           src={image}
           alt={alt}
@@ -35,7 +36,7 @@ export default function ProductDetailPage({ product }) {
         />
         <p className={styles.price}>
           {displayPrice(price.amount)}{" "}
-          <span className={styles.priceType}>PDF</span>
+          <span className={styles.priceType}>{type}</span>
         </p>
         <p className={styles.cardDescription}>{description}</p>
         <button

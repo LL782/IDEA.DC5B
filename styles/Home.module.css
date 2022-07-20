@@ -80,6 +80,9 @@
   margin: 0;
   font-size: 1.5rem;
 }
+.card h4 {
+  font-size: 1rem;
+}
 
 .cardDescription {
   margin-top: 1rem;
@@ -97,8 +100,8 @@
   border: 1px solid black;
   display: inline-block;
   font-size: 0.85rem;
-  padding-left: 1rem;
-  padding: 0.075rem 0.2rem;
+  margin-left: 0.1rem;
+  padding: 0.075rem 0.25rem;
   position: relative;
   text-transform: uppercase;
 }

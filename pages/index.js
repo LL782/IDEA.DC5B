@@ -26,12 +26,15 @@ export default function Home() {
 
         <ul className={styles.grid}>
           {products.map((product) => {
-            const { title, description, image, alt, price } = product;
+            const { title, type, description, image, alt, price, subTitle } =
+              product;
+
             return (
               <li key={price.id} className={styles.card}>
                 <Link href={`/products/${price.id}`}>
                   <a>
                     <h3>{title}</h3>
+                    <h4>{subTitle}</h4>
                     <Image
                       src={image}
                       alt={alt}
@@ -41,7 +44,7 @@ export default function Home() {
                     />
                     <p className={styles.price}>
                       {displayPrice(price.amount)}{" "}
-                      <span className={styles.priceType}>PDF</span>
+                      <span className={styles.priceType}>{type}</span>
                     </p>
                     <p className={styles.cardDescription}>{description}</p>
                   </a>

@@ -7,6 +7,9 @@
       "id": "price_1ILcCGJvxKuslv8gGjmwU6P2"
     },
     "image": "/product-images/los-atlantis-02.png",
+    "title": "Los Atlantis",
+    "type": "Original prototype",
+    "subTitle": "Colouring in sheet"
   },
   {
     "alt": "Ink drawing of an unusual face with a blindfold covering the eyes, with eyes printed on the blindfold.",
@@ -16,7 +19,9 @@
       "amount": 0.5,
       "id": "price_1ILcBtJvxKuslv8gqTi6Z9tQ"
     },
-    "title": "Eyes On The Blindfold"
+    "title": "Eyes On The Blindfold",
+    "type": "Original prototype",
+    "subTitle": "Colouring in sheet"
   },
   {
     "alt": "A coloured in drawing of a strange bearded face.",
@@ -26,6 +31,8 @@
       "amount": 0.5,
       "id": "price_1ILcBUJvxKuslv8gmfBuEG5K"
     },
-    "title": "Bearded Strangeface"
+    "title": "Bearded Strangeface",
+    "type": "Original prototype",
+    "subTitle": "Colouring in sheet"
   }
 ]
