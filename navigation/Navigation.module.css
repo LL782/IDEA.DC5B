@@ -9,15 +9,15 @@
 }
 
 .nav::after {
-  background: #fffb linear-gradient(330deg, #f0fb, #0f0b);
+  background: #fffb linear-gradient(330deg, #f0fb, #eeeb, #0f0b);
   content: "";
-  bottom: -1px;
+  bottom: -2px;
   left: 0;
   right: 0;
   position: absolute;
   width: 100%;
   z-index: 100;
-  height: 1px;
+  height: 2px;
 }
 
 .container {
