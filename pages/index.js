@@ -18,7 +18,7 @@ export default function Home() {
       </Head>
 
       <main className={styles.main}>
-        <h1 className={styles.title}>DC5B Shop</h1>
+        <h1 className={styles.title}>SHOP.DC5B</h1>
 
         <p className={styles.description}>
           Imagination aids for present and future ages
