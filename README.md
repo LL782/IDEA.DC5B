@@ -34,4 +34,4 @@ The files in `data/products` are arranged to feature toggle unfinished products.
 
 ### Issues
 
-We track [issues](/issues) here in GitHub. That's a good intray for anything improvement related.
+We track issues here in GitHub. That's a good intray for anything improvement related.
