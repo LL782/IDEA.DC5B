@@ -23,7 +23,7 @@ export default function ProductDetailPage({ product }) {
       </nav>
 
       <main className={styles.main}>
-        <h3 class={styles.title}>{title}</h3>
+        <h3 className={styles.title}>{title}</h3>
         <div className={styles.imageHolder}>
           <img src={image} alt={alt} />
         </div>
