@@ -19,12 +19,20 @@
 .title {
   margin: 0;
   line-height: 1.15;
-  font-size: 4rem;
+  font-size: 16vw;
+}
+
+@media screen and (min-width: 800px) {
+  .title {
+    font-size: 128px;
+  }
 }
 
 .title,
 .description {
   text-align: center;
+  padding-left: 1rem;
+  padding-right: 1rem;
 }
 
 .description {
