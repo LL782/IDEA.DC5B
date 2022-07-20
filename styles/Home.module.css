@@ -103,21 +103,6 @@
   text-transform: uppercase;
 }
 
-.imageHolder {
-  position: relative;
-  height: 0;
-  padding-top: 50%;
-  margin-top: 1rem;
-  margin-bottom: calc(50% + 1rem);
-}
-
-.imageHolder img {
-  position: absolute;
-  top: 100%;
-  left: 0;
-  transform: translateY(-50%);
-}
-
 .button {
   font-size: 0.9rem;
   margin: 1rem 0 0;

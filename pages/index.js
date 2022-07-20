@@ -1,3 +1,4 @@
+import Image from "next/image";
 import Head from "next/head";
 import Link from "next/link";
 import styles from "../styles/Home.module.css";
@@ -31,9 +32,13 @@ export default function Home() {
                 <Link href={`/products/${price.id}`}>
                   <a>
                     <h3>{title}</h3>
-                    <div className={styles.imageHolder}>
-                      <img src={image} alt={alt} />
-                    </div>
+                    <Image
+                      src={image}
+                      alt={alt}
+                      width="800px"
+                      height="800px"
+                      layout="responsive"
+                    />
                     <p className={styles.price}>
                       {displayPrice(price.amount)}{" "}
                       <span className={styles.priceType}>PDF</span>

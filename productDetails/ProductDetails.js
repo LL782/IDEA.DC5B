@@ -1,8 +1,10 @@
+import Image from "next/image";
+import Link from "next/link";
 import Head from "next/head";
+
 import styles from "./ProductDetail.module.css";
 import { useBag } from "../bag/useBag";
 import { displayPrice } from "../bag/displayPrice";
-import Link from "next/link";
 
 export default function ProductDetailPage({ product }) {
   const { addToBag } = useBag();
@@ -24,9 +26,13 @@ export default function ProductDetailPage({ product }) {
 
       <main className={styles.main}>
         <h3 className={styles.title}>{title}</h3>
-        <div className={styles.imageHolder}>
-          <img src={image} alt={alt} />
-        </div>
+        <Image
+          src={image}
+          alt={alt}
+          width="800px"
+          height="800px"
+          layout="responsive"
+        />
         <p className={styles.price}>
           {displayPrice(price.amount)}{" "}
           <span className={styles.priceType}>PDF</span>
