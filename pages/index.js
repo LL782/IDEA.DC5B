@@ -31,24 +31,24 @@ export default function Home() {
 
             return (
               <li key={price.id} className={styles.card}>
-                <Link href={`/products/${price.id}`}>
-                  <a>
-                    <h3>{title}</h3>
-                    <h4>{subTitle}</h4>
-                    <Image
-                      src={image}
-                      alt={alt}
-                      width="800px"
-                      height="800px"
-                      layout="responsive"
-                    />
-                    <p className={styles.price}>
-                      {displayPrice(price.amount)}{" "}
-                      <span className={styles.priceType}>{type}</span>
-                    </p>
-                    <p className={styles.cardDescription}>{description}</p>
-                  </a>
-                </Link>
+                {/* <Link href={`/products/${price.id}`}> */}
+                {/* <a> */}
+                <h3>{title}</h3>
+                <h4>{subTitle}</h4>
+                <Image
+                  src={image}
+                  alt={alt}
+                  width="800px"
+                  height="800px"
+                  layout="responsive"
+                />
+                <p className={styles.price}>
+                  {displayPrice(price.amount)}{" "}
+                  <span className={styles.priceType}>{type}</span>
+                </p>
+                <p className={styles.cardDescription}>{description}</p>
+                {/* </a> */}
+                {/* </Link> */}
                 <PrimaryButton onClick={() => addToBag({ id: price.id })}>
                   Add to bag
                 </PrimaryButton>
