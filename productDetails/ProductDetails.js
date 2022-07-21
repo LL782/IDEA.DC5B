@@ -13,7 +13,9 @@ export default function ProductDetailPage({ product }) {
   return (
     <div className={styles.container}>
       <Head>
-        <title>{title} | DC5B Shop</title>
+        <title>
+          {title} - {subTitle} // DC5B
+        </title>
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
