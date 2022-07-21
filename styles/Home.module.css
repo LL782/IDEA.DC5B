@@ -8,7 +8,7 @@
 }
 
 .main {
-  padding: 5rem 0;
+  padding: 1rem 0;
   flex: 1;
   display: flex;
   flex-direction: column;
@@ -17,10 +17,11 @@
 }
 
 .title {
-  background-color: #f0f3;
-  font-size: 16vw;
+  font-size: 14vw;
   line-height: 1.15;
-  margin: 0;
+  margin: 2rem 0 0;
+  padding-left: 3rem;
+  padding-right: 3rem;
 }
 
 @media screen and (min-width: 800px) {
@@ -32,18 +33,17 @@
 .title,
 .description {
   text-align: center;
-  padding-left: 1rem;
-  padding-right: 1rem;
 }
 
 .description {
-  background-color: #0f03;
-  border-top: 1rem solid;
   font-size: 1rem;
   font-style: italic;
   font-weight: bold;
+  letter-spacing: 0.1rem;
   line-height: 1.5;
-  margin: -0.5rem 0 0 0;
+  margin: 0;
+  padding-left: 0.75em;
+  padding-right: 0.75em;
   text-transform: uppercase;
 }
 
