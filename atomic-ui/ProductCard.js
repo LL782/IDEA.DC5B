@@ -1,9 +1,10 @@
 import Image from "next/image";
+import Link from "next/link";
 
 import styles from "../styles/Home.module.css";
-import { displayPrice } from "../bag/displayPrice";
-import { PrimaryButton } from "../atomic-ui/PrimaryButton";
+import { PrimaryButton } from "./PrimaryButton";
 import { useBag } from "../bag/useBag";
+import { PriceTag } from "./PriceTag";
 
 export const ProductCard = ({ product }) => {
   const { title, type, description, image, alt, price, subTitle } = product;
@@ -11,19 +12,20 @@ export const ProductCard = ({ product }) => {
 
   return (
     <li className={styles.card}>
-      <h3>{title}</h3>
-      <h4>{subTitle}</h4>
-      <Image
-        src={image}
-        alt={alt}
-        width="800px"
-        height="800px"
-        layout="responsive"
-      />
-      <p className={styles.price}>
-        {displayPrice(price.amount)}{" "}
-        <span className={styles.priceType}>{type}</span>
-      </p>
+      <Link href={`/products/${price.id}`}>
+        <a>
+          <h3>{title}</h3>
+          <h4>{subTitle}</h4>
+          <Image
+            src={image}
+            alt={alt}
+            width="800px"
+            height="800px"
+            layout="responsive"
+          />
+        </a>
+      </Link>
+      <PriceTag price={price} type={type} />
       <p className={styles.cardDescription}>{description}</p>
       <PrimaryButton onClick={() => addToBag({ id: price.id })}>
         Add to bag

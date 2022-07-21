@@ -1,7 +1,7 @@
 import Head from "next/head";
 import styles from "../styles/Home.module.css";
 import products from "../data/products";
-import { ProductCard } from "./ProductCard";
+import { ProductCard } from "../atomic-ui/ProductCard";
 
 export default function Home() {
   return (
