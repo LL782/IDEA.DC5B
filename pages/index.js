@@ -13,7 +13,6 @@ export default function Home() {
 
       <main className={styles.main}>
         <h1 className={styles.title}>SHOP.DC5B</h1>
-
         <p className={styles.description}>You must have a head</p>
 
         <ul className={styles.grid}>
