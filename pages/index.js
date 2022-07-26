@@ -1,6 +1,7 @@
 import Head from "next/head";
 import styles from "../styles/Home.module.css";
 import products from "../data/products";
+import { OptionalExtraCard } from "../optionalExtraCard/OptionalExtraCard";
 import { ProductCard } from "../atomic-ui/ProductCard";
 
 export default function Home() {
@@ -16,9 +17,10 @@ export default function Home() {
         <p className={styles.description}>You must have a head</p>
 
         <ul className={styles.grid}>
-          {products.map((product) => (
-            <ProductCard product={product} key={product.price.id} />
-          ))}
+          {products.map((product, index) => [
+            <ProductCard product={product} key={product.price.id} />,
+            <OptionalExtraCard mapIndex={index} />,
+          ])}
         </ul>
       </main>
     </div>
