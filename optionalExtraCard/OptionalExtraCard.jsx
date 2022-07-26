@@ -1,4 +1,4 @@
-import { ExtraCardYourIdeas } from "./extraCards";
+import { YourIdeas } from "./extraCards";
 
 export const OptionalExtraCard = ({ mapIndex }) =>
-  mapIndex === 2 ? <ExtraCardYourIdeas /> : null;
+  mapIndex === 2 ? <YourIdeas /> : null;

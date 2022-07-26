@@ -1,6 +1,6 @@
 import styles from "../styles/Home.module.css";
 
-export const ExtraCardYourIdeas = () => (
+export const YourIdeas = () => (
   <li className={styles.card}>
     <h2>Your ideas:</h2>
     <p className={styles.cardDescription}>
