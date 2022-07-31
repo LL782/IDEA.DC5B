@@ -13,3 +13,22 @@ export const YourIdeas = () => (
     </p>
   </li>
 );
+
+export const Prototypes = () => (
+  <li className={styles.card}>
+    <h2>Prototypes</h2>
+    <p className={styles.cardDescription}>
+      This is all new to us (to me really). We're putting ideas out here to get
+      feedback. What do you like? What works? What doesn't?
+    </p>
+    <p className={styles.cardDescription}>
+      Your feedback is not only welcome, it's the way this business is going to
+      grow. Within reason, we want to provide artwork in exactly the way you
+      want it.
+    </p>
+    <p className={styles.cardDescription}>
+      T-shirt, coaster, wall vinyl, colouring in book, huge oil paintings, brass
+      etching. All formats considered. If anything strikes a chord do say.
+    </p>
+  </li>
+);
