@@ -4,7 +4,7 @@ let stripePromise;
 
 export const initiateCheckout = async ({ lineItems = {} }) => {
   stripePromise =
-    stripePromise || loadStripe(process.env.NEXT_PUBLIC_STRIPE_API_KEY);
+    stripePromise || loadStripe(process.env.NEXT_PUBLIC_STRIPE_API_KEY || "");
 
   const stripe = await stripePromise;
 

@@ -1,6 +1,13 @@
+import { BAG_COLUMNS } from "./Bag";
 import styles from "./Table.module.css";
 
-export const Table = ({ columns, rows, footer }) => {
+interface Props {
+  columns: typeof BAG_COLUMNS;
+  rows: any;
+  footer: any;
+}
+
+export const Table = ({ columns, rows, footer }: Props) => {
   const columnIds = Object.keys(columns);
 
   return (

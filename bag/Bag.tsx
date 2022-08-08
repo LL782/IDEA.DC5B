@@ -7,15 +7,15 @@ import products from "../data/products";
 import { displayPrice } from "./displayPrice";
 import { PrimaryButton } from "../atomic-ui/PrimaryButton";
 
+export const BAG_COLUMNS = {
+  title: "Item",
+  quantity: "Quantity",
+  pricePerItem: "Price",
+  total: "Total",
+};
+
 export const Bag = () => {
   const { bagItems, checkout, checkoutDisabled, updateItem } = useBag();
-
-  const columns = {
-    title: "Item",
-    quantity: "Quantity",
-    pricePerItem: "Price",
-    total: "Total",
-  };
 
   const rows = bagItems.map(({ id, pricePerItem, quantity }) => {
     const product = products.find(({ price }) => price.id === id);
@@ -64,7 +64,7 @@ export const Bag = () => {
       </h1>
       {rows.length > 0 ? (
         <>
-          <Table columns={columns} rows={rows} footer={footer}></Table>
+          <Table columns={BAG_COLUMNS} rows={rows} footer={footer}></Table>
           <PrimaryButton onClick={checkout} disabled={checkoutDisabled}>
             Checkout
           </PrimaryButton>
@@ -72,7 +72,7 @@ export const Bag = () => {
       ) : (
         <>
           <h2>Your bag is empty</h2>
-          <p>Let's find something to go in it?</p>
+          <p>Let&apos;s find something to go in it?</p>
           <PrimaryLink href="/">Go shopping</PrimaryLink>
         </>
       )}

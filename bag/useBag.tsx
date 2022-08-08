@@ -2,11 +2,21 @@ import { useState, createContext, useContext, useEffect } from "react";
 import products from "../data/products";
 import { initiateCheckout } from "../stripe/initiateCheckout";
 
+type BagContextType = {
+  addToBag: ({ id }: { id: string }) => void;
+  bagItems: any[];
+  checkout: () => void;
+  checkoutDisabled: boolean;
+  updateItem: ({ id, quantity }: { id: string; quantity: number }) => void;
+  totalCost: number;
+  totalItems: number;
+};
+
 const defaultBag = {
   products: {},
 };
 
-export const BagContext = createContext({});
+export const BagContext = createContext<BagContextType | null>(null);
 
 export const useBagState = () => {
   const [bag, updateBag] = useState(defaultBag);
@@ -95,6 +105,5 @@ export const useBagState = () => {
 };
 
 export const useBag = () => {
-  const bag = useContext(BagContext);
-  return bag;
+  return useContext(BagContext);
 };

@@ -19,7 +19,7 @@ export default function Home() {
         <ul className={styles.grid}>
           {products.map((product, index) => [
             <ProductCard product={product} key={product.price.id} />,
-            <OptionalExtraCard mapIndex={index} />,
+            <OptionalExtraCard mapIndex={index} key="Optional extra cards" />,
           ])}
         </ul>
       </main>
