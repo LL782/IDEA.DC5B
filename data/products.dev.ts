@@ -24,7 +24,7 @@ const products: Product[] = [
       id: "price_1ILxbyJvxKuslv8gRyvaM2ez",
     },
     title: "Bearded Strangeface",
-    type: "Digital Download",
+    type: "Printable Download",
     subTitle: "Colouring in sheet",
   },
   {
@@ -37,7 +37,7 @@ const products: Product[] = [
       id: "price_1ILxbXJvxKuslv8gtLk0vtky",
     },
     title: "Eyes On The Blindfold",
-    type: "Digital Download",
+    type: "Printable Download",
     subTitle: "Colouring in sheet",
   },
   {
@@ -50,7 +50,7 @@ const products: Product[] = [
       id: "price_1ILxZ4JvxKuslv8godvKlBvt",
     },
     title: "Los Atlantis",
-    type: "Digital Download",
+    type: "Printable Download",
     subTitle: "Colouring in sheet",
   },
 ];
