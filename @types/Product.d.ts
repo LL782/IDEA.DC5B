@@ -6,7 +6,7 @@ export type Product = {
     amount: number;
     id: string;
   };
-  title: string;
   subTitle: string;
-  type: string;
+  title: string;
+  type: "Original prototype" | "Printable Download";
 };

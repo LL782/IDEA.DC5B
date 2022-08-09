@@ -1,4 +1,6 @@
-const products = [
+import { Product } from "../@types/Product";
+
+const products: Product[] = [
   {
     alt: "A white porceline mug that I've drawn on with a black chinagraph pencil",
     description:
