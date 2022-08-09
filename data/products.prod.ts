@@ -1,4 +1,4 @@
-export default [
+const products = [
   {
     alt: "A white porceline mug that I've drawn on with a black chinagraph pencil",
     description:
@@ -52,3 +52,5 @@ export default [
     subTitle: "Colouring in sheet",
   },
 ];
+
+export default products;
