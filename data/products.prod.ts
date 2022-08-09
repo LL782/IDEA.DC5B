@@ -1,6 +1,11 @@
 import { Product } from "../@types/Product";
+import { balsamicPotion } from "./ideasBase";
 
 const products: Product[] = [
+  Object.assign(
+    { price: { amount: 50, id: "price_1LV01JJvxKuslv8gnJWklB18" } },
+    balsamicPotion
+  ),
   {
     alt: "A white porceline mug that I've drawn on with a black chinagraph pencil",
     description:
