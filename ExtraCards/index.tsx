@@ -1,6 +1,12 @@
 import styles from "../styles/Home.module.css";
 
-export const YourIdeas = () => (
+export const OptionalExtraCard = ({ mapIndex }) => {
+  if (mapIndex === 3) return <Prototypes />;
+  if (mapIndex === 6) return <YourIdeas />;
+  return null;
+};
+
+const YourIdeas = () => (
   <li className={styles.card}>
     <h2>Your ideas:</h2>
     <p className={styles.cardDescription}>
@@ -14,7 +20,7 @@ export const YourIdeas = () => (
   </li>
 );
 
-export const Prototypes = () => (
+const Prototypes = () => (
   <li className={styles.card}>
     <h2>Prototypes</h2>
     <p className={styles.cardDescription}>
