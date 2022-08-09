@@ -1,24 +1,19 @@
 import { Product } from "../@types/Product";
-import { balsamicPotion } from "./ideasBase";
+import { balsamicPotion, niceBitOfWrapping, spaceAgeMug } from "./ideasBase";
 
 const products: Product[] = [
+  Object.assign(
+    { price: { amount: 15, id: "price_1LV0V2JvxKuslv8gXJMJyWgm" } },
+    niceBitOfWrapping
+  ),
   Object.assign(
     { price: { amount: 50, id: "price_1LV01JJvxKuslv8gnJWklB18" } },
     balsamicPotion
   ),
-  {
-    alt: "A white porceline mug that I've drawn on with a black chinagraph pencil",
-    description:
-      "This is the original sketch for the Space Age Traveller art mug. It's chinagraph pencil on porceline so only buy it if you're an art collector who can avoid smudging it. If you like the art or have any better ideas let me know. If like I'll make a cheaper version for you using all the right mug printing techniques.",
-    image: "/product-images/space-age-traveller-mug-001.jpg",
-    price: {
-      amount: 500,
-      id: "price_1LNkCqJvxKuslv8gltFewqHU",
-    },
-    title: "Space Age Traveller",
-    subTitle: "Art mug original",
-    type: "Original prototype",
-  },
+  Object.assign(
+    { price: { amount: 500, id: "price_1LNkCqJvxKuslv8gltFewqHU" } },
+    spaceAgeMug
+  ),
   {
     alt: "A coloured in drawing of a strange bearded face.",
     description:

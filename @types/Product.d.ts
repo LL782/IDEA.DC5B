@@ -8,5 +8,5 @@ export type Product = {
   };
   subTitle: string;
   title: string;
-  type: "Original prototype" | "Printable Download";
+  type: "A3 Glossy Paper" | "Original prototype" | "Printable Download";
 };

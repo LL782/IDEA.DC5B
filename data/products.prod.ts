@@ -1,24 +1,19 @@
 import { Product } from "../@types/Product";
-import { balsamicPotion } from "./ideasBase";
+import { balsamicPotion, niceBitOfWrapping, spaceAgeMug } from "./ideasBase";
 
 const products: Product[] = [
+  Object.assign(
+    { price: { amount: 15, id: "price_1LV0VbJvxKuslv8gTkTZVnNt" } },
+    niceBitOfWrapping
+  ),
   Object.assign(
     { price: { amount: 50, id: "price_1LV01JJvxKuslv8gnJWklB18" } },
     balsamicPotion
   ),
-  {
-    alt: "A white porceline mug that I've drawn on with a black chinagraph pencil",
-    description:
-      "This is chinagraph pencil on porceline so don't smudge it. Recommended for a careful collector. If people like it I'll do a print run of non-unique, cheaper ones. Let me know",
-    image: "/product-images/space-age-traveller-mug-001.jpg",
-    price: {
-      amount: 500,
-      id: "price_1LNkKpJvxKuslv8gZDbyb8CM",
-    },
-    title: "Space Age Traveller",
-    subTitle: "Art mug original",
-    type: "Original prototype",
-  },
+  Object.assign(
+    { price: { amount: 500, id: "price_1LNkKpJvxKuslv8gZDbyb8CM" } },
+    spaceAgeMug
+  ),
   {
     alt: "Black and white artists impression of a Toltec warrior standing in from of Los Atlantis statues with a flying saucer hovering above.",
     description:
