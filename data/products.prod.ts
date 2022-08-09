@@ -7,7 +7,7 @@ const products: Product[] = [
     niceBitOfWrapping
   ),
   Object.assign(
-    { price: { amount: 50, id: "price_1LV01JJvxKuslv8gnJWklB18" } },
+    { price: { amount: 50, id: "price_1LV02sJvxKuslv8gC3vUIyoA" } },
     balsamicPotion
   ),
   Object.assign(
