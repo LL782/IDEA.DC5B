@@ -22,15 +22,15 @@ const products: Product[] = [
     spaceAgeMug
   ),
   Object.assign(
-    { price: { amount: 2, id: "price_1LW5MqJvxKuslv8gY5k6T3vr" } },
+    { price: { amount: 1.5, id: "price_1LW5MqJvxKuslv8gY5k6T3vr" } },
     losAtlantisColouring
   ),
   Object.assign(
-    { price: { amount: 2, id: "price_1LW5MIJvxKuslv8gYtWXPOJS" } },
+    { price: { amount: 1.5, id: "price_1LW5MIJvxKuslv8gYtWXPOJS" } },
     eyesOnTheBlindfoldColouring
   ),
   Object.assign(
-    { price: { amount: 2, id: "price_1LW5LYJvxKuslv8gxJIn9bbk" } },
+    { price: { amount: 1.5, id: "price_1LW5LYJvxKuslv8gxJIn9bbk" } },
     beardedStrangeFaceColouring
   ),
 ];
