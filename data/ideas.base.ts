@@ -51,6 +51,7 @@ export const beardedStrangeFaceColouring: BaseIdea = {
   type: "Printable Download",
   subTitle: "Colouring in sheet",
 };
+
 export const eyesOnTheBlindfoldColouring: BaseIdea = {
   alt: "Ink drawing of an unusual face with a blindfold covering the eyes, with eyes printed on the blindfold.",
   description:
