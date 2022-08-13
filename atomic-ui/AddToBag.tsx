@@ -5,8 +5,8 @@ export const AddToBag = ({ price }) => {
   const { addToBag, bagItems } = useBag();
   const bagItem = bagItems.filter(({ id }) => id === price.id)[0];
   const inBag = !!bagItem;
-  const max = price.maxQuanitiy || 5;
-  const maxedOut = bagItem?.quantity === max;
+  const max = price.maxQuantity || 5;
+  const maxedOut = bagItem?.quantity >= max;
 
   const handleAdd = () => addToBag({ id: price.id });
 
