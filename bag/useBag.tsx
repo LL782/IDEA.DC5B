@@ -1,10 +1,11 @@
 import { useState, createContext, useContext, useEffect } from "react";
+import { BagItem } from "../@types/Product";
 import products from "../data/products";
 import { initiateCheckout } from "../stripe/initiateCheckout";
 
 type BagContextType = {
   addToBag: ({ id }: { id: string }) => void;
-  bagItems: any[];
+  bagItems: BagItem[];
   checkout: () => void;
   checkoutDisabled: boolean;
   updateItem: ({ id, quantity }: { id: string; quantity: number }) => void;
@@ -38,6 +39,7 @@ export const useBagState = () => {
     const product = products.find(({ price: { id } }) => id === key);
     return {
       ...bag.products[key],
+      maxQuantity: product.maxQuantity,
       pricePerItem: product.price.amount,
     };
   });

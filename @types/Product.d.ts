@@ -11,3 +11,10 @@ export type Product = {
   title: string;
   type: "A3 Glossy Paper" | "Original prototype" | "Printable Download";
 };
+
+export type BagItem = {
+  id: string;
+  maxQuantity?: number;
+  pricePerItem: number;
+  quantity: number;
+};
