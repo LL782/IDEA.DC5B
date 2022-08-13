@@ -6,6 +6,7 @@ import { Table } from "./Table";
 import products from "../data/products";
 import { displayPrice } from "./displayPrice";
 import { PrimaryButton } from "../atomic-ui/PrimaryButton";
+import { SecondaryLink } from "../atomic-ui/SecondaryLink";
 import { BagItemQuantity } from "./BagItemQuantity";
 
 export const BAG_COLUMNS = {
@@ -51,6 +52,9 @@ export const Bag = () => {
           <PrimaryButton onClick={checkout} disabled={checkoutDisabled}>
             Checkout
           </PrimaryButton>
+          <p>
+            <SecondaryLink href="/">Back to the shop</SecondaryLink>
+          </p>
         </>
       ) : (
         <>
