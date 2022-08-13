@@ -6,38 +6,58 @@ import { Table } from "./Table";
 import products from "../data/products";
 import { displayPrice } from "./displayPrice";
 import { PrimaryButton } from "../atomic-ui/PrimaryButton";
+import { ChangeEvent } from "react";
 
 export const BAG_COLUMNS = {
   title: "Item",
   quantity: "Quantity",
-  remove: "",
-  pricePerItem: "Price",
-  total: "Total",
+  price: "Price",
+  lineTotal: "Total",
+};
+
+const BagItemQuantity = ({ bagItem }) => {
+  const { id, quantity, maxQuantity = 5 } = bagItem;
+  const { updateItem } = useBag();
+
+  const handleQuantity = (e: ChangeEvent<HTMLSelectElement>) => {
+    const newQuantity = Number.parseInt(e.target.value);
+    updateItem({ id, quantity: newQuantity });
+  };
+
+  const options = [];
+  for (let i = 0; i <= maxQuantity; i++) {
+    options.push(<option value={i} key={i}>{`${i}`}</option>);
+  }
+
+  return (
+    <select value={quantity} onChange={handleQuantity}>
+      {options}
+    </select>
+  );
 };
 
 export const Bag = () => {
   const { bagItems, checkout, checkoutDisabled, updateItem } = useBag();
 
-  const rows = bagItems.map(({ id, pricePerItem, quantity }) => {
+  const rows = bagItems.map((bagItem) => {
+    const { id, pricePerItem, quantity, maxQuantity } = bagItem;
     const product = products.find(({ price }) => price.id === id);
 
     return {
       id,
       title: product.title,
-      quantity,
-      remove: (
-        <button onClick={() => updateItem({ id, quantity: 0 })} type="button">
-          -
-        </button>
-      ),
-      pricePerItem: displayPrice(pricePerItem),
-      total: displayPrice(quantity * pricePerItem),
+      quantity: <BagItemQuantity bagItem={bagItem} />,
+      price: displayPrice(pricePerItem),
+      lineTotal: displayPrice(quantity * pricePerItem),
     };
   });
 
-  const totalOfRows = bagItems.reduce((accumulator, { pricePerItem }) => {
-    return accumulator + pricePerItem;
-  }, 0);
+  const totalOfRows = bagItems.reduce(
+    (accumulator, { pricePerItem, quantity }) => {
+      return accumulator + quantity * pricePerItem;
+    },
+    0
+  );
 
   const footer = { Total: displayPrice(totalOfRows) };
 
