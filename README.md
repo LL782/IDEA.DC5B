@@ -1,10 +1,18 @@
 # SHOP.DC5B.COM
 
-This is the [source code](https://en.wikipedia.org/wiki/Source_code) for [shop.dc5b.com](https://shop.dc5b.com) – if you're interested in the project of developing this business drop me a comment on [dc5b.dog](https://dc5b.dog).
+## Welcome 👋
+
+This is the [source code](https://en.wikipedia.org/wiki/Source_code) for [shop.dc5b.com](https://shop.dc5b.com)
+
+If you're interested in the project drop me a comment on [dc5b.dog](https://dc5b.dog)
+
+### Issues and milestones
+
+In GitHub you'll find [Issues](https://github.com/LL782/DC5B-SHOP/issues) and [Milestones](https://github.com/LL782/DC5B-SHOP/milestones). These show you what's being worked on and suggest a path for the future of the shop. If you'd like to contribute, you'd be most welcome.
 
 ## Tech
 
-The rest of this document will be notes for me about developing the website.
+The following are technical notes for the website development.
 
 ### Summary
 
@@ -32,6 +40,3 @@ Everything about the products gets duplicated, price, description, title, image,
 
 The files in `data/products` are arranged to feature toggle unfinished products. We work on products "in dev" (meaning locally) by adding their details to the `dev` data. This means we can have file changes related to them merged into the main branch and deployed without any problems. The new products are only released to the public when we add their details to the `prod` data.
 
-### Issues
-
-We track issues here in GitHub. That's a good intray for anything improvement related.
