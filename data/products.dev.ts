@@ -14,13 +14,7 @@ const products: Product[] = [
     niceBitOfWrapping
   ),
   Object.assign(
-    {
-      price: {
-        amount: 50,
-        id: "price_1LV01JJvxKuslv8gnJWklB18",
-        maxQuantity: 3,
-      },
-    },
+    { price: { amount: 50, id: "price_1LV01JJvxKuslv8gnJWklB18" } },
     balsamicPotion
   ),
   Object.assign(

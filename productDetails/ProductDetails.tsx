@@ -1,14 +1,19 @@
 import Image from "next/image";
 import Link from "next/link";
 import Head from "next/head";
+import { Product } from "../@types/Product";
 
 import styles from "./ProductDetail.module.css";
-import { useBag } from "../bag/useBag";
 import { displayPrice } from "../bag/displayPrice";
 import { AddToBag } from "../atomic-ui/AddToBag";
 
-export default function ProductDetailPage({ product }) {
-  const { title, type, description, image, alt, price, subTitle } = product;
+interface Props {
+  product: Product;
+}
+
+export default function ProductDetailPage({ product }: Props) {
+  const { title, type, description, image, maxQuantity, alt, price, subTitle } =
+    product;
 
   return (
     <div className={styles.container}>
@@ -39,7 +44,7 @@ export default function ProductDetailPage({ product }) {
           <span className={styles.priceType}>{type}</span>
         </p>
         <p className={styles.cardDescription}>{description}</p>
-        <AddToBag price={price} />
+        <AddToBag maxQuantity={maxQuantity} price={price} />
       </main>
     </div>
   );

@@ -6,6 +6,7 @@ export type Product = {
     amount: number;
     id: string;
   };
+  maxQuantity?: number;
   subTitle: string;
   title: string;
   type: "A3 Glossy Paper" | "Original prototype" | "Printable Download";

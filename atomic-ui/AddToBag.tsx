@@ -1,12 +1,11 @@
 import { PrimaryButton } from "./PrimaryButton";
 import { useBag } from "../bag/useBag";
 
-export const AddToBag = ({ price }) => {
+export const AddToBag = ({ maxQuantity = 5, price }) => {
   const { addToBag, bagItems } = useBag();
   const bagItem = bagItems.filter(({ id }) => id === price.id)[0];
   const inBag = !!bagItem;
-  const max = price.maxQuantity || 5;
-  const maxedOut = bagItem?.quantity >= max;
+  const maxedOut = bagItem?.quantity >= maxQuantity;
 
   const handleAdd = () => addToBag({ id: price.id });
 
