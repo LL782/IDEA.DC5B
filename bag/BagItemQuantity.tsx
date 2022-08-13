@@ -3,7 +3,7 @@ import { ChangeEvent } from "react";
 import { useBag } from "./useBag";
 
 export const BagItemQuantity = ({ bagItem }) => {
-  const { id, quantity, maxQuantity } = bagItem;
+  const { id, quantity, maxQuantity = 5 } = bagItem;
   const { updateItem } = useBag();
 
   const handleQuantity = (e: ChangeEvent<HTMLSelectElement>) => {
@@ -12,7 +12,7 @@ export const BagItemQuantity = ({ bagItem }) => {
   };
 
   const options = [];
-  for (let i = 0; i <= maxQuantity || 5; i++) {
+  for (let i = 0; i <= maxQuantity; i++) {
     options.push(<option value={i} key={i}>{`${i}`}</option>);
   }
 
