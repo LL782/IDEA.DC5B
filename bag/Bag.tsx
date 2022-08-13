@@ -6,7 +6,7 @@ import { Table } from "./Table";
 import products from "../data/products";
 import { displayPrice } from "./displayPrice";
 import { PrimaryButton } from "../atomic-ui/PrimaryButton";
-import { ChangeEvent } from "react";
+import { BagItemQuantity } from "./BagItemQuantity";
 
 export const BAG_COLUMNS = {
   title: "Item",
@@ -15,32 +15,11 @@ export const BAG_COLUMNS = {
   lineTotal: "Total",
 };
 
-const BagItemQuantity = ({ bagItem }) => {
-  const { id, quantity, maxQuantity = 5 } = bagItem;
-  const { updateItem } = useBag();
-
-  const handleQuantity = (e: ChangeEvent<HTMLSelectElement>) => {
-    const newQuantity = Number.parseInt(e.target.value);
-    updateItem({ id, quantity: newQuantity });
-  };
-
-  const options = [];
-  for (let i = 0; i <= maxQuantity; i++) {
-    options.push(<option value={i} key={i}>{`${i}`}</option>);
-  }
-
-  return (
-    <select value={quantity} onChange={handleQuantity}>
-      {options}
-    </select>
-  );
-};
-
 export const Bag = () => {
-  const { bagItems, checkout, checkoutDisabled, updateItem } = useBag();
+  const { bagItems, checkout, checkoutDisabled } = useBag();
 
   const rows = bagItems.map((bagItem) => {
-    const { id, pricePerItem, quantity, maxQuantity } = bagItem;
+    const { id, pricePerItem, quantity } = bagItem;
     const product = products.find(({ price }) => price.id === id);
 
     return {
