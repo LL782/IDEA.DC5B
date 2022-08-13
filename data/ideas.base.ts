@@ -28,7 +28,7 @@ export const spaceAgeMug: BaseIdea = {
   description:
     "This is chinagraph pencil on porceline so don't smudge it. Recommended for a careful collector. If people like it I'll do a print run of non-unique, cheaper ones. Let me know",
   image: "/product-images/spaceAgeMug.jpg",
-  maxQuantity: 4,
+  maxQuantity: 1,
   subTitle: "Test artwork on a big mug",
   title: "Space Age Mug",
   type: "Original prototype",
