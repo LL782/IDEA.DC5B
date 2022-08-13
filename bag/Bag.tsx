@@ -10,6 +10,7 @@ import { PrimaryButton } from "../atomic-ui/PrimaryButton";
 export const BAG_COLUMNS = {
   title: "Item",
   quantity: "Quantity",
+  remove: "",
   pricePerItem: "Price",
   total: "Total",
 };
@@ -20,40 +21,23 @@ export const Bag = () => {
   const rows = bagItems.map(({ id, pricePerItem, quantity }) => {
     const product = products.find(({ price }) => price.id === id);
 
-    const handleSubmit = (e) => {
-      e.preventDefault();
-      const newQuantity = e.currentTarget.elements.namedItem("quantity")?.value;
-      updateItem({ id, quantity: newQuantity });
-    };
-
-    const Quantity = () => (
-      <form onSubmit={handleSubmit}>
-        <input
-          defaultValue={quantity}
-          id="quantity"
-          min={0}
-          step={1}
-          type="number"
-        />
-        <button>Update</button>
-      </form>
-    );
-
     return {
       id,
       title: product.title,
-      quantity: <Quantity />,
+      quantity,
+      remove: (
+        <button onClick={() => updateItem({ id, quantity: 0 })} type="button">
+          -
+        </button>
+      ),
       pricePerItem: displayPrice(pricePerItem),
       total: displayPrice(quantity * pricePerItem),
     };
   });
 
-  const totalOfRows = bagItems.reduce(
-    (accumulator, { pricePerItem, quantity }) => {
-      return accumulator + quantity * pricePerItem;
-    },
-    0
-  );
+  const totalOfRows = bagItems.reduce((accumulator, { pricePerItem }) => {
+    return accumulator + pricePerItem;
+  }, 0);
 
   const footer = { Total: displayPrice(totalOfRows) };
 
