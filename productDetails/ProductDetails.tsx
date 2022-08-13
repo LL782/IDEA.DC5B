@@ -5,9 +5,9 @@ import Head from "next/head";
 import styles from "./ProductDetail.module.css";
 import { useBag } from "../bag/useBag";
 import { displayPrice } from "../bag/displayPrice";
+import { AddToBag } from "../atomic-ui/AddToBag";
 
 export default function ProductDetailPage({ product }) {
-  const { addToBag } = useBag();
   const { title, type, description, image, alt, price, subTitle } = product;
 
   return (
@@ -39,14 +39,7 @@ export default function ProductDetailPage({ product }) {
           <span className={styles.priceType}>{type}</span>
         </p>
         <p className={styles.cardDescription}>{description}</p>
-        <button
-          className={styles.button}
-          onClick={() => {
-            addToBag({ id: price.id });
-          }}
-        >
-          Add to bag
-        </button>
+        <AddToBag price={price} />
       </main>
     </div>
   );
