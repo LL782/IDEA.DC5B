@@ -31,12 +31,13 @@ Dev runs at [http://localhost:3000](http://localhost:3000)
 
 ### Managing Products
 
-1. Manage them in Stripe
-1. Duplicate the product details in the `product.{ENV}.json` files
+Follow the existing examples
 
-Everything about the products gets duplicated, price, description, title, image, etc.
+1. Add products to [Stripe > Products](https://dashboard.stripe.com/products)
+1. Add the same title, subtitle and image to the ideas data in `data`
+1. Fill out the other attributes of the idea
+1. Copy the `price` data from Stripe over to the `dev` or `prod` files ("dev" equates to "[test mode](https://dashboard.stripe.com/test/products)")
 
-### Products on Dev and Prod
+#### Test Mode
 
-The files in `data/products` are arranged to feature toggle unfinished products. We work on products "in dev" (meaning locally) by adding their details to the `dev` data. This means we can have file changes related to them merged into the main branch and deployed without any problems. The new products are only released to the public when we add their details to the `prod` data.
-
+When developing a new idea we can add a work in progress to the `dev` file and safely merge this to main and deploy it. We only release the idea to production when we add the idea to the `prod` file.
