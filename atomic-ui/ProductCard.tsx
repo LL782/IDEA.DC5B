@@ -2,19 +2,8 @@ import Image from "next/image";
 import Link from "next/link";
 
 import styles from "../styles/Home.module.css";
-import { PrimaryButton } from "./PrimaryButton";
-import { useBag } from "../bag/useBag";
 import { PriceTag } from "./PriceTag";
-
-const AddToBag = ({ price }) => {
-  const { addToBag } = useBag();
-
-  const handleAdd = () => {
-    addToBag({ id: price.id });
-  };
-
-  return <PrimaryButton onClick={handleAdd}>Add to bag</PrimaryButton>;
-};
+import { AddToBag } from "./AddToBag";
 
 export const ProductCard = ({ product }) => {
   const { title, type, description, image, alt, price, subTitle } = product;
