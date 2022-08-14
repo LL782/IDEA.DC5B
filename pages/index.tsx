@@ -1,8 +1,8 @@
 import Head from "next/head";
 import styles from "../styles/Home.module.css";
-import products from "../data/products";
+import ideas from "../data/ideas";
 import { OptionalExtraCard } from "../ExtraCards";
-import { ProductCard } from "../atomic-ui/ProductCard";
+import { IdeaCard } from "../atomic-ui/IdeaCard";
 
 export default function Home() {
   return (
@@ -17,8 +17,8 @@ export default function Home() {
         <p className={styles.description}>You must have a head</p>
 
         <ul className={styles.grid}>
-          {products.map((product, index) => [
-            <ProductCard product={product} key={product.price.id} />,
+          {ideas.map((idea, index) => [
+            <IdeaCard idea={idea} key={idea.price.id} />,
             <OptionalExtraCard mapIndex={index} key="Optional extra cards" />,
           ])}
         </ul>

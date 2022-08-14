@@ -18,7 +18,7 @@ The following are technical notes for the website development.
 
 - It's a [Next.js](https://nextjs.org/) application
 - Deployed and hosted via my [Vercel dashboard](https://vercel.com/dashboard)
-- Product and payment handling integrated with my [Stripe dashboard](https://dashboard.stripe.com/dashboard)
+- Bag and payment handling via [Stripe dashboard](https://dashboard.stripe.com/dashboard)
 
 ### Getting Started
 
@@ -29,15 +29,17 @@ yarn dev
 
 Dev runs at [http://localhost:3000](http://localhost:3000)
 
-### Managing Products
+### Managing Ideas
 
 Follow the existing examples
 
-1. Add products to [Stripe > Products](https://dashboard.stripe.com/products)
-1. Add the same title, subtitle and image to the ideas data in `data`
+1. \[OPTIONAL\] Add to [Stripe > Products](https://dashboard.stripe.com/products)
+1. Add the \[same\] title, subtitle and image to the ideas data in `data`
 1. Fill out the other attributes of the idea
-1. Copy the `price` data from Stripe over to the `dev` or `prod` files ("dev" equates to "[test mode](https://dashboard.stripe.com/test/products)")
+1. \[OPTIONAL\] Copy `price` data from Stripe to the `dev` and `prod` files ([Stripe's "test mode"](https://dashboard.stripe.com/test/products) is for `dev`)
 
-#### Test Mode
+#### Dev, Test Mode and Prod
 
-When developing a new idea we can add a work in progress to the `dev` file and safely merge this to main and deploy it. We only release the idea to production when we add the idea to the `prod` file.
+When developing a new idea, we can add work in progress to the `dev` file and safely merge this and deploy it. We only release the idea to production when we add it to the `prod` file.
+
+Stripe has

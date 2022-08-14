@@ -1,16 +1,16 @@
 import Image from "next/image";
 import Link from "next/link";
-import { Product } from "../@types/Product";
+import type { Idea } from "../@types";
 
 import styles from "../styles/Home.module.css";
 import { PriceTag } from "./PriceTag";
 import { AddToBag } from "./AddToBag";
 
 interface Props {
-  product: Product;
+  idea: Idea;
 }
 
-export const ProductCard = ({ product }: Props) => {
+export const IdeaCard = ({ idea }: Props) => {
   const {
     alt,
     description,
@@ -21,11 +21,11 @@ export const ProductCard = ({ product }: Props) => {
     subTitle,
     title,
     type,
-  } = product;
+  } = idea;
 
   return (
     <li className={styles.card}>
-      <Link href={`/products/${id}`}>
+      <Link href={`/ideas/${id}`}>
         <a>
           <h3>{title}</h3>
           <h4>{subTitle}</h4>

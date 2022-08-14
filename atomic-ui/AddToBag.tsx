@@ -1,4 +1,4 @@
-import { BagItem } from "../@types/Product";
+import type { BagItem } from "../@types";
 import { PrimaryButton } from "./PrimaryButton";
 import { useBag } from "../bag/useBag";
 

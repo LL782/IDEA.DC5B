@@ -1,6 +1,6 @@
 import { useState, createContext, useContext, useEffect } from "react";
-import { BagItem } from "../@types/Product";
-import products from "../data/products";
+import type { BagItem } from "../@types";
+import ideas from "../data/ideas";
 import { initiateCheckout } from "../stripe/initiateCheckout";
 
 type BagContextType = {
@@ -14,7 +14,7 @@ type BagContextType = {
 };
 
 const defaultBag = {
-  products: {},
+  items: {},
 };
 
 export const BagContext = createContext<BagContextType | null>(null);
@@ -35,12 +35,12 @@ export const useBagState = () => {
     window.localStorage.setItem("dc5b_bag", data);
   }, [bag]);
 
-  const bagItems = Object.keys(bag.products).map((key) => {
-    const product = products.find(({ price: { id } }) => id === key);
+  const bagItems = Object.keys(bag.items).map((key) => {
+    const idea = ideas.find(({ price: { id } }) => id === key);
     return {
-      ...bag.products[key],
-      maxQuantity: product.maxQuantity,
-      pricePerItem: product.price.amount,
+      ...bag.items[key],
+      maxQuantity: idea.maxQuantity,
+      pricePerItem: idea.price.amount,
     };
   });
 
@@ -59,32 +59,32 @@ export const useBagState = () => {
 
   const addToBag = ({ id }) => {
     const prevBag = bag;
-    const products = { ...bag.products };
+    const items = { ...bag.items };
 
-    if (products[id]) {
-      products[id].quantity++;
+    if (items[id]) {
+      items[id].quantity++;
     } else {
-      products[id] = { id, quantity: 1 };
+      items[id] = { id, quantity: 1 };
     }
 
-    updateBag({ ...prevBag, products });
+    updateBag({ ...prevBag, items: items });
   };
 
   const updateItem = ({ id, quantity }) => {
     const prevBag = bag;
-    const products = { ...bag.products };
+    const items = { ...bag.items };
 
     quantity = parseInt(quantity);
 
-    if (products[id] && quantity === 0) {
-      delete products[id];
+    if (items[id] && quantity === 0) {
+      delete items[id];
     }
 
-    if (products[id] && quantity) {
-      products[id].quantity = quantity;
+    if (items[id] && quantity) {
+      items[id].quantity = quantity;
     }
 
-    updateBag({ ...prevBag, products });
+    updateBag({ ...prevBag, items });
   };
 
   const checkout = () => {

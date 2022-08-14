@@ -1,4 +1,4 @@
-import { Product } from "../@types/Product";
+import type { Idea } from "../../@types";
 import {
   balsamicPotion,
   beardedStrangeFaceColouring,
@@ -8,7 +8,7 @@ import {
   spaceAgeMug,
 } from "./ideas.base";
 
-const products: Product[] = [
+const ideas: Idea[] = [
   Object.assign(
     { price: { amount: 15, id: "price_1LV0VbJvxKuslv8gTkTZVnNt" } },
     niceBitOfWrapping
@@ -35,4 +35,4 @@ const products: Product[] = [
   ),
 ];
 
-export default products;
+export default ideas;

@@ -1,19 +1,19 @@
 import Image from "next/image";
 import Link from "next/link";
 import Head from "next/head";
-import { Product } from "../@types/Product";
+import type { Idea } from "../@types";
 
-import styles from "./ProductDetail.module.css";
+import styles from "./ideaDetails.module.css";
 import { displayPrice } from "../bag/displayPrice";
 import { AddToBag } from "../atomic-ui/AddToBag";
 
 interface Props {
-  product: Product;
+  idea: Idea;
 }
 
-export default function ProductDetails({ product }: Props) {
+export const IdeaDetails = ({ idea }: Props) => {
   const { alt, description, image, maxQuantity, price, subTitle, title, type } =
-    product;
+    idea;
 
   return (
     <div className={styles.container}>
@@ -24,7 +24,7 @@ export default function ProductDetails({ product }: Props) {
 
       <nav className={styles.breadcrumbs}>
         <Link href="/">
-          <a className={styles.breadcrumb}>Products</a>
+          <a className={styles.breadcrumb}>Ideas</a>
         </Link>{" "}
         &gt; <span className={styles.currentBreadcrumb}>{title}</span>
       </nav>
@@ -48,4 +48,4 @@ export default function ProductDetails({ product }: Props) {
       </main>
     </div>
   );
-}
+};

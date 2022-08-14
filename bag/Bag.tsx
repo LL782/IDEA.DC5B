@@ -3,7 +3,7 @@ import styles from "./Bag.module.css";
 import { PrimaryLink } from "../atomic-ui/PrimaryLink";
 import { useBag } from "./useBag";
 import { Table } from "./Table";
-import products from "../data/products";
+import ideas from "../data/ideas";
 import { displayPrice } from "./displayPrice";
 import { PrimaryButton } from "../atomic-ui/PrimaryButton";
 import { SecondaryLink } from "../atomic-ui/SecondaryLink";
@@ -21,11 +21,11 @@ export const Bag = () => {
 
   const rows = bagItems.map((bagItem) => {
     const { id, pricePerItem, quantity } = bagItem;
-    const product = products.find(({ price }) => price.id === id);
+    const item = ideas.find(({ price }) => price.id === id);
 
     return {
       id,
-      title: product.title,
+      title: item.title,
       quantity: <BagItemQuantity bagItem={bagItem} />,
       price: displayPrice(pricePerItem),
       lineTotal: displayPrice(quantity * pricePerItem),
