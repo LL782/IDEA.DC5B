@@ -11,8 +11,8 @@ interface Props {
   product: Product;
 }
 
-export default function ProductDetailPage({ product }: Props) {
-  const { title, type, description, image, maxQuantity, alt, price, subTitle } =
+export default function ProductDetails({ product }: Props) {
+  const { alt, description, image, maxQuantity, price, subTitle, title, type } =
     product;
 
   return (

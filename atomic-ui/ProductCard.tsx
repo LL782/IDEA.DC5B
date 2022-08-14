@@ -11,12 +11,21 @@ interface Props {
 }
 
 export const ProductCard = ({ product }: Props) => {
-  const { title, type, description, image, alt, price, subTitle, maxQuantity } =
-    product;
+  const {
+    alt,
+    description,
+    id,
+    image,
+    maxQuantity,
+    price,
+    subTitle,
+    title,
+    type,
+  } = product;
 
   return (
     <li className={styles.card}>
-      <Link href={`/products/${price.id}`}>
+      <Link href={`/products/${id}`}>
         <a>
           <h3>{title}</h3>
           <h4>{subTitle}</h4>
