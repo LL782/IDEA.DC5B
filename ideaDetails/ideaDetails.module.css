@@ -1,3 +1,10 @@
+.breadcrumbs {
+  overflow-y: auto;
+  line-height: 1;
+  white-space: nowrap;
+  height: 1.5em;
+}
+
 .breadcrumb {
   border-bottom: 2px solid #fff;
   border-image: linear-gradient(30deg, #0003, #0003) 2;
