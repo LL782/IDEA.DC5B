@@ -19,8 +19,6 @@
   font-size: 14vw;
   line-height: 1.15;
   margin: 3rem 0 0;
-  padding-left: 3rem;
-  padding-right: 3rem;
 }
 
 @media screen and (min-width: 800px) {
@@ -57,8 +55,14 @@
   border-top: 1px solid #ddd;
 }
 
+@media (min-width: 601px) {
+  .grid {
+    margin-bottom: 3rem;
+  }
+}
 @media (max-width: 600px) {
   .grid {
+    margin-bottom: 0;
     width: 100%;
     flex-direction: column;
   }
