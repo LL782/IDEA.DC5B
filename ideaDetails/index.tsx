@@ -6,14 +6,24 @@ import type { Idea } from "../@types";
 import styles from "./ideaDetails.module.css";
 import { displayPrice } from "../bag/displayPrice";
 import { AddToBag } from "../atomic-ui/AddToBag";
+import { CustomIdeaDetails } from "./CustomIdeaDetails";
 
 interface Props {
   idea: Idea;
 }
 
 export const IdeaDetails = ({ idea }: Props) => {
-  const { alt, description, image, maxQuantity, price, subTitle, title, type } =
-    idea;
+  const {
+    alt,
+    description,
+    id,
+    image,
+    maxQuantity,
+    price,
+    subTitle,
+    title,
+    type,
+  } = idea;
 
   return (
     <div className={styles.container}>
@@ -47,6 +57,7 @@ export const IdeaDetails = ({ idea }: Props) => {
         </p>
         <p className={styles.cardDescription}>{description}</p>
         <AddToBag maxQuantity={maxQuantity} price={price} />
+        <CustomIdeaDetails id={id} />
       </main>
     </div>
   );
