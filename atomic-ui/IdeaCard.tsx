@@ -29,13 +29,15 @@ export const IdeaCard = ({ idea }: Props) => {
         <a>
           <h3>{title}</h3>
           <h4>{subTitle}</h4>
-          <Image
-            src={image}
-            alt={alt}
-            width="800px"
-            height="800px"
-            layout="responsive"
-          />
+          <div className={styles.cardImage}>
+            <Image
+              src={image}
+              alt={alt}
+              width="800px"
+              height="800px"
+              layout="responsive"
+            />
+          </div>
         </a>
       </Link>
       <PriceTag price={price} type={type} />

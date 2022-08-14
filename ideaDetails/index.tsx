@@ -32,13 +32,15 @@ export const IdeaDetails = ({ idea }: Props) => {
       <main className={styles.main}>
         <h3 className={styles.title}>{title}</h3>
         <h4 className={styles.subTitle}>{subTitle}</h4>
-        <Image
-          src={image}
-          alt={alt}
-          width="800px"
-          height="800px"
-          layout="responsive"
-        />
+        <div className={styles.heroImage}>
+          <Image
+            src={image}
+            alt={alt}
+            width="800px"
+            height="800px"
+            layout="responsive"
+          />
+        </div>
         <p className={styles.price}>
           {displayPrice(price.amount)}{" "}
           <span className={styles.priceType}>{type}</span>
