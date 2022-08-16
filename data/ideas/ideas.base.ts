@@ -29,6 +29,8 @@ export const balsamicPotion: Idea = {
 
 export const spaceAgeMug: Idea = {
   alt: "A white porceline mug that I've drawn on with a black chinagraph pencil",
+  blogPost:
+    "https://dc5b.dog/2022/08/16/why-you-should-and-you-shouldnt-buy-this-mug/",
   description:
     "This is chinagraph pencil on porceline so don't smudge it. Recommended for a careful collector. If people like it I'll do a print run of non-unique, cheaper ones. Let me know",
   id: "space-age-mug",
