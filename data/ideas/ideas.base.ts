@@ -68,6 +68,8 @@ export const beardedStrangeFaceColouring: Idea = {
 
 export const eyesOnTheBlindfoldColouring: Idea = {
   alt: "Ink drawing of an unusual face with a blindfold covering the eyes, with eyes printed on the blindfold.",
+  blogPost:
+    "https://dc5b.dog/2022/08/16/can-i-tell-you-anything-about-eyes-on-the-blindfold-colouring-in-can-you-tell-me-anything/",
   description:
     "Imagine having faces on the front and the back of the head. Now imagine one face has been blindfolded, and on the blindfold are the only open eyes. I drew the original in 2009 (shown here). I'll redraw just the lines so you can print it at home or at the library and apply your own colours. Yum",
   id: "eyes-on-the-blindfold-colouring",
