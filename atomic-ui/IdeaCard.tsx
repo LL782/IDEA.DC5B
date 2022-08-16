@@ -5,6 +5,7 @@ import type { Idea } from "../@types";
 import styles from "../styles/Home.module.css";
 import { PriceTag } from "./PriceTag";
 import { AddToBag } from "./AddToBag";
+import { TalkAboutIt } from "./TalkAboutIt";
 
 interface Props {
   idea: Idea;
@@ -13,6 +14,7 @@ interface Props {
 export const IdeaCard = ({ idea }: Props) => {
   const {
     alt,
+    blogPost,
     description,
     id,
     image,
@@ -43,6 +45,7 @@ export const IdeaCard = ({ idea }: Props) => {
       <PriceTag price={price} type={type} />
       <p className={styles.cardDescription}>{description}</p>
       <AddToBag maxQuantity={maxQuantity} price={price} />
+      <TalkAboutIt blogPost={blogPost} />
     </li>
   );
 };

@@ -1,5 +1,6 @@
 export type Idea = {
   alt: string;
+  blogPost?: string;
   description: string;
   id: string;
   image: string;

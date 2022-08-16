@@ -2,6 +2,8 @@ import type { Idea } from "../../@types";
 
 export const niceBitOfWrapping: Idea = {
   alt: "Photograph of a little box nicely wrapped up in glossy, black and white paper. There's a plant and a heavy kitchen mortar in the composition too, all on top of a wooden desk",
+  blogPost:
+    "https://dc5b.dog/2022/08/16/about-this-nice-bit-of-wrapping-paper-then/",
   description:
     "So I have some A3 sheets of paper which are prints of some completed artwork. Reckon these would make nice wrapping paper. If it's a good idea I could look into a proper print run to bring the cost down",
   id: "nice-bit-of-wrapping",
@@ -14,6 +16,7 @@ export const niceBitOfWrapping: Idea = {
 
 export const balsamicPotion: Idea = {
   alt: "Crisp, clean photograph of a hand decorated bottle of Balsamic Vinegar",
+  blogPost: "https://dc5b.dog/2022/08/16/the-balsamo-discussion/",
   description:
     "Bit of a weird one. Do you like this bottle? It looks a bit like a magic potion. In actual fact it's balsamic vinegar.",
   id: "balsamic-potion",
