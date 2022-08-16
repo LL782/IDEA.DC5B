@@ -7,6 +7,7 @@ import styles from "./ideaDetails.module.css";
 import { displayPrice } from "../bag/displayPrice";
 import { AddToBag } from "../atomic-ui/AddToBag";
 import { CustomSections } from "./customSections";
+import { TalkAboutIt } from "../atomic-ui/TalkAboutIt";
 
 interface Props {
   idea: Idea;
@@ -15,6 +16,7 @@ interface Props {
 export const IdeaDetails = ({ idea }: Props) => {
   const {
     alt,
+    blogPost,
     description,
     id,
     image,
@@ -57,6 +59,7 @@ export const IdeaDetails = ({ idea }: Props) => {
         </p>
         <p className={styles.cardDescription}>{description}</p>
         <AddToBag maxQuantity={maxQuantity} price={price} />
+        <TalkAboutIt blogPost={blogPost} />
         <CustomSections id={id} />
       </main>
     </div>
