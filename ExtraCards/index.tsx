@@ -1,3 +1,4 @@
+import { TalkAboutIt } from "../atomic-ui/TalkAboutIt";
 import styles from "../styles/Home.module.css";
 
 export const OptionalExtraCard = ({ mapIndex }) => {
@@ -35,6 +36,9 @@ const Prototypes = () => (
     <p className={styles.cardDescription}>
       T-shirt, coaster, wall vinyl, colouring in book, huge oil paintings, brass
       etching. All formats considered. If anything strikes a chord do say.
+    </p>
+    <p>
+      <TalkAboutIt blogPost="https://dc5b.dog/2022/08/16/prototypes-call-them-prototypes-go-so-what-you-gonna-do-about-them-thats-what-i-want-to-know/" />
     </p>
   </li>
 );
