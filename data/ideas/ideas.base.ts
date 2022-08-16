@@ -43,6 +43,8 @@ export const spaceAgeMug: Idea = {
 
 export const losAtlantisColouring: Idea = {
   alt: "Black and white artists impression of a Toltec warrior standing in from of Los Atlantis statues with a flying saucer hovering above.",
+  blogPost:
+    "https://dc5b.dog/2022/08/16/los-atlantis-colouring-paper-is-a-pretty-safe-bet/",
   description:
     "In Tula you can see them. Very strange! In 2008 we draw them with a UFO and a Toltec Warrior on the scene. Now you can spend 50p or £1 or £1.50, etc. and print copies till your heart's content",
   id: "los-atlantis-colouring",
