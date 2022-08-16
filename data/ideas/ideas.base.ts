@@ -56,6 +56,7 @@ export const losAtlantisColouring: Idea = {
 
 export const beardedStrangeFaceColouring: Idea = {
   alt: "A coloured in drawing of a strange bearded face.",
+  blogPost: "https://dc5b.dog/2022/08/16/lets-talk-about-bearded-strangeface/",
   description:
     "This bearded face, of ambigious adornment, is shown here in colour but I've since redrawn it in black and white at a bigger size to give you a colouring in version. Let me know if you like it and about other ideas for the artwork. We can do anything!",
   id: "bearded-strange-face-colouring",
