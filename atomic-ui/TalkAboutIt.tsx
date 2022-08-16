@@ -10,7 +10,7 @@ export const TalkAboutIt = ({ blogPost }: Props) => {
     return null;
   }
   return (
-    <SecondaryLink href={blogPost} newTab>
+    <SecondaryLink href={blogPost}>
       Discussion{" "}
       <BiLinkExternal style={{ position: "relative", top: "1.5px" }} />
     </SecondaryLink>
