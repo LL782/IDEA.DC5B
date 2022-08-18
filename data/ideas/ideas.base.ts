@@ -5,7 +5,7 @@ export const rodwellHatTrick004: Idea = {
   description:
     "This is the kind of thing this site should be full of - original art, beautifully framed. Rodwell Hat-trick is a series of five hundred hand-drawn multiples, the first fifty get released in small batches over the coming weeks.",
   id: "rodwell-hat-trick-004",
-  image: "/idea-images/rodwell-hat-trick-004.webp",
+  image: "/idea-images/rodwell-hat-trick-004.jpg",
   maxQuantity: 1,
   subTitle: "AKA Touchdown Rodwell #4 of 500",
   title: "Rodwell Hat-trick #4 (Framed)",
