@@ -5,10 +5,15 @@ import {
   eyesOnTheBlindfoldColouring,
   losAtlantisColouring,
   niceBitOfWrapping,
+  rodwellHatTrick004,
   spaceAgeMug,
 } from "./ideas.base";
 
 const ideas: Idea[] = [
+  Object.assign(
+    { price: { amount: 79, id: "price_1LYI7pJvxKuslv8gcdXWGQMe" } },
+    rodwellHatTrick004
+  ),
   Object.assign(
     { price: { amount: 15, id: "price_1LV0V2JvxKuslv8gXJMJyWgm" } },
     niceBitOfWrapping

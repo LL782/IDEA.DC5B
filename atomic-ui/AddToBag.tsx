@@ -11,7 +11,7 @@ interface ButtonTextProps {
 
 const ButtonText = ({ bagItem, maxedOut }: ButtonTextProps) => {
   if (!bagItem) return <>Add to bag</>;
-  if (bagItem.quantity === 1 && maxedOut) return <>Last one in the bag 😃</>;
+  if (bagItem.quantity === 1 && maxedOut) return <>Bagged 😃</>;
   if (bagItem.quantity === 1) return <>In the bag</>;
   if (maxedOut) return <>Maxed out 🎉</>;
 

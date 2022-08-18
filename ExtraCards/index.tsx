@@ -15,7 +15,7 @@ const YourIdeas = () => (
       as much detail as you want.
     </p>
     <p className={styles.cardDescription}>
-      We&apos; look into it. Dreaming, we can manifest beautiful things. First
+      We&apos;ll look into it! Dreaming, we can manifest beautiful things. First
       step is dropping a word or two into a message.
     </p>
   </li>

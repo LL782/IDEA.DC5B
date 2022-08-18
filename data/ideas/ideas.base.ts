@@ -1,5 +1,17 @@
 import type { Idea } from "../../@types";
 
+export const rodwellHatTrick004: Idea = {
+  alt: "Clean image of bold and colourful artwork on white paper. Thin black lines work with distorted geometric blocks to describe a semi abstract, surreal landscape.",
+  description:
+    "This is the kind of thing this site should be full of - original art, beautifully framed. Rodwell Hat-trick is a series of five hundred hand-drawn multiples, the first fifty get released in small batches over the coming weeks.",
+  id: "rodwell-hat-trick-004",
+  image: "/idea-images/rodwell-hat-trick-004.webp",
+  maxQuantity: 1,
+  subTitle: "AKA Touchdown Rodwell #4 of 500",
+  title: "Rodwell Hat-trick #4 (Framed)",
+  type: "H.D.M – Framed",
+};
+
 export const niceBitOfWrapping: Idea = {
   alt: "Photograph of a little box nicely wrapped up in glossy, black and white paper. There's a plant and a heavy kitchen mortar in the composition too, all on top of a wooden desk",
   blogPost:
@@ -9,7 +21,7 @@ export const niceBitOfWrapping: Idea = {
   id: "nice-bit-of-wrapping",
   image: "/idea-images/nice-bit-of-wrapping.jpg",
   maxQuantity: 10,
-  subTitle: "Heavy weight, super limited edition prototype",
+  subTitle: "Heavy weight prototype",
   title: "Nice bit of wrapping paper",
   type: "A3 Glossy Paper",
 };
@@ -36,7 +48,7 @@ export const spaceAgeMug: Idea = {
   id: "space-age-mug",
   image: "/idea-images/space-age-mug.jpg",
   maxQuantity: 2,
-  subTitle: "Test artwork on a big mug",
+  subTitle: "Art on mug",
   title: "Space Age Mug",
   type: "Original prototype",
 };
@@ -49,7 +61,7 @@ export const losAtlantisColouring: Idea = {
     "In Tula you can see them. Very strange! In 2008 we draw them with a UFO and a Toltec Warrior on the scene. Now you can spend 50p or £1 or £1.50, etc. and print copies till your heart's content",
   id: "los-atlantis-colouring",
   image: "/idea-images/los-atlantis-colouring.png",
-  subTitle: "Colouring in sheet",
+  subTitle: "",
   title: "Los Atlantis",
   type: "Printable Download",
 };

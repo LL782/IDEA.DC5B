@@ -8,7 +8,11 @@ export type Idea = {
   price?: Price;
   subTitle: string;
   title: string;
-  type: "A3 Glossy Paper" | "Original prototype" | "Printable Download";
+  type:
+    | "A3 Glossy Paper"
+    | "H.D.M – Framed"
+    | "Original prototype"
+    | "Printable Download";
 };
 
 type Price = {
