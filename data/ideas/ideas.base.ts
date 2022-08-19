@@ -2,6 +2,7 @@ import type { Idea } from "../../@types";
 
 export const rodwellHatTrick004: Idea = {
   alt: "Clean image of bold and colourful artwork on white paper. Thin black lines work with distorted geometric blocks to describe a semi abstract, surreal landscape.",
+  blogPost: "https://dc5b.dog/2022/08/19/so-you-want-to-talk-about-rodwell/",
   description:
     "This is the kind of thing this site should be full of - original art, beautifully framed. Rodwell Hat-trick is a series of five hundred hand-drawn multiples, the first fifty get released in small batches over the coming weeks.",
   id: "rodwell-hat-trick-004",
