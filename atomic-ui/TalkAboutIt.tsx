@@ -1,5 +1,3 @@
-import { BiLinkExternal } from "react-icons/bi";
-
 import { SecondaryLink } from "./SecondaryLink";
 
 type Props = {
@@ -9,10 +7,5 @@ export const TalkAboutIt = ({ blogPost }: Props) => {
   if (!blogPost) {
     return null;
   }
-  return (
-    <SecondaryLink href={blogPost}>
-      Discussion{" "}
-      <BiLinkExternal style={{ position: "relative", top: "1.5px" }} />
-    </SecondaryLink>
-  );
+  return <SecondaryLink href={blogPost}>Open comms</SecondaryLink>;
 };
