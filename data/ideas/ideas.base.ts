@@ -1,5 +1,17 @@
 import type { Idea } from "../../@types";
 
+export const rodwellHatTrick005: Idea = {
+  alt: "Another Touchdown Rodwell image. It features a long pink, red and blue dragon, white,yellow and orange clouds, bright blue sky, a yellow field and green bushes.",
+  blogPost: "https://dc5b.dog/2022/08/19/so-you-want-to-talk-about-rodwell/",
+  description: "This one is gone now but don't worry there will be more.",
+  id: "rodwell-hat-trick-005",
+  image: "/idea-images/rodwell-hat-trick/005_tidy.jpg",
+  maxQuantity: 0,
+  subTitle: "AKA Touchdown Rodwell #5 of 500",
+  title: "Rodwell Hat-trick #5",
+  type: "H.D.M – Framed",
+};
+
 export const rodwellHatTrick004: Idea = {
   alt: "Clean image of bold and colourful artwork on white paper. Thin black lines work with distorted geometric blocks to describe a semi abstract, surreal landscape.",
   blogPost: "https://dc5b.dog/2022/08/19/so-you-want-to-talk-about-rodwell/",
@@ -9,7 +21,7 @@ export const rodwellHatTrick004: Idea = {
   image: "/idea-images/rodwell-hat-trick-004.jpg",
   maxQuantity: 1,
   subTitle: "AKA Touchdown Rodwell #4 of 500",
-  title: "Rodwell Hat-trick #4 (Framed)",
+  title: "Rodwell Hat-trick #4",
   type: "H.D.M – Framed",
 };
 

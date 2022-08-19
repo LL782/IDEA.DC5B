@@ -6,10 +6,15 @@ import {
   losAtlantisColouring,
   niceBitOfWrapping,
   rodwellHatTrick004,
+  rodwellHatTrick005,
   spaceAgeMug,
 } from "./ideas.base";
 
 const ideas: Idea[] = [
+  Object.assign(
+    { price: { amount: 81, id: "price_1LYda3JvxKuslv8gUkH7LrRX" } },
+    rodwellHatTrick005
+  ),
   Object.assign(
     { price: { amount: 79, id: "price_1LYI7pJvxKuslv8gcdXWGQMe" } },
     rodwellHatTrick004
