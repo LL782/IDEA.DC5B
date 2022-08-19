@@ -1,6 +1,7 @@
 import type { BagItem } from "../@types";
 import { PrimaryButton } from "./PrimaryButton";
 import { useBag } from "../bag/useBag";
+import styles from "./AddToBag.module.css";
 
 const NUMBER_WORD = { 2: "Two", 3: "Three", 4: "Four", 5: "Five" };
 
@@ -26,6 +27,8 @@ export const AddToBag = ({ maxQuantity = 5, price }) => {
   const maxedOut = bagItem?.quantity >= maxQuantity;
 
   const handleAdd = () => addToBag({ id: price.id });
+
+  if (maxQuantity === 0) return <p className={styles.redDot}>Not available</p>;
 
   return (
     <PrimaryButton disabled={maxedOut} onClick={handleAdd}>
