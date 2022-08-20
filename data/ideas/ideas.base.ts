@@ -21,7 +21,7 @@ export const rodwellHatTrick006: Idea = {
   id: "rodwell-hat-trick-006",
   image: "/idea-images/rodwell-hat-trick/006_square.jpg",
   maxQuantity: 1,
-  subTitle: "One of five-hundred hand-drawn multiple",
+  subTitle: "One of five-hundred hand-drawn multiples",
   title: "Touchdown Rodwell #6",
   type: "Framed ink on paper",
 };
