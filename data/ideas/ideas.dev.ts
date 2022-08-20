@@ -7,12 +7,22 @@ import {
   niceBitOfWrapping,
   rodwellHatTrick004,
   rodwellHatTrick005,
+  rodwellHatTrick006,
+  rodwellHatTrick007,
   spaceAgeMug,
 } from "./ideas.base";
 
 const ideas: Idea[] = [
   Object.assign(
-    { price: { amount: 81, id: "price_1LYda3JvxKuslv8gUkH7LrRX" } },
+    { price: { amount: 82, id: "price_1LYzqJJvxKuslv8gtYKXewqD" } },
+    rodwellHatTrick007
+  ),
+  Object.assign(
+    { price: { amount: 81, id: "price_1LYznUJvxKuslv8gjag9d2Fd" } },
+    rodwellHatTrick006
+  ),
+  Object.assign(
+    { price: { amount: 80, id: "price_1LYda3JvxKuslv8gUkH7LrRX" } },
     rodwellHatTrick005
   ),
   Object.assign(

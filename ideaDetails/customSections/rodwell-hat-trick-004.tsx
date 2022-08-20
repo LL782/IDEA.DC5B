@@ -5,9 +5,7 @@ export default function CustomContent() {
     <>
       <p>In the picture below #4 is on top of the framed pile on the right.</p>
       <Image
-        src={
-          "/idea-images/rodwell-hat-trick-004/Touchdown-Rodwell_004_Framed.jpg"
-        }
+        src={"/idea-images/rodwell-hat-trick/004-250_Framed.jpg"}
         alt={"Black and white version of the main artwork"}
         width="4032px"
         height="3024px"

@@ -10,7 +10,7 @@ export type Idea = {
   title: string;
   type:
     | "A3 Glossy Paper"
-    | "H.D.M – Framed"
+    | "Framed ink on paper"
     | "Original prototype"
     | "Printable Download";
 };

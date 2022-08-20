@@ -1,15 +1,41 @@
 import type { Idea } from "../../@types";
 
+export const rodwellHatTrick007: Idea = {
+  alt: "",
+  blogPost: "https://dc5b.dog/2022/08/19/so-you-want-to-talk-about-rodwell/",
+  description:
+    "The dragon goes, the head is gone, the bush bursts, the green is loose. Copic colours, rotring ink, Fabriano 5. Sixty square centimetres of art, framed well.",
+  id: "rodwell-hat-trick-007",
+  image: "/idea-images/rodwell-hat-trick/007_square.jpg",
+  maxQuantity: 1,
+  subTitle: "Small scale hand-drawn artwork",
+  title: "Touchdown Rodwell #7",
+  type: "Framed ink on paper",
+};
+
+export const rodwellHatTrick006: Idea = {
+  alt: "The dragon in this Touchdown Rodwell has reached the right hand edge of the frame and dips in towards some greenery. The red berries in the bushes have moved and are breaking out white in places. The fire growls low.",
+  blogPost: "https://dc5b.dog/2022/08/19/so-you-want-to-talk-about-rodwell/",
+  description:
+    "In this one the dragon takes a dive for the green, the fire grows low and the berries start bursting out in white amongst the red.",
+  id: "rodwell-hat-trick-006",
+  image: "/idea-images/rodwell-hat-trick/006_square.jpg",
+  maxQuantity: 1,
+  subTitle: "One of five-hundred hand-drawn multiple",
+  title: "Touchdown Rodwell #6",
+  type: "Framed ink on paper",
+};
+
 export const rodwellHatTrick005: Idea = {
   alt: "Another Touchdown Rodwell image. It features a long pink, red and blue dragon, white,yellow and orange clouds, bright blue sky, a yellow field and green bushes.",
   blogPost: "https://dc5b.dog/2022/08/19/so-you-want-to-talk-about-rodwell/",
   description: "This one is gone now but don't worry there will be more.",
   id: "rodwell-hat-trick-005",
-  image: "/idea-images/rodwell-hat-trick/005_tidy.jpg",
+  image: "/idea-images/rodwell-hat-trick/005_square.jpg",
   maxQuantity: 0,
   subTitle: "AKA Touchdown Rodwell #5 of 500",
   title: "Rodwell Hat-trick #5",
-  type: "H.D.M – Framed",
+  type: "Framed ink on paper",
 };
 
 export const rodwellHatTrick004: Idea = {
@@ -22,7 +48,7 @@ export const rodwellHatTrick004: Idea = {
   maxQuantity: 1,
   subTitle: "AKA Touchdown Rodwell #4 of 500",
   title: "Rodwell Hat-trick #4",
-  type: "H.D.M – Framed",
+  type: "Framed ink on paper",
 };
 
 export const niceBitOfWrapping: Idea = {
