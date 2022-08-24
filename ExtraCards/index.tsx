@@ -1,7 +1,11 @@
 import { TalkAboutIt } from "../atomic-ui/TalkAboutIt";
 import styles from "../styles/Home.module.css";
 
-export const OptionalExtraCard = ({ mapIndex }) => {
+interface Props {
+  mapIndex: number;
+}
+
+export const OptionalExtraCard = ({ mapIndex }: Props) => {
   if (mapIndex === 3) return <Prototypes />;
   if (mapIndex === 6) return <YourIdeas />;
   return null;
