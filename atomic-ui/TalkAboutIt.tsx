@@ -1,7 +1,7 @@
 import { SecondaryLink } from "./SecondaryLink";
 
 type Props = {
-  blogPost: string;
+  blogPost?: string;
 };
 export const TalkAboutIt = ({ blogPost }: Props) => {
   if (!blogPost) {

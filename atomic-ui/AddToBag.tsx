@@ -3,7 +3,12 @@ import { PrimaryButton } from "./PrimaryButton";
 import { useBag } from "../bag/useBag";
 import styles from "./AddToBag.module.css";
 
-const NUMBER_WORD = { 2: "Two", 3: "Three", 4: "Four", 5: "Five" };
+const NUMBER_WORD: { [key: number]: string } = {
+  2: "Two",
+  3: "Three",
+  4: "Four",
+  5: "Five",
+};
 
 interface ButtonTextProps {
   bagItem: BagItem;
@@ -21,12 +26,18 @@ const ButtonText = ({ bagItem, maxedOut }: ButtonTextProps) => {
   );
 };
 
-export const AddToBag = ({ maxQuantity = 5, price }) => {
+interface Props {
+  price?: { amount: number; id: string };
+  maxQuantity?: number;
+}
+
+export const AddToBag = ({ maxQuantity = 5, price }: Props) => {
   const { addToBag, bagItems } = useBag();
-  const bagItem = bagItems.filter(({ id }) => id === price.id)[0];
+  const bagItem = bagItems.filter(({ id }) => id === price?.id)[0];
   const maxedOut = bagItem?.quantity >= maxQuantity;
 
-  const handleAdd = () => addToBag({ id: price.id });
+  const handleAdd =
+    addToBag && price ? () => addToBag({ id: price.id }) : () => {};
 
   if (maxQuantity === 0) return <p className={styles.redDot}>Not available</p>;
 

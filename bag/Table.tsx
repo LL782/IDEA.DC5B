@@ -1,9 +1,16 @@
+import { ReactElement } from "react";
 import { BAG_COLUMNS } from "./Bag";
 import styles from "./Table.module.css";
 
 interface Props {
   columns: typeof BAG_COLUMNS;
-  rows: any;
+  rows: {
+    id: string;
+    title: string;
+    quantity: ReactElement;
+    price: string;
+    lineTotal: string;
+  }[];
   footer: any;
 }
 
@@ -26,7 +33,8 @@ export const Table = ({ columns, rows, footer }: Props) => {
           <tr key={row.id}>
             {Object.keys(row)
               .filter((r) => columnIds.includes(r))
-              .map((key) => (
+              .map((key: string) => (
+                // @ts-expect-error
                 <td key={key}>{row[key]}</td>
               ))}
           </tr>

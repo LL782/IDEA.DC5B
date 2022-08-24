@@ -1,7 +1,11 @@
 import dynamic from "next/dynamic";
-import { Suspense } from "react";
+import { ComponentType, Suspense } from "react";
 
-const customContent = {
+type CustomContentMap = {
+  [key: string]: ComponentType;
+};
+
+const customContent: CustomContentMap = {
   "balsamic-potion": dynamic(() => import("./balsamic-potion")),
   "bearded-strange-face-colouring": dynamic(
     () => import("./bearded-strange-face-colouring")
@@ -9,7 +13,11 @@ const customContent = {
   "rodwell-hat-trick-004": dynamic(() => import("./rodwell-hat-trick-004")),
 };
 
-export const CustomSections = ({ id }) => {
+interface Props {
+  id: string;
+}
+
+export const CustomSections = ({ id }: Props) => {
   const Content = customContent[id];
 
   if (!Content) {

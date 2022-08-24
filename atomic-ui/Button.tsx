@@ -1,6 +1,14 @@
+import { MouseEventHandler, ReactNode } from "react";
 import styles from "./Button.module.css";
 
-export const Button = ({ children, disabled, onClick, className }) => (
+interface Props {
+  children?: ReactNode;
+  disabled?: boolean;
+  onClick?: MouseEventHandler<HTMLButtonElement>;
+  className?: string;
+}
+
+export const Button = ({ children, disabled, onClick, className }: Props) => (
   <button
     className={`${styles.button} ${className || ""}`}
     disabled={disabled}

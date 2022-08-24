@@ -10,7 +10,7 @@ describe("noteWebActions", () => {
       it('notes the "click button" action', () => {
         expect(
           JSON.parse(
-            window.localStorage.getItem("SHOP_DC5B_INTERACTIONS") || null
+            window.localStorage.getItem("SHOP_DC5B_INTERACTIONS") || ""
           )
         ).toEqual([{ action: "click button" }]);
       });

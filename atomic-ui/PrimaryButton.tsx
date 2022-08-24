@@ -3,7 +3,7 @@ import styles from "./PrimaryButton.module.css";
 
 interface Props {
   children: React.ReactNode;
-  onClick: React.MouseEventHandler<HTMLButtonElement>;
+  onClick?: React.MouseEventHandler<HTMLButtonElement>;
   className?: string;
   disabled?: boolean;
 }

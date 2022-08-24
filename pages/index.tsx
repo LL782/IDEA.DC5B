@@ -18,7 +18,7 @@ export default function Home() {
 
         <ul className={styles.grid}>
           {ideas.map((idea, index) => [
-            <IdeaCard idea={idea} key={idea.price.id} />,
+            <IdeaCard idea={idea} key={idea.id} />,
             <OptionalExtraCard mapIndex={index} key="Optional extra cards" />,
           ])}
         </ul>

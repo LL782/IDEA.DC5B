@@ -21,11 +21,11 @@ export const Bag = () => {
 
   const rows = bagItems.map((bagItem) => {
     const { id, pricePerItem, quantity } = bagItem;
-    const item = ideas.find(({ price }) => price.id === id);
+    const item = ideas.find(({ price }) => price?.id === id);
 
     return {
       id,
-      title: item.title,
+      title: item?.title || "",
       quantity: <BagItemQuantity bagItem={bagItem} />,
       price: displayPrice(pricePerItem),
       lineTotal: displayPrice(quantity * pricePerItem),

@@ -54,7 +54,7 @@ export const IdeaDetails = ({ idea }: Props) => {
           />
         </div>
         <p className={styles.price}>
-          {displayPrice(price.amount)}{" "}
+          {displayPrice(price?.amount)}{" "}
           <span className={styles.priceType}>{type}</span>
         </p>
         <p className={styles.cardDescription}>{description}</p>

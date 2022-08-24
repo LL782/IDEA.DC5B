@@ -4,26 +4,37 @@ import ideas from "../data/ideas";
 import { initiateCheckout } from "../stripe/initiateCheckout";
 
 type BagContextType = {
-  addToBag: ({ id }: { id: string }) => void;
+  addToBag?: ({ id }: { id: string }) => void;
   bagItems: BagItem[];
-  checkout: () => void;
+  checkout?: () => void;
   checkoutDisabled: boolean;
-  updateItem: ({ id, quantity }: { id: string; quantity: number }) => void;
+  updateItem?: ({ id, quantity }: { id: string; quantity: number }) => void;
   totalCost: number;
-  totalItems: number;
 };
 
-const defaultBag = {
+type BagItems = Array<BagItem>;
+
+type confusing_duplicate_BagItems = {
+  [key: string]: { id: string; quantity: number };
+};
+
+const defaultBag: {
+  items: confusing_duplicate_BagItems;
+} = {
   items: {},
 };
 
-export const BagContext = createContext<BagContextType | null>(null);
+export const BagContext = createContext<BagContextType>({
+  bagItems: [],
+  checkoutDisabled: true,
+  totalCost: 0,
+});
 
 export const useBagState = () => {
   const [bag, updateBag] = useState(defaultBag);
 
   useEffect(() => {
-    const bagFromStorage = window.localStorage.getItem("dc5b_bag");
+    const bagFromStorage = window.localStorage.getItem("SHOP_DC5B_BAG");
     const data = bagFromStorage && JSON.parse(bagFromStorage);
     if (data) {
       updateBag(data);
@@ -32,17 +43,21 @@ export const useBagState = () => {
 
   useEffect(() => {
     const data = JSON.stringify(bag);
-    window.localStorage.setItem("dc5b_bag", data);
+    window.localStorage.setItem("SHOP_DC5B_BAG", data);
   }, [bag]);
 
-  const bagItems = Object.keys(bag.items).map((key) => {
-    const idea = ideas.find(({ price: { id } }) => id === key);
-    return {
-      ...bag.items[key],
-      maxQuantity: idea.maxQuantity,
-      pricePerItem: idea.price.amount,
-    };
-  });
+  const bagItems: BagItems = Object.keys(bag.items)
+    .map((key) => {
+      const originalBagItem = bag.items[key];
+      const idea = findIdeaFromBagItem(key);
+
+      return {
+        ...originalBagItem,
+        maxQuantity: idea?.maxQuantity || 0,
+        pricePerItem: idea?.price?.amount || 0,
+      };
+    })
+    .filter((a) => a !== undefined);
 
   const totalItems = bagItems.reduce((accumulator, { quantity }) => {
     return accumulator + quantity;
@@ -57,7 +72,7 @@ export const useBagState = () => {
     0
   );
 
-  const addToBag = ({ id }) => {
+  const addToBag = ({ id }: { id: string }) => {
     const prevBag = bag;
     const items = { ...bag.items };
 
@@ -70,11 +85,9 @@ export const useBagState = () => {
     updateBag({ ...prevBag, items: items });
   };
 
-  const updateItem = ({ id, quantity }) => {
+  const updateItem = ({ id, quantity }: { id: string; quantity: number }) => {
     const prevBag = bag;
     const items = { ...bag.items };
-
-    quantity = parseInt(quantity);
 
     if (items[id] && quantity === 0) {
       delete items[id];
@@ -102,10 +115,13 @@ export const useBagState = () => {
     checkoutDisabled,
     updateItem,
     totalCost,
-    totalItems,
   };
 };
 
 export const useBag = () => {
   return useContext(BagContext);
 };
+
+function findIdeaFromBagItem(key: string) {
+  return ideas.find(({ price: { id } = {} }) => id === key);
+}

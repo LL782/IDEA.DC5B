@@ -1,4 +1,7 @@
-export const displayPrice = (amount) => {
+export const displayPrice = (amount?: number) => {
+  if (amount === undefined) {
+    return "";
+  }
   if (Number.isInteger(amount)) {
     return `£${amount}`;
   }

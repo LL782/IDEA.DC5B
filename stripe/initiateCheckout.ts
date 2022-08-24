@@ -1,12 +1,20 @@
-import { loadStripe } from "@stripe/stripe-js";
+import { loadStripe, Stripe } from "@stripe/stripe-js";
+import type { StripeLineItems } from "./StripeLineItems";
 
-let stripePromise;
+let stripe: Stripe | null;
 
-export const initiateCheckout = async ({ lineItems = {} }) => {
-  stripePromise =
-    stripePromise || loadStripe(process.env.NEXT_PUBLIC_STRIPE_API_KEY || "");
+interface Props {
+  lineItems: StripeLineItems[];
+}
 
-  const stripe = await stripePromise;
+export const initiateCheckout = async ({ lineItems }: Props) => {
+  if (!stripe) {
+    stripe = await loadStripe(process.env.NEXT_PUBLIC_STRIPE_API_KEY || "");
+  }
+
+  if (stripe === null) {
+    throw new Error("Stripe failed to initiate");
+  }
 
   await stripe.redirectToCheckout({
     cancelUrl: `${window.location.origin}/bag`,

@@ -1,14 +1,21 @@
+import { BagItem } from "@types";
 import { ChangeEvent } from "react";
 
 import { useBag } from "./useBag";
 
-export const BagItemQuantity = ({ bagItem }) => {
+interface Props {
+  bagItem: BagItem;
+}
+
+export const BagItemQuantity = ({ bagItem }: Props) => {
   const { id, quantity, maxQuantity = 5 } = bagItem;
   const { updateItem } = useBag();
 
   const handleQuantity = (e: ChangeEvent<HTMLSelectElement>) => {
     const newQuantity = Number.parseInt(e.target.value);
-    updateItem({ id, quantity: newQuantity });
+    if (updateItem) {
+      updateItem({ id, quantity: newQuantity });
+    }
   };
 
   const options = [];
@@ -17,7 +24,7 @@ export const BagItemQuantity = ({ bagItem }) => {
   }
 
   return (
-    <select value={quantity} onChange={handleQuantity}>
+    <select value={quantity} onChange={handleQuantity} disabled={!updateItem}>
       {options}
     </select>
   );
