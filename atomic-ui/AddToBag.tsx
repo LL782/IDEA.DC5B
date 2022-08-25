@@ -2,6 +2,7 @@ import type { BagItem } from "../@types";
 import { PrimaryButton } from "./PrimaryButton";
 import { useBag } from "../bag/useBag";
 import styles from "./AddToBag.module.css";
+import { noteWebActions } from "noteWebActions/noteWebActions";
 
 const NUMBER_WORD: { [key: number]: string } = {
   2: "Two",
@@ -36,8 +37,14 @@ export const AddToBag = ({ maxQuantity = 5, price }: Props) => {
   const bagItem = bagItems.filter(({ id }) => id === price?.id)[0];
   const maxedOut = bagItem?.quantity >= maxQuantity;
 
-  const handleAdd =
-    addToBag && price ? () => addToBag({ id: price.id }) : () => {};
+  const handleAdd = () => {
+    noteWebActions({ action: "clickButton" });
+
+    if (!addToBag || !price) {
+      return;
+    }
+    addToBag({ id: price.id });
+  };
 
   if (maxQuantity === 0) return <p className={styles.redDot}>Not available</p>;
 
