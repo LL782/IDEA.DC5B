@@ -15,7 +15,8 @@
     "next": "latest",
     "react": "18",
     "react-dom": "18",
-    "react-icons": "^4.2.0"
+    "react-icons": "^4.2.0",
+    "uid": "^2.0.0"
   },
   "devDependencies": {
     "@testing-library/dom": "^8.17.1",

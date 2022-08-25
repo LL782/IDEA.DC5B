@@ -1,4 +1,4 @@
-type WebAction =
+export type WebAction =
   | (CommonDetails & ClickButton)
   | (CommonDetails & HoverButton)
   | (CommonDetails & HoverImage)
@@ -6,17 +6,27 @@ type WebAction =
   | (CommonDetails & IntersectImage)
   | (CommonDetails & ViewPage);
 
-type CommonDetails = {
+export type BaseWebAction =
+  | ClickButton
+  | HoverButton
+  | HoverImage
+  | IntersectButton
+  | IntersectImage
+  | ViewPage;
+
+export type CommonDetails = {
   actionId: string;
   dateTime: string;
   instanceId: string;
   instanceType: "new" | "localStorage";
   pageTitle: string;
-  pageType: string;
+  pageType: "Idea Details";
   pageUrl: string;
   referrer: string;
-  scrollPosition: string;
-  viewportSize: string;
+  scrollX: number;
+  scrollY: number;
+  viewportHeight: number;
+  viewportWidth: number;
 };
 
 type ClickButton = {
