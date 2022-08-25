@@ -10,13 +10,20 @@ export default function Document() {
           src="https://www.googletagmanager.com/gtag/js?id=G-HN8K3DEZQ8"
         />
 
-        <Script id="google-analytics" strategy="afterInteractive">
-          {`
+        <Script id="google-analytics" strategy="afterInteractive">{`
           window.dataLayer = window.dataLayer || [];
-          function gtag(){dataLayer.push(arguments);}
+          function gtag(){dataLayer.push(arguments)}
           gtag('js', new Date());
-          gtag('config', 'G-HN8K3DEZQ8');`}
-        </Script>
+          gtag(
+          'config',
+          'G-HN8K3DEZQ8',
+          {
+            'allow_google_signals': false,
+            'allow_ad_personalization_signals': false,
+            'restricted_data_processing': true,
+            'anonymize_ip': true
+          });
+          `}</Script>
       </Head>
 
       <body>
