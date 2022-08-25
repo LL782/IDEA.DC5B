@@ -1,3 +1,5 @@
+import { instanceTypes } from "./instanceTypes";
+
 export type WebAction =
   | (CommonDetails & ClickButton)
   | (CommonDetails & HoverButton)
@@ -18,7 +20,7 @@ export type CommonDetails = {
   actionId: string;
   dateTime: string;
   instanceId: string;
-  instanceType: "new" | "localStorage";
+  instanceType: ValueOf<instanceTypes>;
   pageTitle: string;
   pageType: "Idea Details";
   pageUrl: string;

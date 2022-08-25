@@ -1,6 +1,9 @@
 import { uid } from "uid";
 
-import { BaseWebAction, CommonDetails, WebAction } from "./WebActions";
+import { BaseWebAction, CommonDetails } from "./WebActions";
+import { instanceTypes } from "./instanceTypes";
+
+import { WebAction } from "noteWebActions/WebActions";
 
 const LOCAL_STORAGE_KEY = "SHOP_DC5B_INTERACTIONS";
 
@@ -24,11 +27,12 @@ function storageActions(actions: WebAction[]) {
 }
 
 function getCommonActionDetails() {
+  const { instanceId, instanceType } = getInstance();
   const details: CommonDetails = {
     actionId: uid(),
     dateTime: new Date().toISOString(),
-    instanceId: uid(),
-    instanceType: "new",
+    instanceId,
+    instanceType,
     pageTitle: document.title,
     pageType: "Idea Details",
     pageUrl: document.location.toString(),
@@ -39,4 +43,18 @@ function getCommonActionDetails() {
     viewportWidth: innerWidth,
   };
   return details;
+}
+
+function getInstance() {
+  const existingInstance = getExistingData();
+  if (existingInstance[existingInstance.length - 1].instanceId) {
+    return {
+      instanceId: existingInstance[0].instanceId,
+      instanceType: instanceTypes.LOCAL,
+    };
+  }
+  return {
+    instanceId: uid(),
+    instanceType: instanceTypes.NEW,
+  };
 }
