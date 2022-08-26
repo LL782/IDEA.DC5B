@@ -47,7 +47,10 @@ function getCommonActionDetails() {
 
 function getInstance() {
   const existingInstance = getExistingData();
-  if (existingInstance[existingInstance.length - 1].instanceId) {
+  if (
+    existingInstance.length > 0 &&
+    existingInstance[existingInstance.length - 1].instanceId
+  ) {
     return {
       instanceId: existingInstance[0].instanceId,
       instanceType: instanceTypes.LOCAL,
