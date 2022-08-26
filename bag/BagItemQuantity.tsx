@@ -8,13 +8,13 @@ interface Props {
 }
 
 export const BagItemQuantity = ({ bagItem }: Props) => {
-  const { id, quantity, maxQuantity = 5 } = bagItem;
+  const { id, pricePerItem, quantity, maxQuantity = 5 } = bagItem;
   const { updateItem } = useBag();
 
   const handleQuantity = (e: ChangeEvent<HTMLSelectElement>) => {
     const newQuantity = Number.parseInt(e.target.value);
     if (updateItem) {
-      updateItem({ id, quantity: newQuantity });
+      updateItem({ id, quantity: newQuantity, pricePerItem });
     }
   };
 
