@@ -1,7 +1,7 @@
 import { useState, createContext, useContext, useEffect } from "react";
 import type { BagItem } from "../@types";
 import ideas from "../data/ideas";
-import { initiateCheckout } from "../stripe/initiateCheckout";
+import { stripeCheckout } from "../adaptors/stripeCheckout";
 
 interface BagContextType {
   addToBag?: ({ id }: { id: string }) => void;
@@ -125,7 +125,7 @@ export const useBagState = () => {
   };
 
   const checkout = () => {
-    initiateCheckout({ bagItems });
+    stripeCheckout({ bagItems });
   };
 
   return {

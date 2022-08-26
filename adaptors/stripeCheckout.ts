@@ -9,7 +9,7 @@ interface Props {
   bagItems: BagItem[];
 }
 
-export const initiateCheckout = async ({ bagItems }: Props) => {
+export const stripeCheckout = async ({ bagItems }: Props) => {
   const lineItems: StripeLineItems[] = bagItems.map(({ id, quantity }) => ({
     price: id,
     quantity,
