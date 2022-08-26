@@ -39,7 +39,7 @@ export const Bag = () => {
         lineTotal: displayPrice(quantity * pricePerItem),
       };
     })
-    .filter((i) => i !== undefined);
+    .filter((i) => typeof i?.id === "string");
 
   const totalOfRows = bagItems.reduce(
     (accumulator, { pricePerItem, quantity }) => {
