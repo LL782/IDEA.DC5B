@@ -24,15 +24,16 @@ export const Bag = () => {
       const { id, maxQuantity, pricePerItem, quantity } = bagItem;
       const item = ideas.find(({ price }) => price?.id === id);
 
-      const productAvailable = maxQuantity && quantity;
+      const productAvailable =
+        item && maxQuantity && maxQuantity > 0 && quantity && quantity > 0;
 
       if (!productAvailable) {
-        return undefined;
+        return;
       }
 
       return {
         id,
-        title: item?.title || "",
+        title: item.title || "",
         quantity: <BagItemQuantity bagItem={bagItem} />,
         price: displayPrice(pricePerItem),
         lineTotal: displayPrice(quantity * pricePerItem),
