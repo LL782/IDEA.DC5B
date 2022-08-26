@@ -19,18 +19,26 @@ export const BAG_COLUMNS = {
 export const Bag = () => {
   const { bagItems, checkout, checkoutDisabled } = useBag();
 
-  const rows = bagItems.map((bagItem) => {
-    const { id, pricePerItem, quantity } = bagItem;
-    const item = ideas.find(({ price }) => price?.id === id);
+  const rows = bagItems
+    .map((bagItem) => {
+      const { id, maxQuantity, pricePerItem, quantity } = bagItem;
+      const item = ideas.find(({ price }) => price?.id === id);
 
-    return {
-      id,
-      title: item?.title || "",
-      quantity: <BagItemQuantity bagItem={bagItem} />,
-      price: displayPrice(pricePerItem),
-      lineTotal: displayPrice(quantity * pricePerItem),
-    };
-  });
+      const productAvailable = maxQuantity && quantity;
+
+      if (!productAvailable) {
+        return undefined;
+      }
+
+      return {
+        id,
+        title: item?.title || "",
+        quantity: <BagItemQuantity bagItem={bagItem} />,
+        price: displayPrice(pricePerItem),
+        lineTotal: displayPrice(quantity * pricePerItem),
+      };
+    })
+    .filter((i) => i !== undefined);
 
   const totalOfRows = bagItems.reduce(
     (accumulator, { pricePerItem, quantity }) => {
