@@ -46,11 +46,11 @@ const ideas: Idea[] = [
     losAtlantisColouring
   ),
   Object.assign(
-    { price: { amount: 1.5, id: "price_1LW5O2JvxKuslv8gUsgjcsL8" } },
+    { price: { amount: 1.5, id: "price_1LW5TlJvxKuslv8gGV0tj1P1" } },
     eyesOnTheBlindfoldColouring
   ),
   Object.assign(
-    { price: { amount: 1.5, id: "price_1LW5OKJvxKuslv8gxEGbnCmF" } },
+    { price: { amount: 1.5, id: "price_1LW5UMJvxKuslv8g0IoWIG28" } },
     beardedStrangeFaceColouring
   ),
 ];
