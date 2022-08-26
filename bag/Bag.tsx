@@ -19,6 +19,8 @@ export const BAG_COLUMNS = {
 export const Bag = () => {
   const { bagItems, checkout, checkoutDisabled } = useBag();
 
+  console.log("bagItems", bagItems);
+
   const rows = bagItems.map((bagItem) => {
     const { id, pricePerItem, quantity } = bagItem;
     const item = ideas.find(({ price }) => price?.id === id);

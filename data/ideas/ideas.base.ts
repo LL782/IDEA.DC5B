@@ -59,7 +59,7 @@ export const niceBitOfWrapping: Idea = {
     "So I have some A3 sheets of paper which are prints of some completed artwork. Reckon these would make nice wrapping paper. If it's a good idea I could look into a proper print run to bring the cost down",
   id: "nice-bit-of-wrapping",
   image: "/idea-images/nice-bit-of-wrapping.jpg",
-  maxQuantity: 10,
+  maxQuantity: 9,
   subTitle: "Heavy weight prototype",
   title: "Nice bit of wrapping paper",
   type: "A3 Glossy Paper",

@@ -30,14 +30,56 @@ export const BagContext = createContext<BagContextType>({
   totalCost: 0,
 });
 
+const DEFAULT_MAX_QUANTITY = 9;
+
 export const useBagState = () => {
   const [bag, updateBag] = useState(defaultBag);
+
+  const cleanAndUpdateBag = ({
+    items: input,
+  }: {
+    items: confusing_duplicate_BagItems;
+  }) => {
+    console.log("cleanAndUpdateBag", input);
+    const newKeys = Object.keys(input);
+    console.log("newKeys:", newKeys);
+
+    const availableItemIds = Object.keys(input).filter((key) => {
+      console.log("key:", key);
+
+      const result = ideas.some(({ price }) => price?.id === key);
+      console.log("result:", result);
+
+      return result;
+    });
+    console.log("availableItemIds:", availableItemIds);
+
+    const cleanBag: confusing_duplicate_BagItems = availableItemIds.reduce(
+      (bag, id) => {
+        const { maxQuantity } = ideas.filter((i) => i.price?.id === id)[0];
+
+        const newItem = {
+          [id]: {
+            id,
+            quantity: Math.min(
+              input[id].quantity,
+              maxQuantity || DEFAULT_MAX_QUANTITY
+            ),
+          },
+        };
+        return { ...bag, ...newItem };
+      },
+      {}
+    );
+    updateBag({ items: cleanBag });
+  };
 
   useEffect(() => {
     const bagFromStorage = window.localStorage.getItem("SHOP_DC5B_BAG");
     const data = bagFromStorage && JSON.parse(bagFromStorage);
+    console.log("data", data);
     if (data) {
-      updateBag(data);
+      cleanAndUpdateBag(data);
     }
   }, []);
 
@@ -48,12 +90,13 @@ export const useBagState = () => {
 
   const bagItems: BagItems = Object.keys(bag.items)
     .map((key) => {
+      console.log("bagItems key", key);
       const originalBagItem = bag.items[key];
       const idea = findIdeaFromBagItem(key);
 
       return {
         ...originalBagItem,
-        maxQuantity: idea?.maxQuantity || 0,
+        maxQuantity: idea?.maxQuantity || DEFAULT_MAX_QUANTITY,
         pricePerItem: idea?.price?.amount || 0,
       };
     })
@@ -75,6 +118,7 @@ export const useBagState = () => {
   const addToBag = ({ id }: { id: string }) => {
     const prevBag = bag;
     const items = { ...bag.items };
+    console.log("addToBag", id);
 
     if (items[id]) {
       items[id].quantity++;
@@ -82,7 +126,7 @@ export const useBagState = () => {
       items[id] = { id, quantity: 1 };
     }
 
-    updateBag({ ...prevBag, items: items });
+    cleanAndUpdateBag({ ...prevBag, items: items });
   };
 
   const updateItem = ({ id, quantity }: { id: string; quantity: number }) => {
@@ -97,11 +141,12 @@ export const useBagState = () => {
       items[id].quantity = quantity;
     }
 
-    updateBag({ ...prevBag, items });
+    cleanAndUpdateBag({ ...prevBag, items });
   };
 
   const checkout = () => {
     const lineItems = bagItems.map(({ id, quantity }) => {
+      console.log("checkout id", id);
       return { price: id, quantity };
     });
 
