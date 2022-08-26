@@ -3,6 +3,7 @@ import { PrimaryButton } from "./PrimaryButton";
 import { useBag } from "../bag/useBag";
 import styles from "./AddToBag.module.css";
 import { noteWebActions } from "../noteWebActions/noteWebActions";
+import { DEFAULT_MAX_QUANTITY } from "bag";
 
 const NUMBER_WORD: { [key: number]: string } = {
   2: "Two",
@@ -33,7 +34,11 @@ interface Props {
   maxQuantity?: Idea["maxQuantity"];
 }
 
-export const AddToBag = ({ id, maxQuantity = 5, price }: Props) => {
+export const AddToBag = ({
+  id,
+  maxQuantity = DEFAULT_MAX_QUANTITY,
+  price,
+}: Props) => {
   const { addToBag, bagItems } = useBag();
   const bagItem = bagItems.filter(({ id }) => id === price?.id)[0];
   const maxedOut = bagItem?.quantity >= maxQuantity;
