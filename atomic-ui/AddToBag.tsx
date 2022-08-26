@@ -1,8 +1,8 @@
-import type { BagItem } from "../@types";
+import type { BagItem, Idea } from "../@types";
 import { PrimaryButton } from "./PrimaryButton";
 import { useBag } from "../bag/useBag";
 import styles from "./AddToBag.module.css";
-import { noteWebActions } from "noteWebActions/noteWebActions";
+import { noteWebActions } from "../noteWebActions/noteWebActions";
 
 const NUMBER_WORD: { [key: number]: string } = {
   2: "Two",
@@ -28,17 +28,18 @@ const ButtonText = ({ bagItem, maxedOut }: ButtonTextProps) => {
 };
 
 interface Props {
-  price?: { amount: number; id: string };
-  maxQuantity?: number;
+  id: Idea["id"];
+  price?: Idea["price"];
+  maxQuantity?: Idea["maxQuantity"];
 }
 
-export const AddToBag = ({ maxQuantity = 5, price }: Props) => {
+export const AddToBag = ({ id, maxQuantity = 5, price }: Props) => {
   const { addToBag, bagItems } = useBag();
   const bagItem = bagItems.filter(({ id }) => id === price?.id)[0];
   const maxedOut = bagItem?.quantity >= maxQuantity;
 
   const handleAdd = () => {
-    noteWebActions({ action: "clickButton" });
+    noteAdd(id);
 
     if (!addToBag || !price) {
       return;
@@ -54,3 +55,10 @@ export const AddToBag = ({ maxQuantity = 5, price }: Props) => {
     </PrimaryButton>
   );
 };
+
+function noteAdd(id: string) {
+  noteWebActions({
+    action: "Click button",
+    buttonName: `Add to bag :: ${id}`,
+  });
+}

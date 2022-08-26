@@ -44,7 +44,7 @@ export const IdeaCard = ({ idea }: Props) => {
       </Link>
       <PriceTag price={price} type={type} />
       <p className={styles.cardDescription}>{description}</p>
-      <AddToBag maxQuantity={maxQuantity} price={price} />
+      <AddToBag id={id} maxQuantity={maxQuantity} price={price} />
       <TalkAboutIt blogPost={blogPost} />
     </li>
   );

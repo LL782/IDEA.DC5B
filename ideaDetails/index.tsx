@@ -58,7 +58,7 @@ export const IdeaDetails = ({ idea }: Props) => {
           <span className={styles.priceType}>{type}</span>
         </p>
         <p className={styles.cardDescription}>{description}</p>
-        <AddToBag maxQuantity={maxQuantity} price={price} />
+        <AddToBag id={id} maxQuantity={maxQuantity} price={price} />
         <TalkAboutIt blogPost={blogPost} />
         <CustomSections id={id} />
       </main>

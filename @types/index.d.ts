@@ -12,7 +12,8 @@ export type Idea = {
     | "A3 Glossy Paper"
     | "Framed ink on paper"
     | "Original prototype"
-    | "Printable Download";
+    | "Printable Download"
+    | "Test Idea Type";
 };
 
 type Price = {
