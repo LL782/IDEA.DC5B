@@ -9,6 +9,7 @@ import {
 import type { BagItem } from "../@types";
 import ideas from "../data/ideas";
 import { stripeCheckout } from "../adaptors/stripeCheckout";
+import { DEFAULT_MAX_QUANTITY } from "./";
 
 interface BagContextType {
   addToBag?: ({ id }: { id: string }) => void;
@@ -32,8 +33,6 @@ export const BagContext = createContext<BagContextType>({
   checkoutDisabled: true,
   totalCost: 0,
 });
-
-const DEFAULT_MAX_QUANTITY = 9;
 
 export const useBagState = () => {
   const [bag, updateBag] = useState(defaultBag);

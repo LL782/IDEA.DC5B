@@ -1,6 +1,7 @@
 import { BagItem } from "@types";
 import { ChangeEvent } from "react";
 
+import { DEFAULT_MAX_QUANTITY } from "./";
 import { useBag } from "./useBag";
 
 interface Props {
@@ -8,7 +9,12 @@ interface Props {
 }
 
 export const BagItemQuantity = ({ bagItem }: Props) => {
-  const { id, pricePerItem, quantity, maxQuantity = 5 } = bagItem;
+  const {
+    id,
+    pricePerItem,
+    quantity,
+    maxQuantity = DEFAULT_MAX_QUANTITY,
+  } = bagItem;
   const { updateItem } = useBag();
 
   const handleQuantity = (e: ChangeEvent<HTMLSelectElement>) => {
