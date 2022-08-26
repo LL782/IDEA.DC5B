@@ -1,4 +1,11 @@
-import { useState, createContext, useContext, useEffect } from "react";
+import {
+  useState,
+  createContext,
+  useContext,
+  useEffect,
+  Dispatch,
+  SetStateAction,
+} from "react";
 import type { BagItem } from "../@types";
 import ideas from "../data/ideas";
 import { stripeCheckout } from "../adaptors/stripeCheckout";
@@ -31,37 +38,11 @@ const DEFAULT_MAX_QUANTITY = 9;
 export const useBagState = () => {
   const [bag, updateBag] = useState(defaultBag);
 
-  interface CleanAndUpdateBag {
-    items: Items;
-  }
-
-  const cleanAndUpdateBag = ({ items }: CleanAndUpdateBag) => {
-    const availableItemIds = Object.keys(items).filter((key) =>
-      ideas.some(({ price }) => price?.id === key)
-    );
-
-    const cleanBag: Items = availableItemIds.reduce((bag, id) => {
-      const { maxQuantity } = ideas.filter((i) => i.price?.id === id)[0];
-
-      const newItem = {
-        [id]: {
-          id,
-          quantity: Math.min(
-            items[id].quantity,
-            maxQuantity || DEFAULT_MAX_QUANTITY
-          ),
-        },
-      };
-      return { ...bag, ...newItem };
-    }, {});
-    updateBag({ items: cleanBag });
-  };
-
   useEffect(() => {
     const bagFromStorage = window.localStorage.getItem("SHOP_DC5B_BAG");
     const data = bagFromStorage && JSON.parse(bagFromStorage);
     if (data) {
-      cleanAndUpdateBag(data);
+      cleanThen(updateBag, data.items);
     }
   }, []);
 
@@ -97,7 +78,6 @@ export const useBagState = () => {
   );
 
   const addToBag = ({ id }: { id: string }) => {
-    const prevBag = bag;
     const items = { ...bag.items };
 
     if (items[id]) {
@@ -106,11 +86,10 @@ export const useBagState = () => {
       items[id] = newBagItem(id);
     }
 
-    cleanAndUpdateBag({ ...prevBag, items: items });
+    cleanThen(updateBag, items);
   };
 
   const updateItem = ({ id, quantity }: { id: string; quantity: number }) => {
-    const prevBag = bag;
     const items = { ...bag.items };
 
     if (items[id] && quantity === 0) {
@@ -121,7 +100,7 @@ export const useBagState = () => {
       items[id].quantity = quantity;
     }
 
-    cleanAndUpdateBag({ ...prevBag, items });
+    cleanThen(updateBag, items);
   };
 
   const checkout = () => {
@@ -150,4 +129,29 @@ function newBagItem(id: string) {
   const item = ideas.filter((i) => i.price?.id === id)[0];
   const pricePerItem = item.price?.amount || 0;
   return { id, quantity: 1, pricePerItem };
+}
+
+function cleanThen(
+  updateBag: Dispatch<SetStateAction<{ items: Items }>>,
+  items: Items
+) {
+  const availableItemIds = Object.keys(items).filter((key) =>
+    ideas.some(({ price }) => price?.id === key)
+  );
+
+  const cleanBag: Items = availableItemIds.reduce((bag, id) => {
+    const { maxQuantity } = ideas.filter((i) => i.price?.id === id)[0];
+
+    const newItem = {
+      [id]: {
+        id,
+        quantity: Math.min(
+          items[id].quantity,
+          maxQuantity || DEFAULT_MAX_QUANTITY
+        ),
+      },
+    };
+    return { ...bag, ...newItem };
+  }, {});
+  updateBag({ items: cleanBag });
 }
