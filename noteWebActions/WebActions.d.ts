@@ -1,20 +1,8 @@
 import { instanceTypes } from "./instanceTypes";
 
-export type WebAction =
-  | (CommonDetails & ClickButton)
-  | (CommonDetails & HoverButton)
-  | (CommonDetails & HoverImage)
-  | (CommonDetails & IntersectButton)
-  | (CommonDetails & IntersectImage)
-  | (CommonDetails & ViewPage);
+export type WebAction = CommonDetails & ClickButton;
 
-export type BaseWebAction =
-  | ClickButton
-  | HoverButton
-  | HoverImage
-  | IntersectButton
-  | IntersectImage
-  | ViewPage;
+export type BaseWebAction = ClickButton;
 
 export type CommonDetails = {
   actionId: string;
@@ -34,28 +22,4 @@ export type CommonDetails = {
 type ClickButton = {
   action: "Click button";
   buttonName: string;
-};
-
-type HoverButton = {
-  action: "Hover button";
-  buttonName: string;
-};
-
-type HoverImage = {
-  action: "Hover image";
-  imageName: string;
-};
-
-type IntersectButton = {
-  action: "Intersect button";
-  buttonName: string;
-};
-
-type IntersectImage = {
-  action: "Intersect image";
-  imageName: string;
-};
-
-type ViewPage = {
-  action: "View page";
 };

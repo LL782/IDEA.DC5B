@@ -1,13 +1,20 @@
 import { loadStripe, Stripe } from "@stripe/stripe-js";
-import type { StripeLineItems } from "./StripeLineItems";
+import { BagItem } from "@types";
 
 let stripe: Stripe | null;
 
+type StripeLineItems = { price?: string; quantity?: number };
+
 interface Props {
-  lineItems: StripeLineItems[];
+  bagItems: BagItem[];
 }
 
-export const initiateCheckout = async ({ lineItems }: Props) => {
+export const initiateCheckout = async ({ bagItems }: Props) => {
+  const lineItems: StripeLineItems[] = bagItems.map(({ id, quantity }) => ({
+    price: id,
+    quantity,
+  }));
+
   if (!stripe) {
     stripe = await loadStripe(process.env.NEXT_PUBLIC_STRIPE_API_KEY || "");
   }

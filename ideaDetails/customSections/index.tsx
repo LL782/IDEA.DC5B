@@ -1,9 +1,9 @@
 import dynamic from "next/dynamic";
 import { ComponentType, Suspense } from "react";
 
-type CustomContentMap = {
+interface CustomContentMap {
   [key: string]: ComponentType;
-};
+}
 
 const customContent: CustomContentMap = {
   "balsamic-potion": dynamic(() => import("./balsamic-potion")),

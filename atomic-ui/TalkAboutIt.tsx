@@ -1,8 +1,9 @@
 import { SecondaryLink } from "./SecondaryLink";
 
-type Props = {
+interface Props {
   blogPost?: string;
-};
+}
+
 export const TalkAboutIt = ({ blogPost }: Props) => {
   if (!blogPost) {
     return null;
