@@ -13,6 +13,7 @@
   "dependencies": {
     "@stripe/stripe-js": "^1.12.1",
     "next": "latest",
+    "next-seo": "^5.5.0",
     "react": "18",
     "react-dom": "18",
     "react-icons": "^4.2.0",

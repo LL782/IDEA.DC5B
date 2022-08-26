@@ -1,17 +1,23 @@
+import { DefaultSeo } from "next-seo";
+import { AppProps } from "next/app";
+
 import "../styles/globals.css";
+import SEO from "../next-seo.config";
 import { BagContext, useBagState } from "../bag/useBag";
 import { Navigation } from "../navigation/Navigation";
 import Footer from "../footer/Footer";
-import { AppProps } from "next/app";
 
 const MyApp = ({ Component, pageProps }: AppProps) => {
   const bag = useBagState();
   return (
-    <BagContext.Provider value={bag}>
-      <Navigation />
-      <Component {...pageProps} />
-      <Footer />
-    </BagContext.Provider>
+    <>
+      <DefaultSeo {...SEO} />
+      <BagContext.Provider value={bag}>
+        <Navigation />
+        <Component {...pageProps} />
+        <Footer />
+      </BagContext.Provider>
+    </>
   );
 };
 

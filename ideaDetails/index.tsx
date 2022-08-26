@@ -1,6 +1,6 @@
 import Image from "next/image";
 import Link from "next/link";
-import Head from "next/head";
+import { NextSeo } from "next-seo";
 import type { Idea } from "../@types";
 
 import styles from "./ideaDetails.module.css";
@@ -29,18 +29,13 @@ export const IdeaDetails = ({ idea }: Props) => {
 
   return (
     <div className={styles.container}>
-      <Head>
-        <title>{`${title} - ${subTitle} // DC5B`}</title>
-        <link rel="icon" href="/favicon.ico" />
-      </Head>
-
+      <NextSeo title={`${title} - ${subTitle} // DC5B`} />
       <nav className={styles.breadcrumbs}>
         <Link href="/">
           <a className={styles.breadcrumb}>Ideas</a>
         </Link>{" "}
         &gt; <span className={styles.currentBreadcrumb}>{title}</span>
       </nav>
-
       <main className={styles.main}>
         <h3 className={styles.title}>{title}</h3>
         <h4 className={styles.subTitle}>{subTitle}</h4>
