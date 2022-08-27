@@ -8,7 +8,7 @@ const seo: NextSeoProps = {
     },
     {
       rel: "apple-touch-icon",
-      href: "/branding/apple-touch-icon.jpg",
+      href: "/branding/apple-touch-icon.png",
       sizes: "180x180",
     },
     {
@@ -21,10 +21,10 @@ const seo: NextSeoProps = {
     description: "You must have a head",
     images: [
       {
-        url: "https://shop.dc5b.com/branding/warrior-heading.jpg",
+        url: "https://shop.dc5b.com/branding/branding.jpg",
         width: 1280,
         height: 640,
-        alt: "DOG.DC5B Artwork",
+        alt: "",
       },
     ],
     type: "website",
