@@ -21,7 +21,7 @@ const seo: NextSeoProps = {
     description: "You must have a head",
     images: [
       {
-        url: "/branding/warrior-heading.jpg",
+        url: "https://shop.dc5b.com/branding/warrior-heading.jpg",
         width: 1280,
         height: 640,
         alt: "DOG.DC5B Artwork",
