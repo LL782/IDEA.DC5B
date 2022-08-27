@@ -18,9 +18,10 @@ const seo: NextSeoProps = {
   ],
   defaultTitle: "S H O P - D C 5 B",
   openGraph: {
+    description: "You must have a head",
     images: [
       {
-        url: "/branding/warrier-heading.jpg",
+        url: "/branding/warrior-heading.jpg",
         width: 1280,
         height: 640,
         alt: "DOG.DC5B Artwork",
