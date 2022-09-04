@@ -22,6 +22,12 @@ The following are technical notes for the website development.
 
 ### Getting Started
 
+#### Environment variables
+
+Copy `.env.example` to a file called `.env.local` and populate the values where necessary.
+
+These same variables will have to be defined in each environment where the app runs. For `prod` we store these in Vercel.
+
 ```bash
 yarn i
 yarn dev
