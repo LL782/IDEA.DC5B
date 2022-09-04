@@ -14,9 +14,7 @@ const firebaseConfig = {
 export default function Home() {
   useEffect(() => {
     const app = initializeApp(firebaseConfig);
-    const analytics = getAnalytics(app);
-    console.log("app:", app);
-    console.log("analytics:", analytics);
+    getAnalytics(app);
   }, []);
   return (
     <code
