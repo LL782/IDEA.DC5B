@@ -48,7 +48,6 @@ const firstClick: WebAction = {
   buttonName: `Add to bag :: ${exampleIdea.id}`,
   dateTime: TEST_DATE_STRING,
   instanceId: TEST_UID_1,
-  instanceType: instanceTypes.NEW,
   pageTitle: testTitle,
   pageType: "Idea Details",
   pageUrl: "https://test.url/",
@@ -62,7 +61,6 @@ const firstClick: WebAction = {
 const secondClick = {
   ...firstClick,
   actionId: TEST_UID_3,
-  instanceType: instanceTypes.LOCAL,
 };
 
 const expectedResults = [firstClick, secondClick];

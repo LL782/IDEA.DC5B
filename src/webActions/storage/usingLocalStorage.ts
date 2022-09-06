@@ -1,7 +1,6 @@
 import { uid } from "uid";
 
 import { BaseWebAction, CommonDetails } from "../businessLogic/WebActions";
-import { instanceTypes } from "../businessLogic/instanceTypes";
 
 import { WebAction } from "src/webActions/businessLogic/WebActions";
 
@@ -27,12 +26,11 @@ function storageActions(actions: WebAction[]) {
 }
 
 function getCommonActionDetails() {
-  const { instanceId, instanceType } = getInstance();
+  const { instanceId } = getInstance();
   const details: CommonDetails = {
     actionId: uid(),
     dateTime: new Date().toISOString(),
     instanceId,
-    instanceType,
     pageTitle: document.title,
     pageType: "Idea Details",
     pageUrl: document.location.toString(),
@@ -53,11 +51,9 @@ function getInstance() {
   ) {
     return {
       instanceId: existingInstance[0].instanceId,
-      instanceType: instanceTypes.LOCAL,
     };
   }
   return {
     instanceId: uid(),
-    instanceType: instanceTypes.NEW,
   };
 }

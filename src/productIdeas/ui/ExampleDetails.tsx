@@ -1,7 +1,7 @@
-import { Idea } from "productIdeas/businessLogic/Idea";
+import { Idea } from "../businessLogic/Idea";
 import { Details } from "./Details";
 
-export const exampleIdea: Idea = {
+export const example: Idea = {
   alt: "testAlt",
   description: "testDescription",
   id: "testId",
@@ -11,4 +11,4 @@ export const exampleIdea: Idea = {
   type: "Test Idea Type",
 };
 
-export const ExampleIdeaDetails = () => <Details idea={exampleIdea} />;
+export const ExampleIdeaDetails = () => <Details idea={example} />;
