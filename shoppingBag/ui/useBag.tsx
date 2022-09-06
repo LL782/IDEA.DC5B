@@ -6,17 +6,18 @@ import {
   Dispatch,
   SetStateAction,
 } from "react";
-import type { BagItem } from "../@types";
-import ideas from "../data/ideas";
-import { stripeCheckout } from "../adaptors/stripeCheckout";
-import { DEFAULT_MAX_QUANTITY } from "./";
+
+import type { BagItem } from "@types";
+import ideas from "../../data/ideas";
+import { DEFAULT_MAX_QUANTITY } from "../businessLogic/defaults";
+import usingStripe from "../checkout/usingStripe";
 
 interface BagContextType {
   addToBag?: ({ id }: { id: string }) => void;
   bagItems: BagItem[];
   checkout?: () => void;
   checkoutDisabled: boolean;
-  updateItem?: ({}: BagItem) => void;
+  updateItem?: ({ id, pricePerItem, quantity }: BagItem) => void;
   totalCost: number;
 }
 
@@ -103,7 +104,7 @@ export const useBagState = () => {
   };
 
   const checkout = () => {
-    stripeCheckout({ bagItems });
+    usingStripe({ bagItems });
   };
 
   return {

@@ -1,5 +1,5 @@
 import styles from "../styles/Home.module.css";
-import { displayPrice } from "../bag/displayPrice";
+import { displayPrice } from "../shoppingBag/businessLogic/displayPrice";
 
 interface Props {
   price?: { amount: number };

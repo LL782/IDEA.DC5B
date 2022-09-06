@@ -1,8 +1,8 @@
 import { GetStaticProps } from "next/types";
 import ideas from "../../data/ideas";
-import { IdeaDetails } from "../../ideaDetails";
+import { Details } from "../../productIdeas/ui/Details";
 
-export default IdeaDetails;
+export default Details;
 
 export const getStaticProps: GetStaticProps = ({ params }) => {
   const idea = ideas.find(({ id }) => id === params?.id);

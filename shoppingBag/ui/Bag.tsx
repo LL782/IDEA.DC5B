@@ -1,13 +1,14 @@
 import { BiShoppingBag } from "react-icons/bi";
+
 import styles from "./Bag.module.css";
-import { PrimaryLink } from "../atomic-ui/PrimaryLink";
-import { useBag } from "./useBag";
-import { Table } from "./Table";
-import ideas from "../data/ideas";
-import { displayPrice } from "./displayPrice";
-import { PrimaryButton } from "../atomic-ui/PrimaryButton";
-import { SecondaryLink } from "../atomic-ui/SecondaryLink";
 import { BagItemQuantity } from "./BagItemQuantity";
+import { Table } from "./Table";
+import { useBag } from "./useBag";
+import ideas from "../../data/ideas";
+import { displayPrice } from "../../shoppingBag/businessLogic/displayPrice";
+import { PrimaryLink } from "../../atomic-ui/PrimaryLink";
+import { PrimaryButton } from "../../atomic-ui/PrimaryButton";
+import { SecondaryLink } from "../../atomic-ui/SecondaryLink";
 
 export const BAG_COLUMNS = {
   title: "Item",

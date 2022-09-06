@@ -9,7 +9,7 @@ interface Props {
   bagItems: BagItem[];
 }
 
-export const stripeCheckout = async ({ bagItems }: Props) => {
+const usingStripe = async ({ bagItems }: Props) => {
   const lineItems: StripeLineItems[] = bagItems.map(({ id, quantity }) => ({
     price: id,
     quantity,
@@ -30,3 +30,5 @@ export const stripeCheckout = async ({ bagItems }: Props) => {
     successUrl: `${window.location.origin}?session_id={CHECKOUT_SESSION_ID}`,
   });
 };
+
+export default usingStripe;

@@ -1,7 +1,7 @@
 import Link from "next/link";
 import { BiShoppingBag } from "react-icons/bi";
-import { displayPrice } from "../bag/displayPrice";
-import { useBag } from "../bag/useBag";
+import { displayPrice } from "../shoppingBag/businessLogic/displayPrice";
+import { useBag } from "../shoppingBag/ui/useBag";
 import styles from "./Navigation.module.css";
 
 const MiniBag = () => {

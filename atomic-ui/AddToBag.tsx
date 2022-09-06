@@ -1,9 +1,9 @@
 import type { BagItem, Idea } from "../@types";
 import { PrimaryButton } from "./PrimaryButton";
-import { useBag } from "../bag/useBag";
+import { useBag } from "../shoppingBag/ui/useBag";
 import styles from "./AddToBag.module.css";
-import { noteWebActions } from "../webActions/noteWebActions";
-import { DEFAULT_MAX_QUANTITY } from "bag";
+import { noteWebActions } from "../webActions/storage/usingLocalStorage";
+import { DEFAULT_MAX_QUANTITY } from "../shoppingBag/businessLogic/defaults";
 
 const NUMBER_WORD: { [key: number]: string } = {
   2: "Two",

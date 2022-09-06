@@ -1,7 +1,7 @@
 import { BagItem } from "@types";
 import { ChangeEvent } from "react";
 
-import { DEFAULT_MAX_QUANTITY } from "./";
+import { DEFAULT_MAX_QUANTITY } from "../businessLogic/defaults";
 import { useBag } from "./useBag";
 
 interface Props {

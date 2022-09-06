@@ -1,19 +1,19 @@
 import Image from "next/image";
 import Link from "next/link";
 import { NextSeo } from "next-seo";
-import type { Idea } from "../@types";
+import type { Idea } from "../../@types";
 
-import styles from "./ideaDetails.module.css";
-import { displayPrice } from "../bag/displayPrice";
-import { AddToBag } from "../atomic-ui/AddToBag";
-import { CustomSections } from "./customSections";
-import { TalkAboutIt } from "../atomic-ui/TalkAboutIt";
+import styles from "./Details.module.css";
+import { displayPrice } from "../../shoppingBag/businessLogic/displayPrice";
+import { AddToBag } from "../../atomic-ui/AddToBag";
+import { LoadBespokeDetails } from "./LoadBespokeDetails";
+import { TalkAboutIt } from "../../atomic-ui/TalkAboutIt";
 
 interface Props {
   idea: Idea;
 }
 
-export const IdeaDetails = ({ idea }: Props) => {
+export const Details = ({ idea }: Props) => {
   const {
     alt,
     blogPost,
@@ -55,7 +55,7 @@ export const IdeaDetails = ({ idea }: Props) => {
         <p className={styles.cardDescription}>{description}</p>
         <AddToBag id={id} maxQuantity={maxQuantity} price={price} />
         <TalkAboutIt blogPost={blogPost} />
-        <CustomSections id={id} />
+        <LoadBespokeDetails id={id} />
       </main>
     </div>
   );

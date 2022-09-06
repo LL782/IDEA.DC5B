@@ -1,9 +1,9 @@
 import { uid } from "uid";
 
-import { BaseWebAction, CommonDetails } from "./WebActions";
-import { instanceTypes } from "./instanceTypes";
+import { BaseWebAction, CommonDetails } from "../businessLogic/WebActions";
+import { instanceTypes } from "../businessLogic/instanceTypes";
 
-import { WebAction } from "webActions/WebActions";
+import { WebAction } from "webActions/businessLogic/WebActions";
 
 const LOCAL_STORAGE_KEY = "SHOP_DC5B_INTERACTIONS";
 
