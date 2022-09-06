@@ -1,6 +1,6 @@
 import { NextSeo } from "next-seo";
 
-import { Bag } from "../shoppingBag/ui/Bag";
+import { Bag } from "../src/shoppingBag/ui/Bag";
 
 export default function BagPage() {
   return (

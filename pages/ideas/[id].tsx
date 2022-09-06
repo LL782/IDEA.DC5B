@@ -1,6 +1,6 @@
 import { GetStaticProps } from "next/types";
-import ideas from "../../data/ideas";
-import { Details } from "../../productIdeas/ui/Details";
+import ideas from "../../src/productIdeas/data/ideas";
+import { Details } from "../../src/productIdeas/ui/Details";
 
 export default Details;
 

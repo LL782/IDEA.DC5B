@@ -1,7 +1,7 @@
-import styles from "../styles/Home.module.css";
-import ideas from "../data/ideas";
-import { OptionalExtraCard } from "../ExtraCards";
-import { IdeaCard } from "../atomic-ui/IdeaCard";
+import styles from "../src/siteLayout/ui/Home.module.css";
+import ideas from "../src/productIdeas/data/ideas";
+import { OptionalExtraCard } from "../src/siteMessaging";
+import { IdeaCard } from "../src/atomic-ui/IdeaCard";
 
 export default function Home() {
   return (

@@ -1,4 +1,4 @@
-import { read, write } from "../dbConnectionTest";
+import { read, write } from "../src/webActions/dbConnectionTest";
 
 export default function Test() {
   return (
