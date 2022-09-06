@@ -1,5 +1,5 @@
 import { Idea } from "../businessLogic/Idea";
-import { Details } from "./Details";
+import { Details } from "../ui/Details";
 
 export const example: Idea = {
   alt: "testAlt",
@@ -11,4 +11,4 @@ export const example: Idea = {
   type: "Test Idea Type",
 };
 
-export const ExampleIdeaDetails = () => <Details idea={example} />;
+export const ExampleDetails = () => <Details idea={example} />;

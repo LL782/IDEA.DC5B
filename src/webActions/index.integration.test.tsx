@@ -2,14 +2,10 @@ import { fireEvent, render, screen } from "@testing-library/react";
 import { uid } from "uid";
 
 import { WebAction } from "./businessLogic/WebActions";
-import { instanceTypes } from "./businessLogic/instanceTypes";
-import {
-  exampleIdea,
-  ExampleIdeaDetails,
-} from "../productIdeas/ui/ExampleDetails";
+import { example, ExampleDetails } from "../productIdeas/_example";
 
 const takeActions = () => {
-  render(<ExampleIdeaDetails />);
+  render(<ExampleDetails />);
   const addToBag = screen.getByRole("button", { name: "Add to bag" });
   fireEvent.click(addToBag);
   fireEvent.click(addToBag);
@@ -45,7 +41,7 @@ const TEST_VIEWPORT_WIDTH = 1024;
 const firstClick: WebAction = {
   action: "Click button",
   actionId: TEST_UID_2,
-  buttonName: `Add to bag :: ${exampleIdea.id}`,
+  buttonName: `Add to bag :: ${example.id}`,
   dateTime: TEST_DATE_STRING,
   instanceId: TEST_UID_1,
   pageTitle: testTitle,
