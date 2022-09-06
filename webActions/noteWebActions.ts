@@ -3,7 +3,7 @@ import { uid } from "uid";
 import { BaseWebAction, CommonDetails } from "./WebActions";
 import { instanceTypes } from "./instanceTypes";
 
-import { WebAction } from "noteWebActions/WebActions";
+import { WebAction } from "webActions/WebActions";
 
 const LOCAL_STORAGE_KEY = "SHOP_DC5B_INTERACTIONS";
 

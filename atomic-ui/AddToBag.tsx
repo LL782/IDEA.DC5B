@@ -2,7 +2,7 @@ import type { BagItem, Idea } from "../@types";
 import { PrimaryButton } from "./PrimaryButton";
 import { useBag } from "../bag/useBag";
 import styles from "./AddToBag.module.css";
-import { noteWebActions } from "../noteWebActions/noteWebActions";
+import { noteWebActions } from "../webActions/noteWebActions";
 import { DEFAULT_MAX_QUANTITY } from "bag";
 
 const NUMBER_WORD: { [key: number]: string } = {
