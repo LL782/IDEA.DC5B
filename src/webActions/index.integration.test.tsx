@@ -4,19 +4,6 @@ import { uid } from "uid";
 import { WebAction } from "./businessLogic/WebActions";
 import { example, ExampleDetails } from "../productIdeas/_example";
 
-const takeActions = () => {
-  render(<ExampleDetails />);
-  const addToBag = screen.getByRole("button", { name: "Add to bag" });
-  fireEvent.click(addToBag);
-  fireEvent.click(addToBag);
-};
-
-function getOurLocalStorage() {
-  return JSON.parse(
-    window.localStorage.getItem("SHOP_DC5B_INTERACTIONS") || ""
-  );
-}
-
 const testDate = new Date("2020-01-01");
 jest.useFakeTimers().setSystemTime(testDate);
 
@@ -62,10 +49,22 @@ const secondClick = {
 const expectedResults = [firstClick, secondClick];
 
 describe("Web Actions", () => {
-  describe("When I view the test idea and then click 'Add to bag'", () => {
-    beforeAll(takeActions);
+  render(<ExampleDetails />);
+
+  describe("When I click 'Add to bag' twice in the UI", () => {
+    beforeEach(() => {
+      const addToBag = screen.getByRole("button", { name: "Add to bag" });
+      fireEvent.click(addToBag);
+      fireEvent.click(addToBag);
+    });
     test("details of the interactions get stored on the customer's computer", () => {
       expect(getOurLocalStorage()).toEqual(expectedResults);
     });
   });
 });
+
+function getOurLocalStorage() {
+  return JSON.parse(
+    window.localStorage.getItem("SHOP_DC5B_INTERACTIONS") || ""
+  );
+}
