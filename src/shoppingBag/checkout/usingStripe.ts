@@ -1,5 +1,5 @@
 import { loadStripe, Stripe } from "@stripe/stripe-js";
-import { BagItem } from "BagItem";
+import { BagItem } from "../businessLogic/BagItem";
 
 let stripe: Stripe | null;
 

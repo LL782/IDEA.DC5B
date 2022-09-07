@@ -1,4 +1,4 @@
-import { BagItem } from "BagItem";
+import { BagItem } from "../businessLogic/BagItem";
 import { ChangeEvent } from "react";
 
 import { DEFAULT_MAX_QUANTITY } from "../businessLogic/defaults";

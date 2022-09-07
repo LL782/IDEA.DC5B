@@ -1,4 +1,4 @@
-import type { Idea } from "productIdeas/businessLogic/Idea";
+import type { Idea } from "../../productIdeas/businessLogic/Idea";
 import { BagItem } from "../businessLogic/BagItem";
 import { PrimaryButton } from "../../atomic-ui/PrimaryButton";
 import { useBag } from "../ui/useBag";

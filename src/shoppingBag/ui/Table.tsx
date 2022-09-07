@@ -34,6 +34,7 @@ export const Table = ({ columns, rows, footer }: Props) => {
             {Object.keys(row)
               .filter((r) => columnIds.includes(r))
               .map((key: string) => (
+                // @ts-expect-error row[key]
                 <td key={key}>{row[key]}</td>
               ))}
           </tr>
@@ -45,7 +46,10 @@ export const Table = ({ columns, rows, footer }: Props) => {
             <th colSpan={Object.keys(columns).length - 1} scope="row">
               {key}
             </th>
-            <td>{footer[key]}</td>
+            {
+              // @ts-expect-error footer[key]
+              <td>{footer[key]}</td>
+            }
           </tr>
         ))}
       </tfoot>
