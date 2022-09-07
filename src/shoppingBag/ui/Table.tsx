@@ -11,7 +11,7 @@ interface Props {
     price: string;
     lineTotal: string;
   }[];
-  footer: any;
+  footer: { Total: string };
 }
 
 export const Table = ({ columns, rows, footer }: Props) => {
@@ -34,7 +34,6 @@ export const Table = ({ columns, rows, footer }: Props) => {
             {Object.keys(row)
               .filter((r) => columnIds.includes(r))
               .map((key: string) => (
-                // @ts-expect-error
                 <td key={key}>{row[key]}</td>
               ))}
           </tr>
