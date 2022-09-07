@@ -3,14 +3,17 @@ import { uid } from "uid";
 import { BaseWebAction, CommonDetails } from "../businessLogic/WebActions";
 
 import { WebAction } from "src/webActions/businessLogic/WebActions";
+import { storeViaApi } from "../storeViaApi";
 
 const LOCAL_STORAGE_KEY = "SHOP_DC5B_INTERACTIONS";
 
-export function noteWebActions(input: BaseWebAction) {
+export async function noteWebActions(input: BaseWebAction) {
   const newAction = { ...input, ...getCommonActionDetails() };
   const existingActions = getExistingData();
   existingActions.push(newAction);
-  storageActions(existingActions);
+  storeActions(existingActions);
+  await storeViaApi(existingActions);
+  resetActions();
 }
 
 function getExistingData() {
@@ -21,7 +24,12 @@ function getExistingData() {
   return data;
 }
 
-function storageActions(actions: WebAction[]) {
+function resetActions() {
+  const latestActions = getExistingData().splice(-3);
+  storeActions(latestActions);
+}
+
+function storeActions(actions: WebAction[]) {
   window.localStorage.setItem(LOCAL_STORAGE_KEY, JSON.stringify(actions));
 }
 

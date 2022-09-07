@@ -45,12 +45,11 @@ export const AddToBag = ({
   const maxedOut = bagItem?.quantity >= maxQuantity;
 
   const handleAdd = () => {
-    noteAdd(id);
-
     if (!addToBag || !price) {
       return;
     }
     addToBag({ id: price.id });
+    noteAdd(id);
   };
 
   if (maxQuantity === 0) return <p className={styles.redDot}>Not available</p>;
