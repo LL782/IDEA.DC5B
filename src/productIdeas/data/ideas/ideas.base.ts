@@ -1,4 +1,15 @@
-import type { Idea } from "../../businessLogic/Idea";
+import type { Idea, RawIdea } from "../../businessLogic/Idea";
+
+export const fastMoving: RawIdea = {
+  alt: "",
+  blogPost: "",
+  description: "",
+  id: "fast-moving",
+  image: "/idea-images/fast-moving.jpg",
+  subTitle: "Unrefined gem of an idea ",
+  title: "Fast Moving Consumer Gods",
+  type: "Raw idea",
+};
 
 export const rodwellHatTrick007: Idea = {
   alt: "",
