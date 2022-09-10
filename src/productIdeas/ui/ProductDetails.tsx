@@ -1,7 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import { NextSeo } from "next-seo";
-import type { Idea } from "../businessLogic/Idea";
+import type { PricedProduct } from "../businessLogic/Idea";
 
 import styles from "./Details.module.css";
 import { displayPrice } from "../../shoppingBag/businessLogic/displayPrice";
@@ -10,10 +10,10 @@ import { LoadBespokeDetails } from "./LoadBespokeDetails";
 import { TalkAboutIt } from "../../getInTouch/ui/TalkAboutIt";
 
 interface Props {
-  idea: Idea;
+  idea: PricedProduct;
 }
 
-export const Details = ({ idea }: Props) => {
+export const ProductDetails = ({ idea }: Props) => {
   const {
     alt,
     blogPost,

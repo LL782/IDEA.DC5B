@@ -2,7 +2,7 @@ import { fireEvent, render, screen } from "@testing-library/react";
 import { uid } from "uid";
 
 import { WebAction } from "./businessLogic/WebActions";
-import { example, ExampleDetails } from "../productIdeas/_example";
+import { example, ExampleProductDetails } from "../productIdeas/_example";
 
 const testDate = new Date("2020-01-01");
 jest.useFakeTimers().setSystemTime(testDate);
@@ -49,7 +49,7 @@ const secondClick = {
 const expectedResults = [firstClick, secondClick];
 
 describe("Web Actions", () => {
-  render(<ExampleDetails />);
+  render(<ExampleProductDetails />);
 
   describe("When I click 'Add to bag' twice in the UI", () => {
     beforeEach(() => {
@@ -64,7 +64,7 @@ describe("Web Actions", () => {
 });
 
 function getOurLocalStorage() {
-  return JSON.parse(
-    window.localStorage.getItem("SHOP_DC5B_INTERACTIONS") || ""
-  );
+  const result = window.localStorage.getItem("SHOP_DC5B_INTERACTIONS") || "[]";
+  // console.log(`result: `, result);
+  return JSON.parse(result);
 }

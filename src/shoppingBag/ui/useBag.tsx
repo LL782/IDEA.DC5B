@@ -8,7 +8,7 @@ import {
 } from "react";
 
 import { BagItem } from "../businessLogic/BagItem";
-import ideas from "../../productIdeas/data/ideas";
+import { products } from "../../productIdeas/data/ideas";
 import { DEFAULT_MAX_QUANTITY } from "../businessLogic/defaults";
 import usingStripe from "../checkout/usingStripe";
 
@@ -122,11 +122,11 @@ export const useBag = () => {
 };
 
 function findIdeaFromBagItem(key: string) {
-  return ideas.find(({ price: { id } = {} }) => id === key);
+  return products.find(({ price: { id } = {} }) => id === key);
 }
 
 function newBagItem(id: string) {
-  const item = ideas.filter((i) => i.price?.id === id)[0];
+  const item = products.filter((i) => i.price?.id === id)[0];
   const pricePerItem = item.price?.amount || 0;
   return { id, quantity: 1, pricePerItem };
 }
@@ -136,11 +136,11 @@ function cleanThen(
   items: Items
 ) {
   const availableItemIds = Object.keys(items).filter((key) =>
-    ideas.some(({ price }) => price?.id === key)
+    products.some(({ price }) => price?.id === key)
   );
 
   const cleanBag: Items = availableItemIds.reduce((bag, id) => {
-    const { maxQuantity } = ideas.filter((i) => i.price?.id === id)[0];
+    const { maxQuantity } = products.filter((i) => i.price?.id === id)[0];
 
     const newItem = {
       [id]: {

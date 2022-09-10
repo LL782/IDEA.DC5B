@@ -4,7 +4,7 @@ import styles from "./Bag.module.css";
 import { BagItemQuantity } from "./BagItemQuantity";
 import { Table } from "./Table";
 import { useBag } from "./useBag";
-import ideas from "../../productIdeas/data/ideas";
+import { products } from "../../productIdeas/data/ideas";
 import { displayPrice } from "../../shoppingBag/businessLogic/displayPrice";
 import { PrimaryLink } from "../../atomic-ui/PrimaryLink";
 import { PrimaryButton } from "../../atomic-ui/PrimaryButton";
@@ -22,7 +22,7 @@ export const Bag = () => {
 
   const rows = bagItems.map((bagItem) => {
     const { id, pricePerItem, quantity } = bagItem;
-    const item = ideas.find(({ price }) => price?.id === id);
+    const item = products.find(({ price }) => price?.id === id);
 
     return {
       id,

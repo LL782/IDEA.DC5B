@@ -1,14 +1,18 @@
-import { Idea } from "../businessLogic/Idea";
-import { Details } from "../ui/Details";
+import { PricedProduct } from "../businessLogic/Idea";
+import { ProductDetails } from "../ui/ProductDetails";
 
-export const example: Idea = {
+export const example: PricedProduct = {
   alt: "testAlt",
   description: "testDescription",
   id: "testId",
   image: "/testImage",
+  price: {
+    amount: 999,
+    id: "testPriceId",
+  },
   subTitle: "testSubTitle",
   title: "testTitle",
   type: "Test Idea Type",
 };
 
-export const ExampleDetails = () => <Details idea={example} />;
+export const ExampleProductDetails = () => <ProductDetails idea={example} />;

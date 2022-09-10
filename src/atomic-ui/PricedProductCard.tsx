@@ -1,7 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
 
-import type { Idea } from "../productIdeas/businessLogic/Idea";
+import type { PricedProduct } from "../productIdeas/businessLogic/Idea";
 
 import styles from "./IdeaCard.module.css";
 import { PriceTag } from "./PriceTag";
@@ -9,10 +9,10 @@ import { AddToBag } from "../shoppingBag/ui/AddToBag";
 import { TalkAboutIt } from "../getInTouch/ui/TalkAboutIt";
 
 interface Props {
-  idea: Idea;
+  productIdea: PricedProduct;
 }
 
-export const IdeaCard = ({ idea }: Props) => {
+export const PricedProductCard = ({ productIdea }: Props) => {
   const {
     alt,
     blogPost,
@@ -24,7 +24,7 @@ export const IdeaCard = ({ idea }: Props) => {
     subTitle,
     title,
     type,
-  } = idea;
+  } = productIdea;
 
   return (
     <li className={styles.card}>
@@ -45,7 +45,6 @@ export const IdeaCard = ({ idea }: Props) => {
       </Link>
       <PriceTag price={price} type={type} />
       <p className={styles.cardDescription}>{description}</p>
-
       <AddToBag id={id} maxQuantity={maxQuantity} price={price} />
       <TalkAboutIt blogPost={blogPost} />
     </li>

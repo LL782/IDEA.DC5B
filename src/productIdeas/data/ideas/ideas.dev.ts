@@ -1,4 +1,4 @@
-import type { Idea } from "../../businessLogic/Idea";
+import type { PricedProduct, RawIdea } from "../../businessLogic/Idea";
 import {
   balsamicPotion,
   beardedStrangeFaceColouring,
@@ -13,7 +13,7 @@ import {
   spaceAgeMug,
 } from "./ideas.base";
 
-const ideas: Idea[] = [
+const ideas: (RawIdea | PricedProduct)[] = [
   fastMoving,
   Object.assign(
     { price: { amount: 82, id: "price_1LYzqJJvxKuslv8gtYKXewqD" } },

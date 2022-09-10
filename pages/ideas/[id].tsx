@@ -1,6 +1,19 @@
 import { GetStaticProps } from "next/types";
+import { PricedProduct, RawIdea } from "src/productIdeas/businessLogic/Idea";
+import { IdeaDetails } from "src/productIdeas/ui/IdeaDetails";
+import { ProductDetails } from "src/productIdeas/ui/ProductDetails";
 import ideas from "../../src/productIdeas/data/ideas";
-import { Details } from "../../src/productIdeas/ui/Details";
+
+interface Props {
+  idea: RawIdea | PricedProduct;
+}
+
+const Details = ({ idea }: Props) => {
+  if (idea.type === "Raw idea") {
+    return <IdeaDetails idea={idea} />;
+  }
+  return <ProductDetails idea={idea} />;
+};
 
 export default Details;
 
