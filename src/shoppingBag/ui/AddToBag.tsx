@@ -1,4 +1,4 @@
-import type { Idea } from "../../productIdeas/businessLogic/Idea";
+import type { PricedProduct } from "../../productIdeas/businessLogic/Idea";
 import { BagItem } from "../businessLogic/BagItem";
 import { PrimaryButton } from "../../atomic-ui/PrimaryButton";
 import { useBag } from "../ui/useBag";
@@ -30,9 +30,9 @@ const ButtonText = ({ bagItem, maxedOut }: ButtonTextProps) => {
 };
 
 interface Props {
-  id: Idea["id"];
-  price?: Idea["price"];
-  maxQuantity?: Idea["maxQuantity"];
+  id: PricedProduct["id"];
+  price?: PricedProduct["price"];
+  maxQuantity?: PricedProduct["maxQuantity"];
 }
 
 export const AddToBag = ({
@@ -40,6 +40,13 @@ export const AddToBag = ({
   maxQuantity = DEFAULT_MAX_QUANTITY,
   price,
 }: Props) => {
+  if (!price) {
+    return null;
+  }
+  if (maxQuantity === 0) {
+    return <p className={styles.redDot}>Not available</p>;
+  }
+
   const { addToBag, bagItems } = useBag();
   const bagItem = bagItems.filter(({ id }) => id === price?.id)[0];
   const maxedOut = bagItem?.quantity >= maxQuantity;
@@ -51,8 +58,6 @@ export const AddToBag = ({
     addToBag({ id: price.id });
     noteAdd(id);
   };
-
-  if (maxQuantity === 0) return <p className={styles.redDot}>Not available</p>;
 
   return (
     <PrimaryButton disabled={maxedOut} onClick={handleAdd}>
