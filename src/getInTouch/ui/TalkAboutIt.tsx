@@ -8,5 +8,9 @@ export const TalkAboutIt = ({ blogPost }: Props) => {
   if (!blogPost) {
     return null;
   }
-  return <SecondaryLink href={blogPost}>Open comms</SecondaryLink>;
+  return (
+    <p>
+      <SecondaryLink href={blogPost}>Let's talk about it...</SecondaryLink>
+    </p>
+  );
 };

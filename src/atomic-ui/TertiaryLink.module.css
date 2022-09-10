@@ -1,0 +1,14 @@
+.link {
+  color: black;
+  display: inline-block;
+  font-size: 0.9rem;
+  font-weight: bold;
+  text-shadow: #0f03 -0px 0 0, #f0f3 0px 0 0;
+}
+
+.link:hover,
+.link:focus {
+  outline: none;
+  transition: text-shadow 0.2s;
+  text-shadow: #0f03 -10px -5px 0, #f0f3 10px 5px 0;
+}
