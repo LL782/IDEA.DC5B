@@ -3,6 +3,7 @@ import {
   balsamicPotion,
   beardedStrangeFaceColouring,
   eyesOnTheBlindfoldColouring,
+  fastMoving,
   losAtlantisColouring,
   niceBitOfWrapping,
   rodwellHatTrick004,
@@ -13,6 +14,7 @@ import {
 } from "./ideas.base";
 
 const ideas: Idea[] = [
+  fastMoving,
   Object.assign(
     { price: { amount: 82, id: "price_1LYzqaJvxKuslv8gQYSsYjJG" } },
     rodwellHatTrick007

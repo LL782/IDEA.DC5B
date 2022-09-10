@@ -1,14 +1,14 @@
 import type { Idea, RawIdea } from "../../businessLogic/Idea";
 
 export const fastMoving: RawIdea = {
-  alt: "",
-  blogPost: "",
-  description: "",
-  id: "fast-moving",
+  title: "Fast Moving",
+  subTitle: "An idea up for vote",
   image: "/idea-images/fast-moving.jpg",
-  subTitle: "Unrefined gem of an idea ",
-  title: "Fast Moving Consumer Gods",
+  alt: `Rough drawing on paper with Ballpoint and graphite pencil. It's a black and white line-drawing, with three figures and a tree, over a minature landscape and a sky made up of sunbeams. It is signed "DOG '15"`,
   type: "Raw idea",
+  description: `This is an early sketch of an idea. Want to see how it would look reworked? We're listening.`,
+  blogPost: "https://dc5b.dog/2022/09/10/fast-moving-consumer-gods/",
+  id: "fast-moving",
 };
 
 export const rodwellHatTrick007: Idea = {
