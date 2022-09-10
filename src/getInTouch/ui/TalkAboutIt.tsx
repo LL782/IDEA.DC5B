@@ -10,7 +10,7 @@ export const TalkAboutIt = ({ blogPost }: Props) => {
   }
   return (
     <p>
-      <SecondaryLink href={blogPost}>Let's talk about it...</SecondaryLink>
+      <SecondaryLink href={blogPost}>Let&apos;s talk about it...</SecondaryLink>
     </p>
   );
 };
