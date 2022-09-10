@@ -1,0 +1,23 @@
+.grid {
+  display: flex;
+  align-items: stretch;
+  justify-content: center;
+  flex-wrap: wrap;
+  max-width: 80em;
+  padding: 0;
+  margin-top: 3rem;
+  border-top: 1px solid #ddd;
+}
+
+@media (min-width: 601px) {
+  .grid {
+    margin-bottom: 3rem;
+  }
+}
+@media (max-width: 600px) {
+  .grid {
+    margin-bottom: 0;
+    width: 100%;
+    flex-direction: column;
+  }
+}
