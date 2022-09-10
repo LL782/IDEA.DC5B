@@ -1,4 +1,4 @@
-import styles from "../siteLayout/ui/Home.module.css";
+import styles from "./PriceTag.module.css";
 import { displayPrice } from "../shoppingBag/businessLogic/displayPrice";
 
 interface Props {

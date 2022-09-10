@@ -1,0 +1,54 @@
+.card {
+  color: inherit;
+  list-style: none;
+  text-align: left;
+  text-decoration: none;
+}
+
+@media screen and (max-width: 600px) {
+  .card {
+    padding: 2rem 4vw 3rem;
+    border-bottom: 1px solid #aaa;
+  }
+  .cardImage {
+    margin-left: -4vw;
+    margin-right: -4vw;
+  }
+}
+
+@media screen and (min-width: 601px) {
+  .card {
+    padding: 1.5rem;
+    border-bottom: 1px solid #ddd;
+    border-left: 1px solid #ddd;
+    border-right: 1px solid #ddd;
+  }
+}
+
+@media screen and (max-width: 959px) {
+  .card {
+    flex-basis: calc(50%);
+  }
+}
+
+@media screen and (min-width: 960px) {
+  .card {
+    flex-basis: calc(33.3%);
+  }
+}
+
+.card h3 {
+  margin: 0;
+  font-size: 1.5rem;
+}
+
+.card h4 {
+  font-size: 1rem;
+}
+
+.cardDescription {
+  margin-top: 1rem;
+  margin-bottom: 0;
+  font-size: 1.25rem;
+  line-height: 1.5;
+}

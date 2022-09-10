@@ -1,0 +1,14 @@
+.price {
+  font-size: 1rem;
+  font-weight: bold;
+}
+
+.priceType {
+  border: 1px solid black;
+  display: inline-block;
+  font-size: 0.85rem;
+  margin-left: 0.5rem;
+  padding: 0.075rem 0.25rem;
+  position: relative;
+  text-transform: uppercase;
+}

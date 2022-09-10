@@ -1,5 +1,5 @@
 import { TalkAboutIt } from "../getInTouch/ui/TalkAboutIt";
-import styles from "../siteLayout/ui/Home.module.css";
+import styles from "../atomic-ui/IdeaCard.module.css";
 
 interface Props {
   mapIndex: number;
