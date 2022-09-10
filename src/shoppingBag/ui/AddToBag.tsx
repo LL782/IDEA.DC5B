@@ -35,11 +35,9 @@ interface Props {
   maxQuantity?: PricedProduct["maxQuantity"];
 }
 
-export const AddToBag = ({
-  id,
-  maxQuantity = DEFAULT_MAX_QUANTITY,
-  price,
-}: Props) => {
+export const AddToBag = (props: Props) => {
+  const { maxQuantity = DEFAULT_MAX_QUANTITY, price } = props;
+
   if (!price) {
     return null;
   }
@@ -47,6 +45,14 @@ export const AddToBag = ({
     return <p className={styles.redDot}>Not available</p>;
   }
 
+  return <AddToBagButton {...props} />;
+};
+
+const AddToBagButton = ({
+  id,
+  maxQuantity = DEFAULT_MAX_QUANTITY,
+  price,
+}: Props) => {
   const { addToBag, bagItems } = useBag();
   const bagItem = bagItems.filter(({ id }) => id === price?.id)[0];
   const maxedOut = bagItem?.quantity >= maxQuantity;
