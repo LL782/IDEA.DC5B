@@ -23,11 +23,7 @@ interface BagContextType {
 
 type Items = { [key: string]: BagItem };
 
-const defaultBag: {
-  items: Items;
-} = {
-  items: {},
-};
+const defaultBag: { items: Items } = { items: {} };
 
 export const BagContext = createContext<BagContextType>({
   bagItems: [],
