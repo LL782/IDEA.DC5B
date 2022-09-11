@@ -1,41 +1,29 @@
 import {
   useState,
-  createContext,
   useContext,
   useEffect,
   Dispatch,
   SetStateAction,
 } from "react";
 
+import { BagContext } from "../context/BagContext";
 import { BagItem } from "../businessLogic/BagItem";
-import { products } from "../../productIdeas/data/ideas";
 import { DEFAULT_MAX_QUANTITY } from "../businessLogic/defaults";
+import { products } from "../../productIdeas/data/ideas";
 import usingStripe from "../checkout/usingStripe";
 
-interface BagContextType {
-  addToBag?: ({ id }: { id: string }) => void;
-  bagItems: BagItem[];
-  checkout?: () => void;
-  checkoutDisabled: boolean;
-  updateItem?: ({ id, pricePerItem, quantity }: BagItem) => void;
-  totalCost: number;
-}
+const BAG_KEY = "SHOP_DC5B_BAG";
+
+export const useBag = () => useContext(BagContext);
 
 type Items = { [key: string]: BagItem };
-
 const defaultBag: { items: Items } = { items: {} };
-
-export const BagContext = createContext<BagContextType>({
-  bagItems: [],
-  checkoutDisabled: true,
-  totalCost: 0,
-});
 
 export const useBagState = () => {
   const [bag, updateBag] = useState(defaultBag);
 
   useEffect(() => {
-    const bagFromStorage = window.localStorage.getItem("SHOP_DC5B_BAG");
+    const bagFromStorage = window.localStorage.getItem(BAG_KEY);
     const data = bagFromStorage && JSON.parse(bagFromStorage);
     if (data) {
       cleanThen(updateBag, data.items);
@@ -44,7 +32,7 @@ export const useBagState = () => {
 
   useEffect(() => {
     const data = JSON.stringify(bag);
-    window.localStorage.setItem("SHOP_DC5B_BAG", data);
+    window.localStorage.setItem(BAG_KEY, data);
   }, [bag]);
 
   const bagItems: Array<BagItem> = Object.keys(bag.items)
@@ -113,10 +101,6 @@ export const useBagState = () => {
   };
 };
 
-export const useBag = () => {
-  return useContext(BagContext);
-};
-
 function findIdeaFromBagItem(key: string) {
   return products.find(({ price: { id } = {} }) => id === key);
 }
@@ -127,10 +111,9 @@ function newBagItem(id: string) {
   return { id, quantity: 1, pricePerItem };
 }
 
-function cleanThen(
-  updateBag: Dispatch<SetStateAction<{ items: Items }>>,
-  items: Items
-) {
+type UpdateBag = Dispatch<SetStateAction<{ items: Items }>>;
+
+function cleanThen(updateBag: UpdateBag, items: Items) {
   const availableItemIds = Object.keys(items).filter((key) =>
     products.some(({ price }) => price?.id === key)
   );
