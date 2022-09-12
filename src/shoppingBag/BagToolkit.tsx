@@ -1,4 +1,4 @@
-import { createContext } from "react";
+import { ChildContextProvider, createContext, ReactNode } from "react";
 import { BagItem } from "./businessLogic/BagItem";
 import { useBagState } from "./hooks/useBagState";
 
@@ -18,7 +18,11 @@ const defaultBagContext: iBagToolkit = {
 
 export const BagToolkit = createContext(defaultBagContext);
 
-export const BagToolkitProvider = () => {
+interface Props {
+  children: ReactNode;
+}
+
+export const BagToolkitProvider = ({ children }: Props) => {
   const bag = useBagState();
-  return <BagToolkit.Provider value={bag} />;
+  return <BagToolkit.Provider value={bag}>{children}</BagToolkit.Provider>;
 };
