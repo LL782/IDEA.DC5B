@@ -26,32 +26,6 @@ export const useBagState = () => {
     window.localStorage.setItem(BAG_KEY, data);
   }, [bag]);
 
-  const bagItems: Array<BagItem> = Object.keys(bag.items)
-    .map((key) => {
-      const originalBagItem = bag.items[key];
-      const idea = findIdeaFromBagItem(key);
-
-      return {
-        ...originalBagItem,
-        maxQuantity: idea?.maxQuantity || DEFAULT_MAX_QUANTITY,
-        pricePerItem: idea?.price?.amount || 0,
-      };
-    })
-    .filter((a) => a !== undefined);
-
-  const totalItems = bagItems.reduce((accumulator, { quantity }) => {
-    return accumulator + quantity;
-  }, 0);
-
-  const checkoutDisabled = totalItems < 1;
-
-  const totalCost = bagItems.reduce(
-    (accumulator, { quantity, pricePerItem }) => {
-      return accumulator + pricePerItem * quantity;
-    },
-    0
-  );
-
   const addToBag = (id: string) => {
     const items = { ...bag.items };
 
@@ -78,33 +52,49 @@ export const useBagState = () => {
     cleanThen(updateBag, items);
   };
 
-  const checkout = () => {
-    usingStripe({ bagItems });
-  };
+  const lineItems: Array<BagItem> = convertToLineItems(bag.items);
+  const totalItems = lineItems.reduce((t, { quantity }) => t + quantity, 0);
 
   return {
     addToBag,
-    bagItems,
-    checkout,
-    checkoutDisabled,
+    lineItems: lineItems,
+    checkout: () => usingStripe({ bagItems: lineItems }),
+    checkoutDisabled: totalItems < 1,
     updateItem,
-    totalCost,
+    totalCost: lineItems.reduce(toTotalPrice, 0),
   };
 };
 
-function findIdeaFromBagItem(key: string) {
-  return products.find(({ price: { id } = {} }) => id === key);
-}
+const convertToLineItems = (bagItems: Items) =>
+  Object.keys(bagItems)
+    .map((key) => {
+      const originalBagItem = bagItems[key];
+      const idea = findIdeaFromBagItem(key);
 
-function newBagItem(id: string) {
+      return {
+        ...originalBagItem,
+        maxQuantity: idea?.maxQuantity || DEFAULT_MAX_QUANTITY,
+        pricePerItem: idea?.price?.amount || 0,
+      };
+    })
+    .filter((a) => a !== undefined);
+
+const toTotalPrice = (t: number, { quantity, pricePerItem }: BagItem): number =>
+  t + pricePerItem * quantity;
+
+const findIdeaFromBagItem = (key: string) =>
+  products.find(({ price: { id } = {} }) => id === key);
+
+const newBagItem = (id: string) => {
   const item = products.filter((i) => i.price?.id === id)[0];
   const pricePerItem = item.price?.amount || 0;
   return { id, quantity: 1, pricePerItem };
-}
+};
 
-type UpdateBag = Dispatch<SetStateAction<{ items: Items }>>;
-
-function cleanThen(updateBag: UpdateBag, items: Items) {
+const cleanThen = (
+  updateBag: Dispatch<SetStateAction<{ items: Items }>>,
+  items: Items
+) => {
   const availableItemIds = Object.keys(items).filter((key) =>
     products.some(({ price }) => price?.id === key)
   );
@@ -124,4 +114,4 @@ function cleanThen(updateBag: UpdateBag, items: Items) {
     return { ...bag, ...newItem };
   }, {});
   updateBag({ items: cleanBag });
-}
+};

@@ -53,8 +53,8 @@ const AddToBagButton = ({
   maxQuantity = DEFAULT_MAX_QUANTITY,
   price,
 }: Props) => {
-  const { addToBag, bagItems } = useBag();
-  const bagItem = bagItems.filter(({ id }) => id === price?.id)[0];
+  const { addToBag, lineItems } = useBag();
+  const bagItem = lineItems.filter(({ id }) => id === price?.id)[0];
   const maxedOut = bagItem?.quantity >= maxQuantity;
 
   const handleAdd = () => {

@@ -18,9 +18,9 @@ export const BAG_COLUMNS = {
 };
 
 export const Bag = () => {
-  const { bagItems, checkout, checkoutDisabled } = useBag();
+  const { lineItems, checkout, checkoutDisabled } = useBag();
 
-  const rows = bagItems.map((bagItem) => {
+  const rows = lineItems.map((bagItem) => {
     const { id, pricePerItem, quantity } = bagItem;
     const item = products.find(({ price }) => price?.id === id);
 
@@ -33,7 +33,7 @@ export const Bag = () => {
     };
   });
 
-  const totalOfRows = bagItems.reduce(
+  const totalOfRows = lineItems.reduce(
     (accumulator, { pricePerItem, quantity }) => {
       return accumulator + quantity * pricePerItem;
     },

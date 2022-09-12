@@ -4,14 +4,14 @@ import { useBagState } from "./hooks/useBagState";
 
 interface BagContext {
   addToBag?: (id: string) => void;
-  bagItems: BagItem[];
+  lineItems: BagItem[];
   checkout?: () => void;
   checkoutDisabled: boolean;
   updateItem?: ({ id, pricePerItem, quantity }: BagItem) => void;
   totalCost: number;
 }
 const defaultBagContext: BagContext = {
-  bagItems: [],
+  lineItems: [],
   checkoutDisabled: true,
   totalCost: 0,
 };
