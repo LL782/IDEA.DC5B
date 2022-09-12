@@ -61,7 +61,7 @@ const AddToBagButton = ({
     if (!addToBag || !price) {
       return;
     }
-    addToBag({ id: price.id });
+    addToBag(price.id);
     noteAdd(id);
   };
 

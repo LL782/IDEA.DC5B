@@ -3,7 +3,7 @@ import { BagItem } from "./businessLogic/BagItem";
 import { useBagState } from "./hooks/useBagState";
 
 interface BagContext {
-  addToBag?: ({ id }: { id: string }) => void;
+  addToBag?: (id: string) => void;
   bagItems: BagItem[];
   checkout?: () => void;
   checkoutDisabled: boolean;

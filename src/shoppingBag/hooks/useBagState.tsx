@@ -52,7 +52,7 @@ export const useBagState = () => {
     0
   );
 
-  const addToBag = ({ id }: { id: string }) => {
+  const addToBag = (id: string) => {
     const items = { ...bag.items };
 
     if (items[id]) {
