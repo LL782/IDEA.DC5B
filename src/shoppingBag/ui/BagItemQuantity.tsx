@@ -2,7 +2,7 @@ import { BagItem } from "../businessLogic/BagItem";
 import { ChangeEvent } from "react";
 
 import { DEFAULT_MAX_QUANTITY } from "../businessLogic/defaults";
-import { useBag } from "../hooks/useBag";
+import { useBagToolkit } from "../hooks/useBagToolkit";
 
 interface Props {
   bagItem: BagItem;
@@ -15,7 +15,7 @@ export const BagItemQuantity = ({ bagItem }: Props) => {
     quantity,
     maxQuantity = DEFAULT_MAX_QUANTITY,
   } = bagItem;
-  const { updateItem } = useBag();
+  const { updateItem } = useBagToolkit();
 
   const handleQuantity = (e: ChangeEvent<HTMLSelectElement>) => {
     const newQuantity = Number.parseInt(e.target.value);

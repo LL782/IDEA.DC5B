@@ -3,7 +3,7 @@ import { BiShoppingBag } from "react-icons/bi";
 import styles from "./Bag.module.css";
 import { BagItemQuantity } from "./BagItemQuantity";
 import { Table } from "./Table";
-import { useBag } from "../hooks/useBag";
+import { useBagToolkit } from "../hooks/useBagToolkit";
 import { products } from "../../productIdeas/data/ideas";
 import { displayPrice } from "../../shoppingBag/businessLogic/displayPrice";
 import { PrimaryLink } from "../../atomic-ui/PrimaryLink";
@@ -18,7 +18,7 @@ export const BAG_COLUMNS = {
 };
 
 export const Bag = () => {
-  const { lineItems, checkout, checkoutDisabled } = useBag();
+  const { lineItems, checkout, checkoutDisabled } = useBagToolkit();
 
   const rows = lineItems.map((bagItem) => {
     const { id, pricePerItem, quantity } = bagItem;

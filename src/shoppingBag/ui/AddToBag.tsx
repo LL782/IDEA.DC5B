@@ -1,7 +1,7 @@
 import type { PricedProduct } from "../../productIdeas/businessLogic/Idea";
 import { BagItem } from "../businessLogic/BagItem";
 import { PrimaryButton } from "../../atomic-ui/PrimaryButton";
-import { useBag } from "../hooks/useBag";
+import { useBagToolkit } from "../hooks/useBagToolkit";
 import styles from "./AddToBag.module.css";
 import { noteWebActions } from "../../webActions/storage/usingLocalStorage";
 import { DEFAULT_MAX_QUANTITY } from "../businessLogic/defaults";
@@ -53,7 +53,7 @@ const AddToBagButton = ({
   maxQuantity = DEFAULT_MAX_QUANTITY,
   price,
 }: Props) => {
-  const { addToBag, lineItems } = useBag();
+  const { addToBag, lineItems } = useBagToolkit();
   const bagItem = lineItems.filter(({ id }) => id === price?.id)[0];
   const maxedOut = bagItem?.quantity >= maxQuantity;
 

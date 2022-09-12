@@ -1,11 +1,11 @@
 import Link from "next/link";
 import { BiShoppingBag } from "react-icons/bi";
 import { displayPrice } from "../../shoppingBag/businessLogic/displayPrice";
-import { useBag } from "../../shoppingBag/hooks/useBag";
+import { useBagToolkit } from "../../shoppingBag/hooks/useBagToolkit";
 import styles from "./Navigation.module.css";
 
 const MiniBag = () => {
-  const { checkoutDisabled, totalCost } = useBag();
+  const { checkoutDisabled, totalCost } = useBagToolkit();
 
   return checkoutDisabled ? (
     <span className={styles.miniBag}>

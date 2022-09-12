@@ -2,7 +2,7 @@ import { createContext } from "react";
 import { BagItem } from "./businessLogic/BagItem";
 import { useBagState } from "./hooks/useBagState";
 
-interface BagContext {
+interface iBagToolkit {
   addToBag?: (id: string) => void;
   lineItems: BagItem[];
   checkout?: () => void;
@@ -10,15 +10,15 @@ interface BagContext {
   updateItem?: ({ id, pricePerItem, quantity }: BagItem) => void;
   totalCost: number;
 }
-const defaultBagContext: BagContext = {
+const defaultBagContext: iBagToolkit = {
   lineItems: [],
   checkoutDisabled: true,
   totalCost: 0,
 };
 
-export const BagContext = createContext(defaultBagContext);
+export const BagToolkit = createContext(defaultBagContext);
 
-export const BagContextProvider = ({ ...props }) => {
+export const BagToolkitProvider = () => {
   const bag = useBagState();
-  return <BagContext.Provider value={bag} {...props} />;
+  return <BagToolkit.Provider value={bag} />;
 };
