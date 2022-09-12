@@ -1,7 +1,7 @@
 import type { PricedProduct } from "../../productIdeas/businessLogic/Idea";
 import { BagItem } from "../businessLogic/BagItem";
 import { PrimaryButton } from "../../atomic-ui/PrimaryButton";
-import { useBag } from "../ui/useBag";
+import { useBag } from "../hooks/useBag";
 import styles from "./AddToBag.module.css";
 import { noteWebActions } from "../../webActions/storage/usingLocalStorage";
 import { DEFAULT_MAX_QUANTITY } from "../businessLogic/defaults";

@@ -3,7 +3,7 @@ import { BiShoppingBag } from "react-icons/bi";
 import styles from "./Bag.module.css";
 import { BagItemQuantity } from "./BagItemQuantity";
 import { Table } from "./Table";
-import { useBag } from "./useBag";
+import { useBag } from "../hooks/useBag";
 import { products } from "../../productIdeas/data/ideas";
 import { displayPrice } from "../../shoppingBag/businessLogic/displayPrice";
 import { PrimaryLink } from "../../atomic-ui/PrimaryLink";

@@ -1,20 +1,11 @@
-import {
-  useState,
-  useContext,
-  useEffect,
-  Dispatch,
-  SetStateAction,
-} from "react";
+import { useState, useEffect, Dispatch, SetStateAction } from "react";
 
-import { BagContext } from "../context/BagContext";
 import { BagItem } from "../businessLogic/BagItem";
 import { DEFAULT_MAX_QUANTITY } from "../businessLogic/defaults";
 import { products } from "../../productIdeas/data/ideas";
 import usingStripe from "../checkout/usingStripe";
 
 const BAG_KEY = "SHOP_DC5B_BAG";
-
-export const useBag = () => useContext(BagContext);
 
 type Items = { [key: string]: BagItem };
 const defaultBag: { items: Items } = { items: {} };

@@ -1,5 +1,6 @@
 import { createContext } from "react";
-import { BagItem } from "../businessLogic/BagItem";
+import { BagItem } from "./businessLogic/BagItem";
+import { useBagState } from "./hooks/useBagState";
 
 interface BagContext {
   addToBag?: ({ id }: { id: string }) => void;
@@ -16,3 +17,8 @@ const defaultBagContext: BagContext = {
 };
 
 export const BagContext = createContext(defaultBagContext);
+
+export const BagContextProvider = ({ ...props }) => {
+  const bag = useBagState();
+  return <BagContext.Provider value={bag} {...props} />;
+};
