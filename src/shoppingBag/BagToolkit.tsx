@@ -1,6 +1,6 @@
 import { ChildContextProvider, createContext, ReactNode } from "react";
 import { BagItem } from "./businessLogic/BagItem";
-import { useBagState } from "./hooks/useBagState";
+import { useBagToolkitState } from "./hooks/useBagToolkitState";
 
 interface iBagToolkit {
   addToBag?: (id: string) => void;
@@ -23,6 +23,6 @@ interface Props {
 }
 
 export const BagToolkitProvider = ({ children }: Props) => {
-  const bag = useBagState();
+  const bag = useBagToolkitState();
   return <BagToolkit.Provider value={bag}>{children}</BagToolkit.Provider>;
 };

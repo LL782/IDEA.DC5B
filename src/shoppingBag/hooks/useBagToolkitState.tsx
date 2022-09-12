@@ -10,7 +10,7 @@ const BAG_KEY = "SHOP_DC5B_BAG";
 type Items = { [key: string]: BagItem };
 const defaultBag: { items: Items } = { items: {} };
 
-export const useBagState = () => {
+export const useBagToolkitState = () => {
   const [bag, updateBag] = useState(defaultBag);
 
   useEffect(() => {
