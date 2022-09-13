@@ -4,10 +4,10 @@ import { NextSeo } from "next-seo";
 import type { PricedProduct } from "../businessLogic/Idea";
 
 import styles from "./Details.module.css";
-import { displayPrice } from "../../shoppingBag/businessLogic/displayPrice";
 import { AddToBag } from "../../shoppingBag/ui/AddToBag";
 import { LoadBespokeDetails } from "./LoadBespokeDetails";
 import { TalkAboutIt } from "../../getInTouch/ui/TalkAboutIt";
+import { PriceTag } from "src/atomic-ui/PriceTag";
 
 interface Props {
   idea: PricedProduct;
@@ -48,10 +48,7 @@ export const ProductDetails = ({ idea }: Props) => {
             layout="responsive"
           />
         </div>
-        <p className={styles.price}>
-          {displayPrice(price?.amount)}{" "}
-          <span className={styles.priceType}>{type}</span>
-        </p>
+        <PriceTag price={price} type={type} />
         <p className={styles.cardDescription}>{description}</p>
         <AddToBag id={id} maxQuantity={maxQuantity} price={price} />
         <TalkAboutIt blogPost={blogPost} />
