@@ -6,9 +6,16 @@ interface Props {
   type: string;
 }
 
-export const PriceTag = ({ price, type }: Props) => (
-  <p className={styles.price}>
-    {displayPrice(price?.amount)}{" "}
-    <span className={styles.priceType}>{type}</span>
-  </p>
-);
+const Price = ({ price }: { price?: { amount: number } }) =>
+  !price ? null : (
+    <span className={styles.displayPrice}>{displayPrice(price.amount)} </span>
+  );
+
+export const PriceTag = ({ price, type }: Props) => {
+  return (
+    <p className={styles.price}>
+      <Price price={price} />
+      <span className={styles.priceType}>{type}</span>
+    </p>
+  );
+};
