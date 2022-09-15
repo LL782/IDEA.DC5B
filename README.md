@@ -12,5 +12,5 @@ In GitHub you'll find [Issues](https://github.com/LL782/DC5B-SHOP/issues) and [M
 
 ## Tech
 
-1. Head on into `/website/` where you'll find some more [README.md](/website/README.md) and further details
-1. We're starting to build out the `/data-viewer` – checkout the [README.md](/data-viewer/README.md) there for more about that
+1. Head on into [`/website/`](/website/) where you'll find some more [README.md](/website#readme) and further details
+1. We're starting to build out the [`/data-viewer`](/data-viewer/) – checkout the [README.md](/data-viewer#readme) there for more about that
