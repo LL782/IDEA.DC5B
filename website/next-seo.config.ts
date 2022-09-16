@@ -29,8 +29,8 @@ const seo: NextSeoProps = {
     ],
     type: "website",
     locale: "en_GB",
-    url: "https://shop.dc5b.com/",
-    site_name: "SHOP_DC5B",
+    url: "https://idea.dc5b.com/",
+    site_name: "IDEA_DC5B",
   },
 };
 
