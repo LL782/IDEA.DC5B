@@ -1,12 +1,13 @@
 <script lang="ts">
 	import { page } from '$app/stores';
-	import logo from './svelte-logo.svg';
+	import dc5b from './DC5B-Mark.svg';
+	import gitHub from './GitHub-Mark.svg';
 </script>
 
 <header>
 	<div class="corner">
-		<a href="https://kit.svelte.dev">
-			<img src={logo} alt="SvelteKit" />
+		<a href="https://dc5b.com">
+			<img src={dc5b} alt="DC5B" />
 		</a>
 	</div>
 
@@ -18,9 +19,6 @@
 			<li class:active={$page.url.pathname === '/'}>
 				<a href="/">Home</a>
 			</li>
-			<li class:active={$page.url.pathname === '/about'}>
-				<a href="/about">About</a>
-			</li>
 			<li class:active={$page.url.pathname === '/todos'}>
 				<a href="/todos">Todos</a>
 			</li>
@@ -31,7 +29,9 @@
 	</nav>
 
 	<div class="corner">
-		<!-- TODO put something else here? github link? -->
+		<a href="https://github.com/LL782/SHOP.DC5B">
+			<img class="small" src={gitHub} alt="GitHub Repository" />
+		</a>
 	</div>
 </header>
 
@@ -54,7 +54,14 @@
 		height: 100%;
 	}
 
-	.corner img {
+	.corner img.small {
+		width: 1.25em;
+		height: 1.25em;
+		object-fit: contain;
+	}
+
+
+	.corner img:not(.small) {
 		width: 2em;
 		height: 2em;
 		object-fit: contain;
