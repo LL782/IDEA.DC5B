@@ -2,7 +2,7 @@
 
 ## Welcome 👋
 
-This is the [source code](https://en.wikipedia.org/wiki/Source_code) for [shop.dc5b.com](https://shop.dc5b.com) and the WIP Dataviewer
+This is the [source code](https://en.wikipedia.org/wiki/Source_code) for [idea.dc5b.com](https://idea.dc5b.com) and the WIP Dataviewer
 
 If you're interested in the project drop me a comment on [dc5b.dog](https://dc5b.dog)
 
