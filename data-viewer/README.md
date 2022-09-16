@@ -34,4 +34,4 @@ You can preview the production build with `yarn run preview`.
 
 **Work in progress**
 
-The plan is to create a dashboard to see the web actions taking place on [SHOP.DC5B.COM](https://shop.dc5b.com/)
+The plan is to create a dashboard to see the web actions taking place on [IDEA.DC5B.COM](https://idea.dc5b.com/)
