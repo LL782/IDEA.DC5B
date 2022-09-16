@@ -64,7 +64,7 @@ describe("Web Actions", () => {
 });
 
 function getOurLocalStorage() {
-  const result = window.localStorage.getItem("SHOP_DC5B_INTERACTIONS");
+  const result = window.localStorage.getItem("DC5B_INTERACTIONS");
   console.log(`result: `, result);
   return JSON.parse(result || "[]");
 }
