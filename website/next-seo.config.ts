@@ -16,7 +16,7 @@ const seo: NextSeoProps = {
       href: "/branding/site.webmanifest",
     },
   ],
-  defaultTitle: "S H O P - D C 5 B",
+  defaultTitle: "I D E A - D C 5 B",
   openGraph: {
     description: "You must have a head",
     images: [
