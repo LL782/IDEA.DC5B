@@ -29,7 +29,7 @@
 	</nav>
 
 	<div class="corner">
-		<a href="https://github.com/LL782/SHOP.DC5B">
+		<a href="https://github.com/LL782/IDEA.DC5B">
 			<img class="small" src={gitHub} alt="GitHub Repository" />
 		</a>
 	</div>
