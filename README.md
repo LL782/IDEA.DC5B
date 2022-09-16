@@ -1,4 +1,4 @@
-# SHOP.DC5B.COM
+# IDEA.DC5B.COM
 
 ## Welcome 👋
 
