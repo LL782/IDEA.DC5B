@@ -1,12 +1,29 @@
 import { createNewWebActionsDocument } from "./createNewWebActionsDocument";
 
-export const LOCAL_STORAGE_KEY = "SHOP_DC5B_INTERACTIONS";
+export const LOCAL_STORAGE_KEY = "DC5B_WEB_ACTIONS";
 
 export function storeLocally(newAction: WebAction) {
   const doc = getActionsDocument();
   doc.actions.push(newAction);
-  storeActions(doc);
+  storeActionsDoc(doc);
   return doc;
+}
+
+type Data = { documentId: string; actionIds: string[] };
+
+export function syncLocalStorage({ documentId, actionIds }: Data) {
+  if (!documentId && !actionIds) {
+    return;
+  }
+
+  const doc = getActionsDocument();
+  const reducedActions = doc.actions.filter(
+    (a) => !actionIds.includes(a.actionId)
+  );
+  doc.actions = reducedActions;
+  doc.documentId = doc.documentId || documentId;
+
+  storeActionsDoc(doc);
 }
 
 function getActionsDocument() {
@@ -23,7 +40,7 @@ function getActionsDocument() {
   return data;
 }
 
-function storeActions(doc: WebActionDocument) {
+function storeActionsDoc(doc: WebActionDocument) {
   try {
     window.localStorage.setItem(LOCAL_STORAGE_KEY, JSON.stringify(doc));
   } catch (error) {

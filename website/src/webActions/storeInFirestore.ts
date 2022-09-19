@@ -1,5 +1,11 @@
 import { initializeApp } from "firebase/app";
-import { collection, addDoc } from "firebase/firestore";
+import {
+  addDoc,
+  arrayUnion,
+  collection,
+  doc,
+  updateDoc,
+} from "firebase/firestore";
 import { getFirestore } from "firebase/firestore";
 
 const config = {
@@ -11,15 +17,39 @@ const config = {
   storageBucket: process.env.FIREBASE_STORAGE_BUCKET,
 };
 
-export const storeInFirestore = async (actions: string) => {
+export const storeInFirestore = async ({
+  actions,
+  documentId,
+}: WebActionDocument) => {
+  console.log(`documentId: `, documentId);
+
   try {
-    initializeApp(config);
-    const db = getFirestore();
-    const docRef = await addDoc(collection(db, "web-actions"), {
-      actions: JSON.parse(actions),
-    });
-    return { response: docRef.id };
+    if (documentId) {
+      await updateWith(documentId, actions);
+    } else {
+      documentId = await createWith(actions);
+    }
+    const actionIds = actions.map((a) => a.actionId);
+
+    return { data: { documentId, actionIds } };
   } catch (error) {
     return { error };
   }
 };
+
+async function updateWith(documentId: string, actions: WebAction[]) {
+  initializeApp(config);
+  const db = getFirestore();
+  for await (const action of actions) {
+    updateDoc(doc(db, "web-actions", documentId), {
+      actions: arrayUnion(action),
+    });
+  }
+}
+
+async function createWith(actions: WebAction[]) {
+  initializeApp(config);
+  const db = getFirestore();
+  const docRef = await addDoc(collection(db, "web-actions"), { actions });
+  return docRef.id;
+}
