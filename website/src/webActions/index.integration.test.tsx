@@ -2,9 +2,10 @@ import { fireEvent, render, screen } from "@testing-library/react";
 import { uid } from "uid";
 
 import { WebAction } from "./businessLogic/WebActions";
-import { example, ExampleProductDetails } from "../productIdeas/_example";
+import { ExampleProductDetails } from "../productIdeas/_example";
 import { LOCAL_STORAGE_KEY } from "./storage/usingLocalStorage";
 import { BagToolkitProvider } from "../shoppingBag/BagToolkit";
+import { exampleProduct } from "../productIdeas/data/ideas/ideas.dev";
 
 const testDate = new Date("2020-01-01");
 jest.useFakeTimers().setSystemTime(testDate);
@@ -30,7 +31,7 @@ const TEST_VIEWPORT_WIDTH = 1024;
 const firstClick: WebAction = {
   action: "Click button",
   actionId: TEST_UID_2,
-  buttonName: `Add to bag :: ${example.id}`,
+  buttonName: `Add to bag :: ${exampleProduct.id}`,
   dateTime: TEST_DATE_STRING,
   instanceId: TEST_UID_1,
   pageTitle: testTitle,
@@ -71,6 +72,5 @@ describe("Web Actions", () => {
 
 function getOurLocalStorage() {
   const result = window.localStorage.getItem(LOCAL_STORAGE_KEY);
-  console.log(`result: `, result);
   return JSON.parse(result || "[]");
 }

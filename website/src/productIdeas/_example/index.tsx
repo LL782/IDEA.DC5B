@@ -1,7 +1,7 @@
 import { PricedProduct } from "../businessLogic/Idea";
-import { products } from "../data/ideas";
+import { exampleProduct } from "../data/ideas/ideas.dev";
 import { ProductDetails } from "../ui/ProductDetails";
 
-export const example: PricedProduct = products[0];
-
-export const ExampleProductDetails = () => <ProductDetails idea={example} />;
+export const ExampleProductDetails = () => (
+  <ProductDetails idea={exampleProduct as PricedProduct} />
+);

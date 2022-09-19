@@ -57,4 +57,9 @@ const ideas: (RawIdea | PricedProduct)[] = [
   ),
 ];
 
+export const exampleProduct = Object.assign(
+  { price: { amount: 1.5, id: "price_1LW5LYJvxKuslv8gxJIn9bbk" } },
+  beardedStrangeFaceColouring
+);
+
 export default ideas;
