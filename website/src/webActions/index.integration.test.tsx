@@ -30,10 +30,9 @@ const TEST_VIEWPORT_WIDTH = 1024;
 
 const firstClick: WebAction = {
   action: "Click button",
-  actionId: TEST_UID_2,
+  actionId: TEST_UID_1,
   buttonName: `Add to bag :: ${exampleProduct.id}`,
   dateTime: TEST_DATE_STRING,
-  instanceId: TEST_UID_1,
   pageTitle: testTitle,
   pageType: "Idea Details",
   pageUrl: "https://test.url/",
@@ -49,7 +48,10 @@ const secondClick = {
   actionId: TEST_UID_3,
 };
 
-const expectedResults = [firstClick, secondClick];
+const expectedResults = {
+  documentId: TEST_UID_2,
+  actions: [firstClick, secondClick],
+};
 
 describe("Web Actions", () => {
   render(
@@ -58,14 +60,16 @@ describe("Web Actions", () => {
     </BagToolkitProvider>
   );
 
-  describe("When I click 'Add to bag' twice", () => {
-    beforeEach(() => {
-      const addToBag = screen.getByRole("button", { name: "Add to bag" });
-      fireEvent.click(addToBag);
-      fireEvent.click(addToBag);
-    });
-    test("details of the interactions get stored on the customer's computer", () => {
-      expect(getOurLocalStorage()).toEqual(expectedResults);
+  describe("Given a customer with no data stored on their browser", () => {
+    describe("When 'Add to bag' is clicked twice", () => {
+      beforeEach(() => {
+        const addToBag = screen.getByRole("button", { name: "Add to bag" });
+        fireEvent.click(addToBag);
+        fireEvent.click(addToBag);
+      });
+      test("the details are stored in a single object on the customer's browser", () => {
+        expect(getOurLocalStorage()).toEqual(expectedResults);
+      });
     });
   });
 });

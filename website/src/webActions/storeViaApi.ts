@@ -1,14 +1,12 @@
-import { WebAction } from "./businessLogic/WebActions";
-
-export const storeViaApi = async (actions: WebAction[]) => {
+export const storeViaApi = async (doc: WebActionDocument) => {
   try {
     const response = await fetch("/api/web-actions", {
       method: "POST",
-      body: JSON.stringify(actions),
+      body: JSON.stringify(doc),
     });
-    const { result: id } = await response.json();
-    return id;
+    const data = await response.json();
+    return { data };
   } catch (error) {
-    console.error(error);
+    return { error };
   }
 };

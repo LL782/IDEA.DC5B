@@ -1,11 +1,15 @@
-export type WebAction = CommonDetails & ClickButton;
+type WebActionDocument = {
+  documentId: string;
+  actions: WebAction[];
+};
 
-export type BaseWebAction = ClickButton;
+type WebAction = CommonDetails & ClickButton;
 
-export type CommonDetails = {
+type BaseWebAction = ClickButton;
+
+type CommonDetails = {
   actionId: string;
   dateTime: string;
-  instanceId: string;
   pageTitle: string;
   pageType: "Idea Details";
   pageUrl: string;
