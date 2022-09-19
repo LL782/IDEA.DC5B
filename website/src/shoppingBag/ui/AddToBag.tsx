@@ -3,7 +3,7 @@ import { BagItem } from "../businessLogic/BagItem";
 import { PrimaryButton } from "../../atomic-ui/PrimaryButton";
 import { useBagToolkit } from "../hooks/useBagToolkit";
 import styles from "./AddToBag.module.css";
-import { noteWebActions } from "../../webActions/storage/usingLocalStorage";
+import { noteWebActions } from "../../webActions/noteWebActions";
 import { DEFAULT_MAX_QUANTITY } from "../businessLogic/defaults";
 
 const NUMBER_WORD: { [key: number]: string } = {

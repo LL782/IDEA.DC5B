@@ -1,6 +1,6 @@
 import { uid } from "uid";
 
-import { storeViaApi } from "../storeViaApi";
+import { storeViaApi } from "./storeViaApi";
 
 export const LOCAL_STORAGE_KEY = "SHOP_DC5B_INTERACTIONS";
 

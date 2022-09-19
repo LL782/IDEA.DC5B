@@ -1,9 +1,8 @@
 import { fireEvent, render, screen } from "@testing-library/react";
 import { uid } from "uid";
 
-import { WebAction } from "./businessLogic/WebActions";
 import { ExampleProductDetails } from "../productIdeas/_example";
-import { LOCAL_STORAGE_KEY } from "./storage/usingLocalStorage";
+import { LOCAL_STORAGE_KEY } from "./noteWebActions";
 import { BagToolkitProvider } from "../shoppingBag/BagToolkit";
 import { exampleProduct } from "../productIdeas/data/ideas/ideas.dev";
 
