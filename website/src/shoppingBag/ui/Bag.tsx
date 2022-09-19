@@ -8,7 +8,7 @@ import { products } from "../../productIdeas/data/ideas";
 import { displayPrice } from "../../shoppingBag/businessLogic/displayPrice";
 import { PrimaryLink } from "../../atomic-ui/PrimaryLink";
 import { PrimaryButton } from "../../atomic-ui/PrimaryButton";
-import { TertiaryLink } from "src/atomic-ui/TertiaryLink";
+import { TertiaryLink } from "../../atomic-ui/TertiaryLink";
 
 export const BAG_COLUMNS = {
   title: "Item",

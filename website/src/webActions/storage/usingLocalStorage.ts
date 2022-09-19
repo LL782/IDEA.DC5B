@@ -2,7 +2,7 @@ import { uid } from "uid";
 
 import { BaseWebAction, CommonDetails } from "../businessLogic/WebActions";
 
-import { WebAction } from "src/webActions/businessLogic/WebActions";
+import { WebAction } from "../../webActions/businessLogic/WebActions";
 import { storeViaApi } from "../storeViaApi";
 
 const LOCAL_STORAGE_KEY = "SHOP_DC5B_INTERACTIONS";

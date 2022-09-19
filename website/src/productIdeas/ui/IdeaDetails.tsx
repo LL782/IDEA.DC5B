@@ -6,7 +6,7 @@ import type { RawIdea } from "../businessLogic/Idea";
 import styles from "./Details.module.css";
 import { LoadBespokeDetails } from "./LoadBespokeDetails";
 import { TalkAboutIt } from "../../getInTouch/ui/TalkAboutIt";
-import { PriceTag } from "src/atomic-ui/PriceTag";
+import { PriceTag } from "../../atomic-ui/PriceTag";
 
 interface Props {
   idea: RawIdea;

@@ -1,4 +1,4 @@
-import { PrimaryLink } from "src/atomic-ui/PrimaryLink";
+import { PrimaryLink } from "../../atomic-ui/PrimaryLink";
 import { SecondaryLink } from "../../atomic-ui/SecondaryLink";
 
 interface Props {

@@ -1,7 +1,10 @@
 import { GetStaticProps } from "next/types";
-import { PricedProduct, RawIdea } from "src/productIdeas/businessLogic/Idea";
-import { IdeaDetails } from "src/productIdeas/ui/IdeaDetails";
-import { ProductDetails } from "src/productIdeas/ui/ProductDetails";
+import {
+  PricedProduct,
+  RawIdea,
+} from "../../src/productIdeas/businessLogic/Idea";
+import { IdeaDetails } from "../../src/productIdeas/ui/IdeaDetails";
+import { ProductDetails } from "../../src/productIdeas/ui/ProductDetails";
 import ideas from "../../src/productIdeas/data/ideas";
 
 interface Props {

@@ -2,7 +2,7 @@ import styles from "./ListOfferings.module.css";
 import ideas from "../productIdeas/data/ideas";
 import { OptionalExtraCard } from "../siteMessaging";
 import { RawIdeaCard } from "../atomic-ui/RawIdeaCard";
-import { PricedProductCard } from "src/atomic-ui/PricedProductCard";
+import { PricedProductCard } from "../atomic-ui/PricedProductCard";
 
 export function ListOfferings() {
   return (

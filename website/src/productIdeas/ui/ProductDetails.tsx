@@ -7,7 +7,7 @@ import styles from "./Details.module.css";
 import { AddToBag } from "../../shoppingBag/ui/AddToBag";
 import { LoadBespokeDetails } from "./LoadBespokeDetails";
 import { TalkAboutIt } from "../../getInTouch/ui/TalkAboutIt";
-import { PriceTag } from "src/atomic-ui/PriceTag";
+import { PriceTag } from "../../atomic-ui/PriceTag";
 
 interface Props {
   idea: PricedProduct;
