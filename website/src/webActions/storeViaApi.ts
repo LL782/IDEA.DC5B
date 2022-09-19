@@ -4,9 +4,8 @@ export const storeViaApi = async (doc: WebActionDocument) => {
       method: "POST",
       body: JSON.stringify(doc),
     });
-    const data = await response.json();
-    return { data };
+    await response.json();
   } catch (error) {
-    return { error };
+    console.error("error: ", error);
   }
 };

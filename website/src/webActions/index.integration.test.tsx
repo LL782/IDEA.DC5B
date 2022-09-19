@@ -2,7 +2,7 @@ import { fireEvent, render, screen } from "@testing-library/react";
 import { uid } from "uid";
 
 import { ExampleProductDetails } from "../productIdeas/_example";
-import { LOCAL_STORAGE_KEY } from "./noteWebActions";
+import { LOCAL_STORAGE_KEY } from "./storeLocally";
 import { BagToolkitProvider } from "../shoppingBag/BagToolkit";
 import { exampleProduct } from "../productIdeas/data/ideas/ideas.dev";
 
