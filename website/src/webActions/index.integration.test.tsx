@@ -3,6 +3,8 @@ import { uid } from "uid";
 
 import { WebAction } from "./businessLogic/WebActions";
 import { example, ExampleProductDetails } from "../productIdeas/_example";
+import { LOCAL_STORAGE_KEY } from "./storage/usingLocalStorage";
+import { BagToolkitProvider } from "../shoppingBag/BagToolkit";
 
 const testDate = new Date("2020-01-01");
 jest.useFakeTimers().setSystemTime(testDate);
@@ -49,9 +51,13 @@ const secondClick = {
 const expectedResults = [firstClick, secondClick];
 
 describe("Web Actions", () => {
-  render(<ExampleProductDetails />);
+  render(
+    <BagToolkitProvider>
+      <ExampleProductDetails />
+    </BagToolkitProvider>
+  );
 
-  describe("When I click 'Add to bag' twice in the UI", () => {
+  describe("When I click 'Add to bag' twice", () => {
     beforeEach(() => {
       const addToBag = screen.getByRole("button", { name: "Add to bag" });
       fireEvent.click(addToBag);
@@ -64,7 +70,7 @@ describe("Web Actions", () => {
 });
 
 function getOurLocalStorage() {
-  const result = window.localStorage.getItem("DC5B_INTERACTIONS");
+  const result = window.localStorage.getItem(LOCAL_STORAGE_KEY);
   console.log(`result: `, result);
   return JSON.parse(result || "[]");
 }

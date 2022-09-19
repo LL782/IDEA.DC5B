@@ -5,7 +5,7 @@ import { BaseWebAction, CommonDetails } from "../businessLogic/WebActions";
 import { WebAction } from "../../webActions/businessLogic/WebActions";
 import { storeViaApi } from "../storeViaApi";
 
-const LOCAL_STORAGE_KEY = "SHOP_DC5B_INTERACTIONS";
+export const LOCAL_STORAGE_KEY = "SHOP_DC5B_INTERACTIONS";
 
 export async function noteWebActions(input: BaseWebAction) {
   const newAction = { ...input, ...getCommonActionDetails() };
