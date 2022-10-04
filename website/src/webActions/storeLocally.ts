@@ -37,6 +37,7 @@ function getActionsDocument() {
   const data: WebActionDocument = existingDoc
     ? JSON.parse(existingDoc)
     : newDoc;
+
   return data;
 }
 

@@ -3,15 +3,14 @@ type WebActionDocument = {
   actions: WebAction[];
 };
 
-type WebAction = CommonDetails & ClickButton;
+type WebAction = CommonDetails & BaseWebAction;
 
-type BaseWebAction = ClickButton;
+type BaseWebAction = ClickButton | PageView;
 
 type CommonDetails = {
   actionId: string;
   dateTime: string;
   pageTitle: string;
-  pageType: "Idea Details";
   pageUrl: string;
   referrer: string;
   scrollX: number;
@@ -23,4 +22,8 @@ type CommonDetails = {
 type ClickButton = {
   action: "Click button";
   buttonName: string;
+};
+
+type PageView = {
+  action: "Page view";
 };
