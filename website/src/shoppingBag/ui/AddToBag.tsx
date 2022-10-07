@@ -3,8 +3,8 @@ import { BagItem } from "../businessLogic/BagItem";
 import { PrimaryButton } from "../../atomic-ui/PrimaryButton";
 import { useBagToolkit } from "../hooks/useBagToolkit";
 import styles from "./AddToBag.module.css";
-import { noteWebActions } from "../../webActions/noteWebActions";
 import { DEFAULT_MAX_QUANTITY } from "../businessLogic/defaults";
+import { noteButtonClick } from "../../webActions/noteButtonClick";
 
 const NUMBER_WORD: { [key: number]: string } = {
   2: "Two",
@@ -73,8 +73,5 @@ const AddToBagButton = ({
 };
 
 function noteAdd(id: string) {
-  noteWebActions({
-    action: "Click button",
-    buttonName: `Add to bag :: ${id}`,
-  });
+  noteButtonClick(`Add to bag`, id);
 }
