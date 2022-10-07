@@ -5,7 +5,6 @@ export function getCommonActionDetails() {
     actionId: uid(),
     dateTime: new Date().toISOString(),
     pageTitle: document.title,
-    pageType: "Idea Details",
     pageUrl: document.location.toString(),
     referrer: document.referrer,
     scrollX,
