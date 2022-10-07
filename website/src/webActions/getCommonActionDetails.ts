@@ -10,6 +10,7 @@ export function getCommonActionDetails() {
     referrer: document.referrer,
     scrollX,
     scrollY,
+    userAgent: navigator.userAgent,
     viewportHeight: innerHeight,
     viewportWidth: innerWidth,
   };

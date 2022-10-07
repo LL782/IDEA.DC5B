@@ -16,6 +16,7 @@ type CommonDetails = {
   referrer: string;
   scrollX: number;
   scrollY: number;
+  userAgent: string;
   viewportHeight: number;
   viewportWidth: number;
 };
