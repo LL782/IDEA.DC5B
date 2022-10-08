@@ -22,7 +22,10 @@ const YourIdeas = () => (
       We&apos;ll look into it! Dreaming, we can manifest beautiful things. First
       step is dropping a word or two into a message.
     </p>
-    <TalkAboutIt blogPost="https://dc5b.dog/2022/08/16/prototypes-call-them-prototypes-go-so-what-you-gonna-do-about-them-thats-what-i-want-to-know/" />
+    <TalkAboutIt
+      blogPost="https://dc5b.dog/2022/08/16/prototypes-call-them-prototypes-go-so-what-you-gonna-do-about-them-thats-what-i-want-to-know/"
+      id="your-ideas"
+    />
   </li>
 );
 
@@ -42,6 +45,9 @@ const Prototypes = () => (
       T-shirt, coaster, wall vinyl, colouring in book, huge oil paintings, brass
       etching. All formats considered. If anything strikes a chord do say.
     </p>
-    <TalkAboutIt blogPost="https://dc5b.dog/2022/08/16/prototypes-call-them-prototypes-go-so-what-you-gonna-do-about-them-thats-what-i-want-to-know/" />
+    <TalkAboutIt
+      blogPost="https://dc5b.dog/2022/08/16/prototypes-call-them-prototypes-go-so-what-you-gonna-do-about-them-thats-what-i-want-to-know/"
+      id={"call-them-prototypes"}
+    />
   </li>
 );

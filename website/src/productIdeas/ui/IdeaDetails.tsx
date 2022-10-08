@@ -38,7 +38,7 @@ export const IdeaDetails = ({ idea }: Props) => {
         </div>
         <PriceTag type={type} />
         <p className={styles.cardDescription}>{description}</p>
-        <TalkAboutIt blogPost={blogPost} type={"primary"} />
+        <TalkAboutIt blogPost={blogPost} id={id} type={"primary"} />
         <LoadBespokeDetails id={id} />
       </main>
     </div>

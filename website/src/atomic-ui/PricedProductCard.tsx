@@ -46,7 +46,7 @@ export const PricedProductCard = ({ productIdea }: Props) => {
       <PriceTag price={price} type={type} />
       <p className={styles.cardDescription}>{description}</p>
       <AddToBag id={id} maxQuantity={maxQuantity} price={price} />
-      <TalkAboutIt blogPost={blogPost} />
+      <TalkAboutIt blogPost={blogPost} id={id} />
     </li>
   );
 };

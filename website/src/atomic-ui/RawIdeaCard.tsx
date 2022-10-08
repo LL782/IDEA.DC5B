@@ -33,7 +33,7 @@ export const RawIdeaCard = ({ idea }: Props) => {
       </Link>
       <PriceTag type={type} />
       <p className={styles.cardDescription}>{description}</p>
-      <TalkAboutIt blogPost={blogPost} />
+      <TalkAboutIt blogPost={blogPost} id={id} />
     </li>
   );
 };
