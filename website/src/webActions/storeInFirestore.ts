@@ -21,8 +21,6 @@ export const storeInFirestore = async ({
   actions,
   documentId,
 }: WebActionDocument) => {
-  console.log(`documentId: `, documentId);
-
   try {
     if (documentId) {
       await updateWith(documentId, actions);
