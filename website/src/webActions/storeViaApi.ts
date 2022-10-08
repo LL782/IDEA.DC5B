@@ -1,3 +1,5 @@
+import { disallowed } from "./dataManagement/disallowed";
+
 export const storeViaApi = async (doc: WebActionDocument) => {
   if (disallowed(doc)) {
     return {};
@@ -13,7 +15,3 @@ export const storeViaApi = async (doc: WebActionDocument) => {
     return {};
   }
 };
-
-function disallowed(doc: WebActionDocument): boolean {
-  return doc.actions[0].userAgent.includes("checklyhq.com");
-}
