@@ -17,14 +17,17 @@ document.title = testTitle;
 export const TEST_VIEWPORT_HEIGHT = 768;
 export const TEST_VIEWPORT_WIDTH = 1024;
 
-export const dummyWebAction = {
+export const dummyWebAction: WebAction = {
+  action: "Page view",
   actionId: TEST_UID_1,
   dateTime: TEST_DATE_STRING,
   pageTitle: testTitle,
   pageUrl: "https://test.url/",
   referrer: "",
-  scrollY: 0,
   scrollX: 0,
+  scrollY: 0,
+  userAgent:
+    "Mozilla/5.0 (darwin) AppleWebKit/537.36 (KHTML, like Gecko) jsdom/19.0.0",
   viewportHeight: TEST_VIEWPORT_HEIGHT,
   viewportWidth: TEST_VIEWPORT_WIDTH,
 };
