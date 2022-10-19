@@ -3,18 +3,34 @@ import { NextSeoProps } from "next-seo";
 const seo: NextSeoProps = {
   additionalLinkTags: [
     {
-      rel: "icon",
-      href: "/branding/favicon.ico",
-    },
-    {
       rel: "apple-touch-icon",
-      href: "/branding/apple-touch-icon.png",
       sizes: "180x180",
+      href: "/branding/apple-touch-icon.png",
     },
     {
-      rel: "manifest",
-      href: "/branding/site.webmanifest",
+      rel: "icon",
+      type: "image/png",
+      sizes: "32x32",
+      href: "/branding/favicon-32x32.png",
     },
+    {
+      rel: "icon",
+      type: "image/png",
+      sizes: "16x16",
+      href: "/branding/favicon-16x16.png",
+    },
+    { rel: "manifest", href: "/branding/site.webmanifest" },
+    {
+      rel: "mask-icon",
+      href: "/branding/safari-pinned-tab.svg",
+      color: "#5bbad5",
+    },
+    { rel: "shortcut icon", href: "/branding/favicon.ico" },
+  ],
+  additionalMetaTags: [
+    { name: "msapplication-TileColor", content: "#ff00ff" },
+    { name: "msapplication-config", content: "/branding/browserconfig.xml" },
+    { name: "theme-color", content: "#ffffff" },
   ],
   defaultTitle: "I D E A - D C 5 B",
   openGraph: {
