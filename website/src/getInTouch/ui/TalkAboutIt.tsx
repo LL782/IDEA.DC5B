@@ -1,4 +1,4 @@
-import { noteButtonClick } from "src/webActions/noteButtonClick";
+import { noteButtonClick } from "../../webActions/noteButtonClick";
 import { PrimaryLink } from "../../atomic-ui/PrimaryLink";
 import { SecondaryLink } from "../../atomic-ui/SecondaryLink";
 interface Props {
