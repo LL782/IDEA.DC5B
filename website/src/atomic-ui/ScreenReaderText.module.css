@@ -1,0 +1,7 @@
+.text {
+  display: inline-block;
+  text-indent: 1px;
+  overflow: hidden;
+  width: 1px;
+  height: 1px;
+}

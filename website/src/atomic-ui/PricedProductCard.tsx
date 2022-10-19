@@ -7,6 +7,8 @@ import styles from "./IdeaCard.module.css";
 import { PriceTag } from "./PriceTag";
 import { AddToBag } from "../shoppingBag/ui/AddToBag";
 import { TalkAboutIt } from "../getInTouch/ui/TalkAboutIt";
+import { LikeIdea } from "src/likeIdea/LikeIdea";
+import { FEATURE_TOGGLE_LIKE_BUTTON } from "src/config/featureToggles";
 
 interface Props {
   productIdea: PricedProduct;
@@ -47,6 +49,7 @@ export const PricedProductCard = ({ productIdea }: Props) => {
       <p className={styles.cardDescription}>{description}</p>
       <AddToBag id={id} maxQuantity={maxQuantity} price={price} />
       <TalkAboutIt blogPost={blogPost} id={id} />
+      {FEATURE_TOGGLE_LIKE_BUTTON && <LikeIdea id={id} />}
     </li>
   );
 };
