@@ -10,9 +10,11 @@ interface Props {
 }
 
 export const PrimaryLink = ({ children, href, className, onClick }: Props) => (
-  <Link href={href}>
-    <a className={`${styles.button} ${className || ""}`} onClick={onClick}>
-      {children}
-    </a>
+  <Link
+    href={href}
+    className={`${styles.button} ${className || ""}`}
+    onClick={onClick}
+  >
+    {children}
   </Link>
 );

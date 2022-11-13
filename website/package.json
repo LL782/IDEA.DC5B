@@ -13,7 +13,7 @@
   "dependencies": {
     "@stripe/stripe-js": "^1.12.1",
     "firebase": "^9.9.4",
-    "next": "latest",
+    "next": "^13.0.3",
     "next-seo": "^5.5.0",
     "react": "18",
     "react-dom": "18",

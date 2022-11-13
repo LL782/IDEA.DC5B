@@ -9,8 +9,8 @@ interface Props {
 
 export const TertiaryLink = ({ children, href, className }: Props) => {
   return (
-    <Link href={href} passHref>
-      <a className={`${styles.link} ${className || ""}`}>{children}</a>
+    <Link href={href} className={`${styles.link} ${className || ""}`}>
+      {children}
     </Link>
   );
 };

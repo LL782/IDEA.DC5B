@@ -29,10 +29,14 @@
   margin-right: auto;
 }
 
+.homeLink {
+  font-family: "Times New Roman", Times, serif;
+  visibility: hidden;
+}
+
 .homeLink,
 .miniBag {
-  font-weight: bold;
-  font-style: italic;
+  color: #000;
   letter-spacing: 0.25rem;
 }
 

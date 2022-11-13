@@ -12,10 +12,8 @@ const MiniBag = () => {
       {displayPrice(totalCost)} <BiShoppingBag />
     </span>
   ) : (
-    <Link href="/bag">
-      <a className={styles.miniBag}>
-        {displayPrice(totalCost)} <BiShoppingBag />
-      </a>
+    <Link href="/bag" className={styles.miniBag}>
+      {displayPrice(totalCost)} <BiShoppingBag />
     </Link>
   );
 };
@@ -24,8 +22,8 @@ export const Navigation = () => {
   return (
     <nav className={styles.nav}>
       <div className={styles.container}>
-        <Link href="/">
-          <a className={styles.homeLink}>DC5B Ideas</a>
+        <Link href="/" className={styles.homeLink}>
+          DC5B Ideas
         </Link>
         <MiniBag />
       </div>

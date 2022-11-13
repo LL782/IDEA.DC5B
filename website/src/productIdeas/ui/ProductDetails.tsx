@@ -29,10 +29,10 @@ export const ProductDetails = ({ idea }: Props) => {
 
   return (
     <div className={styles.container}>
-      <NextSeo title={`${title} - ${subTitle} // DC5B`} />
+      <NextSeo title={`${title} - ${subTitle} // DC5B Ideas`} />
       <nav className={styles.breadcrumbs}>
-        <Link href="/">
-          <a className={styles.breadcrumb}>Ideas</a>
+        <Link href="/" className={styles.breadcrumb}>
+          Ideas
         </Link>{" "}
         &gt; <span className={styles.currentBreadcrumb}>{title}</span>
       </nav>
@@ -40,13 +40,7 @@ export const ProductDetails = ({ idea }: Props) => {
         <h3 className={styles.title}>{title}</h3>
         <h4 className={styles.subTitle}>{subTitle}</h4>
         <div className={styles.heroImage}>
-          <Image
-            src={image}
-            alt={alt}
-            width="800px"
-            height="800px"
-            layout="responsive"
-          />
+          <Image src={image} alt={alt} fill />
         </div>
         <PriceTag price={price} type={type} />
         <p className={styles.cardDescription}>{description}</p>

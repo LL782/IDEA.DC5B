@@ -17,6 +17,8 @@
 
 .title {
   font-size: 14vw;
+  font-weight: normal;
+  font-family: Times, "Times New Roman", serif;
   line-height: 1.15;
   margin: 3rem 0 0;
 }
@@ -30,18 +32,6 @@
 .title,
 .description {
   text-align: center;
-}
-
-.description {
-  font-size: 1rem;
-  font-style: italic;
-  font-weight: bold;
-  letter-spacing: 0.1rem;
-  line-height: 1.5;
-  margin: 0;
-  padding-left: 0.75em;
-  padding-right: 0.75em;
-  text-transform: uppercase;
 }
 
 .grid {

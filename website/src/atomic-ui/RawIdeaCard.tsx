@@ -17,19 +17,11 @@ export const RawIdeaCard = ({ idea }: Props) => {
   return (
     <li className={styles.card}>
       <Link href={`/ideas/${id}`}>
-        <a>
-          <div className={styles.cardImage}>
-            <Image
-              src={image}
-              alt={alt}
-              width="800px"
-              height="800px"
-              layout="responsive"
-            />
-          </div>
-          <h3>{title}</h3>
-          <h4>{subTitle}</h4>
-        </a>
+        <div className={styles.cardImage}>
+          <Image src={image} alt={alt} fill />
+        </div>
+        <h3>{title}</h3>
+        <h4>{subTitle}</h4>
       </Link>
       <PriceTag type={type} />
       <p className={styles.cardDescription}>{description}</p>
