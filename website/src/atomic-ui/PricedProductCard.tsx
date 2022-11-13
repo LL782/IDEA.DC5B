@@ -9,6 +9,7 @@ import { AddToBag } from "../shoppingBag/ui/AddToBag";
 import { TalkAboutIt } from "../getInTouch/ui/TalkAboutIt";
 import { LikeIdea } from "src/likeIdea/LikeIdea";
 import { FEATURE_TOGGLE_LIKE_BUTTON } from "src/config/featureToggles";
+import { cardImageSizes } from "./cardImageSizes";
 
 interface Props {
   productIdea: PricedProduct;
@@ -32,7 +33,7 @@ export const PricedProductCard = ({ productIdea }: Props) => {
     <li className={styles.card}>
       <Link href={`/ideas/${id}`}>
         <div className={styles.cardImage}>
-          <Image src={image} alt={alt} fill />
+          <Image src={image} alt={alt} fill sizes={cardImageSizes} />
         </div>
         <h3>{title}</h3>
         <h4>{subTitle}</h4>

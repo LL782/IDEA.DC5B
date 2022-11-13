@@ -9,6 +9,7 @@ export default function Poster() {
           src={"/idea-images/bearded-strange-face-colouring.jpg"}
           alt={""}
           fill
+          sizes="100vw"
         />
       </div>
       <div className={styles.overlay} />

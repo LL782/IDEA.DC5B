@@ -1,5 +1,6 @@
 import Image from "next/image";
 import styles from "../../ui/Details.module.css";
+import { columnImageSizes } from "../../ui/columnImageSizes";
 
 export default function CustomContent() {
   return (
@@ -10,6 +11,7 @@ export default function CustomContent() {
           src={"/idea-images/rodwell-hat-trick/004-250_Framed.jpg"}
           alt={"Black and white version of the main artwork"}
           fill
+          sizes={columnImageSizes}
         />
       </div>
       <p>
