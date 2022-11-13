@@ -30,8 +30,13 @@
 }
 
 .homeLink {
-  font-family: "Times New Roman", Times, serif;
-  visibility: hidden;
+  position: relative;
+  top: 4px;
+  left: 3px;
+}
+
+.homeLink:active path {
+  fill: #f0f;
 }
 
 .homeLink,
@@ -40,13 +45,18 @@
   letter-spacing: 0.25rem;
 }
 
+.logo {
+  height: 30px;
+  width: 30px;
+}
+
 .miniBag {
   align-items: center;
   appearance: none;
   background: none;
   border: 0 none;
   display: flex;
-  font-size: 1rem;
+  font-size: 1.2rem;
   padding: 0;
 }
 
@@ -55,10 +65,12 @@ a.miniBag {
 }
 
 span.miniBag {
-  color: #0009;
+  color: #0006;
   cursor: not-allowed;
 }
 
 .miniBag svg {
+  height: 25px;
+  width: 25px;
   margin-left: 5px;
 }
