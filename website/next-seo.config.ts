@@ -42,7 +42,7 @@ const seo: NextSeoProps = {
     description,
     images: [
       {
-        url: "https://idea.dc5b.com/branding/branding.png",
+        url: "https://idea.dc5b.com/branding/branding.jpg",
         width: 1280,
         height: 640,
         alt: "",
