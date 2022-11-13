@@ -1,53 +1,61 @@
-import { TalkAboutIt } from "../getInTouch/ui/TalkAboutIt";
 import styles from "../atomic-ui/IdeaCard.module.css";
+import Link from "next/link";
+import { noteButtonClick } from "src/webActions/noteButtonClick";
 
 interface Props {
   mapIndex: number;
 }
 
 export const OptionalExtraCard = ({ mapIndex }: Props) => {
-  if (mapIndex === 3) return <Prototypes />;
-  if (mapIndex === 6) return <YourIdeas />;
+  if (mapIndex === 3) return <Customisation />;
+  if (mapIndex === 6) return <SiteIsYoung />;
   return null;
 };
 
-const YourIdeas = () => (
+const SiteIsYoung = () => (
   <li className={styles.card}>
-    <h2>Your ideas:</h2>
+    <h2>The site is young</h2>
     <p className={styles.cardDescription}>
-      What else can we do? Giclée, large size, choice of medium. Let us know in
-      as much detail as you want.
+      DC5B is a brand under development. It&apos;s not only the products that
+      you can influence at this stage, it’s the whole business! Add your ideas
+      into the mix by telling us what you think.
     </p>
     <p className={styles.cardDescription}>
-      We&apos;ll look into it! Dreaming, we can manifest beautiful things. First
-      step is dropping a word or two into a message.
+      <Link
+        onClick={() => noteButtonClick("email", "The site is young")}
+        href="mailto:dc5b@dc5b.com?subject=Where%20shall%20we%20go%20from%20here%3F&body=I've%20just%20been%20on%20your%20website%20and%20wanted%20to%20get%20in%20touch%20with%20an%20idea%20of%20my%20own...%0D%0A%0D%0A%3A)%0D%0A%0D%0A"
+        target="_blank"
+        className={styles.littleLink}
+      >
+        Where shall we go from here?
+      </Link>
     </p>
-    <TalkAboutIt
-      blogPost="https://dc5b.dog/2022/08/16/prototypes-call-them-prototypes-go-so-what-you-gonna-do-about-them-thats-what-i-want-to-know/"
-      id="your-ideas"
-    />
   </li>
 );
 
-const Prototypes = () => (
+const Customisation = () => (
   <li className={styles.card}>
-    <h2>Prototypes</h2>
+    <h2>Customisation</h2>
     <p className={styles.cardDescription}>
-      This is all new to us (to me really). We&apos;re putting ideas out here to
-      get feedback. What do you like? What works? What doesn&apos;t?
+      Thank you for checking out the ideas, your thoughts are invaluable —
+      meaning vital. If you see something you like (or don’t like) let us know.
     </p>
     <p className={styles.cardDescription}>
-      Your feedback is not only welcome, it&apos;s the way this business is
-      going to grow. Within reason, we want to provide artwork in exactly the
-      way you want it.
+      We develop ideas based on feedback. Whether it’s size, format, price,
+      colour, quality or something else everybody wants it slightly different.
+      Just let us know.
     </p>
     <p className={styles.cardDescription}>
-      T-shirt, coaster, wall vinyl, colouring in book, huge oil paintings, brass
-      etching. All formats considered. If anything strikes a chord do say.
+      <Link
+        onClick={() => noteButtonClick("email", "Customisation")}
+        href={
+          "mailto:dc5b@dc5b.com?subject=Customisation&body=Hi%20there%2C%0D%0A%0D%0AI've%20just%20been%20on%20your%20website%20and%20have%20some%20ideas...%0D%0A%0D%0A-%20Do%20you%20do%20...%20%3F%0D%0A-%20I%20like%20...%20but%20not%20the%20...%0D%0A-%20Would%20you%20work%20on%20...%20%3F%0D%0A%0D%0AThanks%20very%20much!"
+        }
+        target="_blank"
+        className={styles.littleLink}
+      >
+        Send a message
+      </Link>
     </p>
-    <TalkAboutIt
-      blogPost="https://dc5b.dog/2022/08/16/prototypes-call-them-prototypes-go-so-what-you-gonna-do-about-them-thats-what-i-want-to-know/"
-      id={"call-them-prototypes"}
-    />
   </li>
 );

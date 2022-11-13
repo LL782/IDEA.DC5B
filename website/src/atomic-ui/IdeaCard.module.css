@@ -56,6 +56,13 @@
 .cardDescription {
   margin-top: 1rem;
   margin-bottom: 0;
-  font-size: 1.25rem;
+  font-size: 1rem;
   line-height: 1.5;
+}
+
+.littleLink {
+  font-weight: bold;
+  color: #51569f;
+  font-size: 1rem;
+  text-decoration: underline;
 }
