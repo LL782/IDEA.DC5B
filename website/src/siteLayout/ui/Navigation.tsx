@@ -25,7 +25,7 @@ export const Navigation = () => {
     <nav className={styles.nav}>
       <div className={styles.container}>
         <Link href="/">
-          <a className={styles.homeLink}>IDEA.DC5B</a>
+          <a className={styles.homeLink}>DC5B Ideas</a>
         </Link>
         <MiniBag />
       </div>

@@ -32,7 +32,7 @@ const seo: NextSeoProps = {
     { name: "msapplication-config", content: "/branding/browserconfig.xml" },
     { name: "theme-color", content: "#ffffff" },
   ],
-  defaultTitle: "I D E A - D C 5 B",
+  defaultTitle: "DC5B Ideas",
   openGraph: {
     description: "You must have a head",
     images: [
@@ -46,7 +46,7 @@ const seo: NextSeoProps = {
     type: "website",
     locale: "en_GB",
     url: "https://idea.dc5b.com/",
-    site_name: "IDEA_DC5B",
+    site_name: "DC5B Ideas",
   },
 };
 
