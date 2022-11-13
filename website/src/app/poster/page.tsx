@@ -11,7 +11,7 @@ export default function Poster() {
           fill
         />
       </div>
-      <div className={styles.overlay}></div>
+      <div className={styles.overlay} />
       <div className={styles.title}>DC5B Ideas</div>
     </div>
   );
