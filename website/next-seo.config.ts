@@ -1,5 +1,8 @@
 import { NextSeoProps } from "next-seo";
 
+const description =
+  "From the raw ideas to finished products — if it's developed at DC5B you'll find it here. Search, browse and own your ideas right here.";
+
 const seo: NextSeoProps = {
   additionalLinkTags: [
     {
@@ -31,10 +34,14 @@ const seo: NextSeoProps = {
     { name: "msapplication-TileColor", content: "#ff00ff" },
     { name: "msapplication-config", content: "/branding/browserconfig.xml" },
     { name: "theme-color", content: "#ffffff" },
+    {
+      name: "description",
+      content: description,
+    },
   ],
   defaultTitle: "DC5B Ideas",
   openGraph: {
-    description: "You must have a head",
+    description,
     images: [
       {
         url: "https://idea.dc5b.com/branding/branding.png",
