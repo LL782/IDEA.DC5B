@@ -6,7 +6,7 @@ export default function Home() {
     <div className={styles.container}>
       <main className={styles.main}>
         <h1 className={styles.title}>DC5B Ideas</h1>
-        <p className={styles.description}>You must have a head</p>
+        <p className={styles.description}>Own it</p>
         <ListOfferings />
       </main>
     </div>
