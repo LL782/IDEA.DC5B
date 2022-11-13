@@ -34,10 +34,8 @@ const seo: NextSeoProps = {
     { name: "msapplication-TileColor", content: "#ff00ff" },
     { name: "msapplication-config", content: "/branding/browserconfig.xml" },
     { name: "theme-color", content: "#ffffff" },
-    {
-      name: "description",
-      content: description,
-    },
+    { name: "description", content: description },
+    { name: "robots", content: "index,follow" },
   ],
   defaultTitle: "DC5B Ideas",
   openGraph: {
