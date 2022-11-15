@@ -20,8 +20,8 @@ const SiteIsYoung = () => (
       <h2>The site is young</h2>
       <p className={styles.cardDescription}>
         DC5B is a brand under development. It&apos;s not only the products that
-        you can influence at this stage, it’s the whole business! Add your ideas
-        into the mix by telling us what you think.
+        you can influence at this stage, it&apos;s the whole business! Add your
+        ideas into the mix by telling us what you think.
       </p>
       <p className={styles.cardDescription}>
         <Link
@@ -35,12 +35,12 @@ const SiteIsYoung = () => (
       </p>
     </div>
     <div className={styles.decoration}>
-      {/* <Image
-        src={"/idea-images/bearded-strange-face-colouring.jpg"}
+      <Image
+        src="/decoration-images/DC5B-rocks.jpg"
         alt={""}
         fill
         sizes={cardImageSizes}
-      /> */}
+      />
     </div>
   </li>
 );
@@ -51,13 +51,12 @@ const Customisation = () => (
       <h2>Customisation</h2>
       <p className={styles.cardDescription}>
         Thank you for checking out the ideas, your thoughts are invaluable —
-        meaning vital. If you see something you like (or don’t like) let us
+        meaning vital. If you see something you like or don&apos;t like, let us
         know.
       </p>
       <p className={styles.cardDescription}>
-        We develop ideas based on feedback. Whether it’s size, format, price,
-        colour, quality or something else everybody wants it slightly different.
-        Just let us know.
+        We develop ideas based on feedback. Whether it&apos;s price, size,
+        quality or something else, just let us know how you want yours...
       </p>
       <p className={styles.cardDescription}>
         <Link
@@ -73,12 +72,12 @@ const Customisation = () => (
       </p>
     </div>
     <div className={styles.decoration}>
-      {/* <Image
-        src={"/idea-images/bearded-strange-face-colouring.jpg"}
+      <Image
+        src="/decoration-images/sculpture.jpg?v2"
         alt={""}
         fill
         sizes={cardImageSizes}
-      /> */}
+      />
     </div>
   </li>
 );
