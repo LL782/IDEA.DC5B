@@ -1,7 +1,7 @@
 import { NextSeoProps } from "next-seo";
 
 const description =
-  "From the raw ideas to finished products — if it's developed at DC5B you'll find it here. Search, browse and own your ideas right here.";
+  "From raw ideas to unique pieces – if it's developed at DC5B you'll find it right here. Come and see what we do, get inspired and tell us about the objeys and gifts of your dreams.";
 
 const seo: NextSeoProps = {
   additionalLinkTags: [
