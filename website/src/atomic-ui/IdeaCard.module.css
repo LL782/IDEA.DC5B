@@ -18,8 +18,8 @@
     border-bottom: 1px solid #aaa;
   }
   .cardImage {
-    margin-left: -4vw;
-    margin-right: -4vw;
+    margin-inline: -4vw;
+    width: auto;
   }
 }
 
