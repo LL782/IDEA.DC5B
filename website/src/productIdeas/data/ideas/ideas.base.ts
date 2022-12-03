@@ -15,7 +15,7 @@ export const rodwellHatTrick007: Idea = {
   alt: "",
   blogPost: "https://dc5b.dog/2022/08/19/so-you-want-to-talk-about-rodwell/",
   description:
-    "The dragon goes, the head is gone, the bush bursts, the green is loose. Copic colours, rotring ink, Fabriano 5. Sixty square centimetres of art, framed well.",
+    "The dragon goes, the head is gone, the bush bursts, the green is loose. Copic colours, Rotring ink, Fabriano 5. Sixty square centimetres of art, framed well.",
   id: "rodwell-hat-trick-007",
   image: "/idea-images/rodwell-hat-trick/007_square.jpg",
   maxQuantity: 1,
