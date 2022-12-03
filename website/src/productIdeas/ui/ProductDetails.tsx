@@ -25,6 +25,7 @@ export const ProductDetails = ({ idea }: Props) => {
     price,
     title,
     type,
+    soldOut = false,
   } = idea;
 
   return (
@@ -41,9 +42,14 @@ export const ProductDetails = ({ idea }: Props) => {
         <div className={styles.heroImage}>
           <Image src={image} alt={alt} fill sizes={columnImageSizes} />
         </div>
-        <PriceTag price={price} type={type} />
+        <PriceTag price={price} soldOut={soldOut} type={type} />
         <p className={styles.cardDescription}>{description}</p>
-        <AddToBag id={id} maxQuantity={maxQuantity} price={price} />
+        <AddToBag
+          id={id}
+          maxQuantity={maxQuantity}
+          price={price}
+          soldOut={soldOut}
+        />
         <BlogLink blogPost={blogPost} id={id} />
         <LoadBespokeDetails id={id} />
       </main>

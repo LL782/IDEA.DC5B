@@ -2,6 +2,7 @@ export type Idea = PricedProduct | ProductBase | RawIdea;
 
 type PricedProduct = ProductBase & {
   price: Price;
+  soldOut?: true;
 };
 
 type ProductBase = {

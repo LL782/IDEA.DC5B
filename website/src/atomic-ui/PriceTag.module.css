@@ -3,8 +3,18 @@
   font-weight: bold;
 }
 
-.displayPrice {
+.displayPrice,
+.soldText {
   margin-right: 0.5rem;
+}
+
+.displayPrice.sold {
+  text-decoration: line-through;
+}
+
+.soldText {
+  text-transform: uppercase;
+  font-size: 0.7em;
 }
 
 .priceType {

@@ -33,15 +33,16 @@ interface Props {
   id: PricedProduct["id"];
   price?: PricedProduct["price"];
   maxQuantity?: PricedProduct["maxQuantity"];
+  soldOut: boolean;
 }
 
 export const AddToBag = (props: Props) => {
-  const { maxQuantity = DEFAULT_MAX_QUANTITY, price } = props;
+  const { price, soldOut } = props;
 
   if (!price) {
     return null;
   }
-  if (maxQuantity === 0) {
+  if (soldOut) {
     return <p className={styles.redDot}>Not available</p>;
   }
 

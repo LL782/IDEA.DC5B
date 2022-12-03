@@ -26,6 +26,7 @@ export const PricedProductCard = ({ productIdea }: Props) => {
     price,
     title,
     type,
+    soldOut = false,
   } = productIdea;
 
   return (
@@ -36,9 +37,14 @@ export const PricedProductCard = ({ productIdea }: Props) => {
         </div>
         <h3>{title}</h3>
       </Link>
-      <PriceTag price={price} type={type} />
+      <PriceTag price={price} soldOut={soldOut} type={type} />
       <p className={styles.cardDescription}>{description}</p>
-      <AddToBag id={id} maxQuantity={maxQuantity} price={price} />
+      <AddToBag
+        id={id}
+        maxQuantity={maxQuantity}
+        price={price}
+        soldOut={soldOut}
+      />
       <BlogLink blogPost={blogPost} id={id} />
       {FEATURE_TOGGLE_LIKE_BUTTON && <LikeIdea id={id} />}
     </li>
