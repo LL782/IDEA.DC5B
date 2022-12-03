@@ -6,7 +6,7 @@ import type { PricedProduct } from "../businessLogic/Idea";
 import styles from "./Details.module.css";
 import { AddToBag } from "../../shoppingBag/ui/AddToBag";
 import { LoadBespokeDetails } from "./LoadBespokeDetails";
-import { TalkAboutIt } from "../../getInTouch/ui/TalkAboutIt";
+import { BlogLink } from "../../getInTouch/ui/BlogLink";
 import { PriceTag } from "../../atomic-ui/PriceTag";
 import { columnImageSizes } from "./columnImageSizes";
 
@@ -46,7 +46,7 @@ export const ProductDetails = ({ idea }: Props) => {
         <PriceTag price={price} type={type} />
         <p className={styles.cardDescription}>{description}</p>
         <AddToBag id={id} maxQuantity={maxQuantity} price={price} />
-        <TalkAboutIt blogPost={blogPost} id={id} />
+        <BlogLink blogPost={blogPost} id={id} />
         <LoadBespokeDetails id={id} />
       </main>
     </div>

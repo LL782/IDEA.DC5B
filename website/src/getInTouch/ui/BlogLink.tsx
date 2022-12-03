@@ -1,17 +1,20 @@
 import { noteButtonClick } from "../../webActions/noteButtonClick";
 import { PrimaryLink } from "../../atomic-ui/PrimaryLink";
 import { SecondaryLink } from "../../atomic-ui/SecondaryLink";
+
+const BUTTON_TEXT = "See blog post";
+
 interface Props {
   blogPost?: string;
   id: string;
   type?: "primary";
 }
 
-export const TalkAboutIt = ({ blogPost, id, type }: Props) => {
+export const BlogLink = ({ blogPost, id, type }: Props) => {
   if (!blogPost) {
     return null;
   }
-  const text = "Let's talk about it...";
+  const text = BUTTON_TEXT;
   const onClick = () => alsoNoteTheClick(id);
   return (
     <p>
@@ -29,5 +32,5 @@ export const TalkAboutIt = ({ blogPost, id, type }: Props) => {
 };
 
 function alsoNoteTheClick(id: string) {
-  noteButtonClick("Talk About It", id, true);
+  noteButtonClick(BUTTON_TEXT, id, true);
 }

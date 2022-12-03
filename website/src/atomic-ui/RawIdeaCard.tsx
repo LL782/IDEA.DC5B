@@ -5,7 +5,7 @@ import type { RawIdea } from "../productIdeas/businessLogic/Idea";
 
 import styles from "./IdeaCard.module.css";
 import { PriceTag } from "./PriceTag";
-import { TalkAboutIt } from "../getInTouch/ui/TalkAboutIt";
+import { BlogLink } from "../getInTouch/ui/BlogLink";
 import { cardImageSizes } from "./cardImageSizes";
 
 interface Props {
@@ -26,7 +26,7 @@ export const RawIdeaCard = ({ idea }: Props) => {
       </Link>
       <PriceTag type={type} />
       <p className={styles.cardDescription}>{description}</p>
-      <TalkAboutIt blogPost={blogPost} id={id} />
+      <BlogLink blogPost={blogPost} id={id} />
     </li>
   );
 };

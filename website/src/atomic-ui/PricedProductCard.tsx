@@ -6,7 +6,7 @@ import type { PricedProduct } from "../productIdeas/businessLogic/Idea";
 import styles from "./IdeaCard.module.css";
 import { PriceTag } from "./PriceTag";
 import { AddToBag } from "../shoppingBag/ui/AddToBag";
-import { TalkAboutIt } from "../getInTouch/ui/TalkAboutIt";
+import { BlogLink } from "../getInTouch/ui/BlogLink";
 import { LikeIdea } from "src/likeIdea/LikeIdea";
 import { FEATURE_TOGGLE_LIKE_BUTTON } from "src/config/featureToggles";
 import { cardImageSizes } from "./cardImageSizes";
@@ -41,7 +41,7 @@ export const PricedProductCard = ({ productIdea }: Props) => {
       <PriceTag price={price} type={type} />
       <p className={styles.cardDescription}>{description}</p>
       <AddToBag id={id} maxQuantity={maxQuantity} price={price} />
-      <TalkAboutIt blogPost={blogPost} id={id} />
+      <BlogLink blogPost={blogPost} id={id} />
       {FEATURE_TOGGLE_LIKE_BUTTON && <LikeIdea id={id} />}
     </li>
   );
