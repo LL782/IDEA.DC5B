@@ -14,38 +14,6 @@ export const OptionalExtraCard = ({ mapIndex }: Props) => {
   return null;
 };
 
-const SiteIsYoung = () => (
-  <li className={`${styles.card} ${styles.card__decorated}`}>
-    <div className={styles.content}>
-      <h2>The site is young</h2>
-      <p className={styles.cardDescription}>
-        DC5B is a brand under development. It&apos;s not only the products that
-        you can influence at this stage, it&apos;s the whole business! Add your
-        ideas into the mix by telling us what you think.
-      </p>
-      <p className={styles.cardDescription}>
-        <Link
-          onClick={() => noteButtonClick("email", "The site is young")}
-          href="mailto:dc5b@dc5b.com?subject=Where%20shall%20we%20go%20from%20here%3F&body=I've%20just%20been%20on%20your%20website%20and%20wanted%20to%20get%20in%20touch%20with%20an%20idea%20of%20my%20own...%0D%0A%0D%0A%3A)%0D%0A%0D%0A"
-          target="_blank"
-          className={styles.littleLink}
-        >
-          Where shall we go from here?
-        </Link>{" "}
-        👈 <em>email</em>
-      </p>
-    </div>
-    <div className={styles.decoration}>
-      <Image
-        src="/decoration-images/DC5B-rocks.jpg"
-        alt={""}
-        fill
-        sizes={cardImageSizes}
-      />
-    </div>
-  </li>
-);
-
 const Customisation = () => (
   <li className={`${styles.card} ${styles.card__decorated}`}>
     <div className={styles.content}>
@@ -75,6 +43,42 @@ const Customisation = () => (
     <div className={styles.decoration}>
       <Image
         src="/decoration-images/sculpture.jpg?v2"
+        alt={""}
+        fill
+        sizes={cardImageSizes}
+      />
+    </div>
+  </li>
+);
+const SiteIsYoung = () => (
+  <li className={`${styles.card} ${styles.card__decorated}`}>
+    <div className={styles.content}>
+      <h2>The site is young</h2>
+      <p className={styles.cardDescription}>
+        DC5B is a brand under development. It&apos;s not only the products you
+        can influence but the whole business. We all about puttiing something
+        out there, getting feedback and refining.
+      </p>
+      <p className={styles.cardDescription}>
+        We&apos;re building something that we want you to really love, so
+        whatever it is, we&apos;d love to know your reaction. Add your ideas
+        into the mix by telling us what you think.
+      </p>
+      <p className={styles.cardDescription}>
+        <Link
+          onClick={() => noteButtonClick("email", "The site is young")}
+          href="mailto:dc5b@dc5b.com?subject=Where%20shall%20we%20go%20from%20here%3F&body=I've%20just%20been%20on%20your%20website%20and%20wanted%20to%20get%20in%20touch%20with%20an%20idea%20of%20my%20own...%0D%0A%0D%0A%3A)%0D%0A%0D%0A"
+          target="_blank"
+          className={styles.littleLink}
+        >
+          Where shall we go from here?
+        </Link>{" "}
+        👈 <em>email</em>
+      </p>
+    </div>
+    <div className={styles.decoration}>
+      <Image
+        src="/decoration-images/DC5B-rocks.jpg"
         alt={""}
         fill
         sizes={cardImageSizes}

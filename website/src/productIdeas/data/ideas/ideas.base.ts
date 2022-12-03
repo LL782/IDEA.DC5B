@@ -65,7 +65,7 @@ export const niceBitOfWrapping: Idea = {
   blogPost:
     "https://dc5b.dog/2022/08/16/about-this-nice-bit-of-wrapping-paper-then/",
   description:
-    "These A3 glossy sheets make beautiful wrapping paper. Stiffer and heavier than normal wrapping paper, it a pleasure to use. Checkout the blog post for more details.",
+    "A3 wrapping paper prototype. Stiffer and heavier than usual, it is pleasure to fold and has a lovely matt finish. Checkout the blog post for more images and details.",
   id: "nice-bit-of-wrapping",
   image: "/idea-images/nice-bit-of-wrapping.jpg",
   maxQuantity: 9,
@@ -77,7 +77,7 @@ export const balsamicPotion: Idea = {
   alt: "Crisp, clean photograph of a hand decorated bottle of Balsamic Vinegar",
   blogPost: "https://dc5b.dog/2022/08/16/the-balsamo-discussion/",
   description:
-    "Bit of a weird one. Do you like this bottle? It looks a bit like a magic potion. In actual fact it's balsamic vinegar.",
+    "Bit of a weird one. Do you like this bottle? It looks a bit like a magic potion. In actual fact it's balsamic vinegar, timelessly decorated in glass, masking tape and rubber.",
   id: "balsamic-potion",
   image: "/idea-images/balsamic-potion.jpg",
   maxQuantity: 2,
@@ -90,7 +90,7 @@ export const spaceAgeMug: Idea = {
   blogPost:
     "https://dc5b.dog/2022/08/16/why-you-should-and-you-shouldnt-buy-this-mug/",
   description:
-    "This is chinagraph pencil on porceline so don't smudge it. Recommended for a careful collector. If people like it I'll do a print run of non-unique, cheaper ones. Let me know",
+    "This is chinagraph pencil on porceline so don't smudge it. Recommended for a careful collector. Would you like it at a different price and without the smudging, let us know.",
   id: "space-age-mug",
   image: "/idea-images/space-age-mug.jpg",
   maxQuantity: 2,
@@ -103,21 +103,10 @@ export const losAtlantisColouring: Idea = {
   blogPost:
     "https://dc5b.dog/2022/08/16/los-atlantis-colouring-paper-is-a-pretty-safe-bet/",
   description:
-    "In Tula you can see them. Very strange! In 2008 we draw them with a UFO and a Toltec Warrior on the scene. Now you can spend 50p or £1 or £1.50, etc. and print copies till your heart's content",
+    "In Tula you can see them. Very strange! In 2008 Dog was asked to draw them with a Toltec Warrior and UFO. Now you can download that scene and print it till your heart's content.",
   id: "los-atlantis-colouring",
   image: "/idea-images/los-atlantis-colouring.png",
   title: "Los Atlantis",
-  type: "Printable Download",
-};
-
-export const beardedStrangeFaceColouring: Idea = {
-  alt: "A coloured in drawing of a strange bearded face.",
-  blogPost: "https://dc5b.dog/2022/08/16/lets-talk-about-bearded-strangeface/",
-  description:
-    "This bearded face, of ambigious adornment, is shown here in colour but I've since redrawn it in black and white at a bigger size to give you a colouring in version. Let me know if you like it and about other ideas for the artwork. We can do anything!",
-  id: "bearded-strange-face-colouring",
-  image: "/idea-images/bearded-strange-face-colouring.jpg",
-  title: "Bearded Strangeface",
   type: "Printable Download",
 };
 
@@ -126,9 +115,20 @@ export const eyesOnTheBlindfoldColouring: Idea = {
   blogPost:
     "https://dc5b.dog/2022/08/16/can-i-tell-you-anything-about-eyes-on-the-blindfold-colouring-in-can-you-tell-me-anything/",
   description:
-    "Imagine having faces on the front and the back of the head. Now imagine one face has been blindfolded, and on the blindfold are the only open eyes. I drew the original in 2009 (shown here). I'll redraw just the lines so you can print it at home or at the library and apply your own colours. Yum",
+    "A colouring sheet. Two faces. One on the front and one on the back. One face has been blindfolded. The other has the eyes closed. The only open eyes are on the blindfold.",
   id: "eyes-on-the-blindfold-colouring",
   image: "/idea-images/eyes-on-the-blindfold-colouring.jpg",
   title: "Eyes On The Blindfold",
+  type: "Printable Download",
+};
+
+export const beardedStrangeFaceColouring: Idea = {
+  alt: "A coloured in drawing of a strange bearded face.",
+  blogPost: "https://dc5b.dog/2022/08/16/lets-talk-about-bearded-strangeface/",
+  description:
+    "This bearded face, of ambigious adornment, is shown here in colour. It's been redrawn in black and white at a bigger size to give you a colouring in version, ready to download and print.",
+  id: "bearded-strange-face-colouring",
+  image: "/idea-images/bearded-strange-face-colouring.jpg",
+  title: "Bearded Strangeface",
   type: "Printable Download",
 };
