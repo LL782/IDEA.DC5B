@@ -15,7 +15,7 @@ export const rodwellHatTrick007: Idea = {
   alt: "",
   blogPost: "https://dc5b.dog/2022/08/19/so-you-want-to-talk-about-rodwell/",
   description:
-    "Head gone, dragon calm, bush distributed, green detached. Piece seven of Touchdown Rodwell. Sixty square centimetres of Fabriano 5, Copic coloured, Rotring inked, expertly framed",
+    "Head gone, dragon calm, bush distributed, green detached. Piece seven of Touchdown Rodwell. Sixty square centimetres of Fabriano 5, Copic coloured, Rotring inked, expertly framed.",
   id: "rodwell-hat-trick-007",
   image: "/idea-images/rodwell-hat-trick/007_square.jpg",
   maxQuantity: 1,
@@ -39,7 +39,7 @@ export const rodwellHatTrick005: Idea = {
   alt: "Another Touchdown Rodwell image. It features a long pink, red and blue dragon, white,yellow and orange clouds, bright blue sky, a yellow field and green bushes.",
   blogPost: "https://dc5b.dog/2022/08/19/so-you-want-to-talk-about-rodwell/",
   description:
-    "Number five of five-hundred. A hand-drawn multiple from our very own Dog 5b. Drawn in London in 2011 using Copic colours, Rotring ink and Fabriano 5 paper. Framed by E17 Arthouse",
+    "Number five of five-hundred. A hand-drawn multiple from our very own Dog 5b. Drawn in London in 2011 using Copic colours, Rotring ink and Fabriano 5 paper. Framed by E17 Arthouse.",
   id: "rodwell-hat-trick-005",
   image: "/idea-images/rodwell-hat-trick/005_square.jpg",
   maxQuantity: 0,
