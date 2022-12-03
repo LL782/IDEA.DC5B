@@ -6,7 +6,7 @@ export const fastMoving: RawIdea = {
   image: "/idea-images/fast-moving.jpg",
   alt: `Rough drawing on paper with Ballpoint and graphite pencil. It's a black and white line-drawing, with three figures and a tree, over a minature landscape and a sky made up of sunbeams. It is signed "DOG '15"`,
   type: "Raw idea",
-  description: `This is an early sketch of an idea. Want to see how it would look reworked?`,
+  description: `This sketch is the first raw idea we've posted. Not yet a product, it's here to get some feedback. We'll post more raw ideas in time and rework the popular ones`,
   blogPost: "https://dc5b.dog/2022/09/10/fast-moving-consumer-gods/",
   id: "fast-moving",
 };
