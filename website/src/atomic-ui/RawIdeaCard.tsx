@@ -13,7 +13,7 @@ interface Props {
 }
 
 export const RawIdeaCard = ({ idea }: Props) => {
-  const { alt, blogPost, description, id, image, subTitle, title, type } = idea;
+  const { alt, blogPost, description, id, image, title, type } = idea;
 
   return (
     <li className={styles.card}>
@@ -22,7 +22,6 @@ export const RawIdeaCard = ({ idea }: Props) => {
           <Image src={image} alt={alt} fill sizes={cardImageSizes} />
         </div>
         <h3>{title}</h3>
-        <h4>{subTitle}</h4>
       </Link>
       <PriceTag type={type} />
       <p className={styles.cardDescription}>{description}</p>

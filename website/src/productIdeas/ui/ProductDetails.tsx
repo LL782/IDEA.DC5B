@@ -23,14 +23,13 @@ export const ProductDetails = ({ idea }: Props) => {
     image,
     maxQuantity,
     price,
-    subTitle,
     title,
     type,
   } = idea;
 
   return (
     <div className={styles.container}>
-      <NextSeo title={`${title} - ${subTitle} // DC5B Ideas`} />
+      <NextSeo title={`${title} - ${type} // DC5B Ideas`} />
       <nav className={styles.breadcrumbs}>
         <Link href="/" className={styles.breadcrumb}>
           Ideas
@@ -39,7 +38,6 @@ export const ProductDetails = ({ idea }: Props) => {
       </nav>
       <main className={styles.main}>
         <h3 className={styles.title}>{title}</h3>
-        <h4 className={styles.subTitle}>{subTitle}</h4>
         <div className={styles.heroImage}>
           <Image src={image} alt={alt} fill sizes={columnImageSizes} />
         </div>

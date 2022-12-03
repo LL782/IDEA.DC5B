@@ -2,7 +2,6 @@ import type { Idea, RawIdea } from "../../businessLogic/Idea";
 
 export const fastMoving: RawIdea = {
   title: "Fast Moving",
-  subTitle: "An idea up for vote",
   image: "/idea-images/fast-moving.jpg",
   alt: `Rough drawing on paper with Ballpoint and graphite pencil. It's a black and white line-drawing, with three figures and a tree, over a minature landscape and a sky made up of sunbeams. It is signed "DOG '15"`,
   type: "Raw idea",
@@ -19,7 +18,6 @@ export const rodwellHatTrick007: Idea = {
   id: "rodwell-hat-trick-007",
   image: "/idea-images/rodwell-hat-trick/007_square.jpg",
   maxQuantity: 1,
-  subTitle: "Small scale hand-drawn artwork",
   title: "Touchdown Rodwell #7",
   type: "Framed ink on paper",
 };
@@ -32,7 +30,6 @@ export const rodwellHatTrick006: Idea = {
   id: "rodwell-hat-trick-006",
   image: "/idea-images/rodwell-hat-trick/006_square.jpg",
   maxQuantity: 1,
-  subTitle: "One of five-hundred hand-drawn multiples",
   title: "Touchdown Rodwell #6",
   type: "Framed ink on paper",
 };
@@ -44,7 +41,6 @@ export const rodwellHatTrick005: Idea = {
   id: "rodwell-hat-trick-005",
   image: "/idea-images/rodwell-hat-trick/005_square.jpg",
   maxQuantity: 0,
-  subTitle: "AKA Touchdown Rodwell #5 of 500",
   title: "Rodwell Hat-trick #5",
   type: "Framed ink on paper",
 };
@@ -57,7 +53,6 @@ export const rodwellHatTrick004: Idea = {
   id: "rodwell-hat-trick-004",
   image: "/idea-images/rodwell-hat-trick/004_square.jpg",
   maxQuantity: 1,
-  subTitle: "AKA Touchdown Rodwell #4 of 500",
   title: "Rodwell Hat-trick #4",
   type: "Framed ink on paper",
 };
@@ -71,7 +66,6 @@ export const niceBitOfWrapping: Idea = {
   id: "nice-bit-of-wrapping",
   image: "/idea-images/nice-bit-of-wrapping.jpg",
   maxQuantity: 9,
-  subTitle: "Heavy weight prototype",
   title: "Nice bit of wrapping paper",
   type: "A3 Glossy Paper",
 };
@@ -84,7 +78,6 @@ export const balsamicPotion: Idea = {
   id: "balsamic-potion",
   image: "/idea-images/balsamic-potion.jpg",
   maxQuantity: 2,
-  subTitle: "Magic Beans",
   title: "Balsamo",
   type: "Original prototype",
 };
@@ -98,7 +91,6 @@ export const spaceAgeMug: Idea = {
   id: "space-age-mug",
   image: "/idea-images/space-age-mug.jpg",
   maxQuantity: 2,
-  subTitle: "Art on mug",
   title: "Space Age Mug",
   type: "Original prototype",
 };
@@ -111,7 +103,6 @@ export const losAtlantisColouring: Idea = {
     "In Tula you can see them. Very strange! In 2008 we draw them with a UFO and a Toltec Warrior on the scene. Now you can spend 50p or £1 or £1.50, etc. and print copies till your heart's content",
   id: "los-atlantis-colouring",
   image: "/idea-images/los-atlantis-colouring.png",
-  subTitle: "",
   title: "Los Atlantis",
   type: "Printable Download",
 };
@@ -125,7 +116,6 @@ export const beardedStrangeFaceColouring: Idea = {
   image: "/idea-images/bearded-strange-face-colouring.jpg",
   title: "Bearded Strangeface",
   type: "Printable Download",
-  subTitle: "Colouring in sheet",
 };
 
 export const eyesOnTheBlindfoldColouring: Idea = {
@@ -138,5 +128,4 @@ export const eyesOnTheBlindfoldColouring: Idea = {
   image: "/idea-images/eyes-on-the-blindfold-colouring.jpg",
   title: "Eyes On The Blindfold",
   type: "Printable Download",
-  subTitle: "Colouring in sheet",
 };

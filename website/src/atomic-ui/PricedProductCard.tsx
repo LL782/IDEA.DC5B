@@ -24,7 +24,6 @@ export const PricedProductCard = ({ productIdea }: Props) => {
     image,
     maxQuantity,
     price,
-    subTitle,
     title,
     type,
   } = productIdea;
@@ -36,7 +35,6 @@ export const PricedProductCard = ({ productIdea }: Props) => {
           <Image src={image} alt={alt} fill sizes={cardImageSizes} />
         </div>
         <h3>{title}</h3>
-        <h4>{subTitle}</h4>
       </Link>
       <PriceTag price={price} type={type} />
       <p className={styles.cardDescription}>{description}</p>

@@ -11,7 +11,6 @@ type ProductBase = {
   id: string;
   image: string;
   maxQuantity?: number;
-  subTitle: string;
   title: string;
   type:
     | "A3 Glossy Paper"
@@ -27,7 +26,6 @@ type RawIdea = {
   description: string;
   id: string;
   image: string;
-  subTitle: string;
   title: string;
   type: "Raw idea";
 };

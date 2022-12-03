@@ -28,7 +28,7 @@ These same variables will have to be defined in each environment where the app r
 Follow the existing examples
 
 1. \[OPTIONAL\] Add to [Stripe > Products](https://dashboard.stripe.com/products)
-1. Add the \[same\] title, subtitle and image to the ideas data in `data`
+1. Add the \[same\] title and image to the ideas data in `data`
 1. Fill out the other attributes of the idea
 1. \[OPTIONAL\] Copy `price` data from Stripe to the `dev` and `prod` files ([Stripe's "test mode"](https://dashboard.stripe.com/test/products) is for `dev`)
 
