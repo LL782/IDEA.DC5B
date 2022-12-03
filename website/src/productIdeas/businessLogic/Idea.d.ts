@@ -14,8 +14,8 @@ type ProductBase = {
   maxQuantity?: number;
   title: string;
   type:
-    | "A3 Glossy Paper"
-    | "Framed ink on paper"
+    | "Hand-drawn multiple"
+    | "Limited edition"
     | "Original prototype"
     | "Printable Download"
     | "Test Idea Type";
