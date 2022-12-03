@@ -31,7 +31,8 @@ const SiteIsYoung = () => (
           className={styles.littleLink}
         >
           Where shall we go from here?
-        </Link>
+        </Link>{" "}
+        👈 <em>email</em>
       </p>
     </div>
     <div className={styles.decoration}>
@@ -67,7 +68,7 @@ const Customisation = () => (
           target="_blank"
           className={styles.littleLink}
         >
-          Send a message
+          Send us an email
         </Link>
       </p>
     </div>
