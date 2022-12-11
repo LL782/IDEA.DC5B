@@ -52,8 +52,8 @@ const SiteIsYoung = () => (
       <h2>The site is young</h2>
       <p className={styles.cardDescription}>
         DC5B is a brand under development. It&apos;s not only the products you
-        can influence but the whole business. We all about puttiing something
-        out there, getting feedback and refining.
+        can influence but the whole business. We&apos;re all about puttiing 
+        something out there, getting feedback and refining.
       </p>
       <p className={styles.cardDescription}>
         We&apos;re building something that we want you to really love, so
