@@ -19,13 +19,9 @@ const Customisation = () => (
     <div className={styles.content}>
       <h2>Customisation</h2>
       <p className={styles.cardDescription}>
-        Thank you for checking out the ideas, your thoughts are invaluable —
-        meaning vital. If you see something you like, or don&apos;t like, let us
-        know.
-      </p>
-      <p className={styles.cardDescription}>
-        We develop ideas based on your feedback. Whether it&apos;s price, size,
-        quality or something else, just let us know how you want it to be...
+        Your thoughts are invaluable. We develop ideas based on your feedback. 
+        So whether it&apos;s price, size, quality or something else, just let
+        us know of any changes you want.
       </p>
       <p className={styles.cardDescription}>
         <Link
