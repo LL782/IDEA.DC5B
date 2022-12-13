@@ -19,7 +19,7 @@ export const TrustPilotWidget = () => {
       data-businessunit-id="637fe0297ad7dce2c685b5ea"
       data-style-height="24px"
       data-style-width="100%"
-      data-theme="light"
+      data-theme="dark"
       data-min-review-count="10"
       data-without-reviews-preferred-string-id="1"
       data-style-alignment="center"
