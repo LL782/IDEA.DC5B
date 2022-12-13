@@ -6,6 +6,7 @@ import { BagToolkitProvider } from "../shoppingBag/BagToolkit";
 import { Navigation } from "../siteLayout/ui/Navigation";
 import Footer from "../siteLayout/ui/Footer";
 import { NotePageView } from "src/webActions/NotePageView";
+import { TrustPilotWidget } from "../atomic-ui/TrustPilotWidget";
 import "../siteLayout/ui/globals.css";
 
 const standAlonePages = ["/poster"];
@@ -31,6 +32,7 @@ const MyApp = ({ Component, pageProps }: AppProps) => {
         <Navigation />
         <Component {...pageProps} />
         <Footer />
+        <TrustPilotWidget />
       </BagToolkitProvider>
     </>
   );
