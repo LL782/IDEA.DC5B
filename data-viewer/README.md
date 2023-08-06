@@ -35,3 +35,10 @@ You can preview the production build with `yarn run preview`.
 1. The plan is to create a dashboard to see the web actions
 2. Currently actions are written to the database by [IDEA.DC5B.COM](https://idea.dc5b.com/)
 3. "Data Viewer" is a new app to read that data
+
+
+![DC5B - Web Actions](https://github.com/LL782/IDEA.DC5B/assets/353044/b0e181bd-43a9-4e34-938d-adc490a9e4d2)
+    
+_[Miro board](https://miro.com/app/board/uXjVO3dkXBo=/?moveToWidget=3458764560964625407&cot=14)_
+    
+
