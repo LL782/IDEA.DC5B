@@ -30,8 +30,8 @@ yarn run build
 
 You can preview the production build with `yarn run preview`.
 
-## More about this
+## Work in progress
 
-**Work in progress**
-
-The plan is to create a dashboard to see the web actions taking place on [IDEA.DC5B.COM](https://idea.dc5b.com/)
+1. The plan is to create a dashboard to see the web actions
+2. Currently actions are written to the database by [IDEA.DC5B.COM](https://idea.dc5b.com/)
+3. "Data Viewer" is a new app to read that data
