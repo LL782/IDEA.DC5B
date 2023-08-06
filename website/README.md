@@ -38,4 +38,4 @@ When developing a new idea, we can add work in progress to the `dev` file and sa
 
 ### Deployment
 
-Changes inside this directory will trigger a deployment in [Vercel](https://vercel.com/)https://vercel.com/
+Changes inside this directory will trigger a deployment in [Vercel](https://vercel.com/)https://vercel.com/)
