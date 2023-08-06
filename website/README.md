@@ -35,3 +35,7 @@ Follow the existing examples
 ### Dev, Test Mode and Prod
 
 When developing a new idea, we can add work in progress to the `dev` file and safely merge this and deploy it. We only release the idea to production when we add it to the `prod` file.
+
+### Deployment
+
+**Work in progress** The website app should only deploy when changes within the website directory are made.
