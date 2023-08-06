@@ -19,4 +19,4 @@ Here in GitHub you'll find [Issues](https://github.com/LL782/DC5B-SHOP/issues) a
 
 ### Deployment
 
-- Both apps deploy via Vercel. Here's [a link to the dashboard](https://vercel.com/) in case you have access.
+- Both apps deploy via Vercel. Here's [a link to the dashboard](https://vercel.com/) 
