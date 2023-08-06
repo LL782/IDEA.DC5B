@@ -2,15 +2,21 @@
 
 ## Welcome 👋
 
-This is the [source code](https://en.wikipedia.org/wiki/Source_code) for [idea.dc5b.com](https://idea.dc5b.com)
+This is the [source code](https://en.wikipedia.org/wiki/Source_code) for [DC5B IDEAS](https://idea.dc5b.com)
 
-If you're interested in the project drop me a comment on [dc5b.dog](https://dc5b.dog)
+Checkout our blog at [dc5b.wordpress.com](dc5b.wordpress.com) for more about the project
 
 ### Issues and milestones
 
-In GitHub you'll find [Issues](https://github.com/LL782/DC5B-SHOP/issues) and [Milestones](https://github.com/LL782/DC5B-SHOP/milestones). These show some of what's being worked on. If you'd like to contribute get involved.
+Here in GitHub you'll find [Issues](https://github.com/LL782/DC5B-SHOP/issues) and [Milestones](https://github.com/LL782/DC5B-SHOP/milestones). These show some of what's being worked on and link up to the wider project. If you'd like to get involved let us know.
 
-## Tech
+## Details
 
-1. Head on into [`/website/`](/website/) where you'll find some more [README.md](/website#readme) and further details
-1. We've started building a [`/data-viewer`](/data-viewer/). This [README.md](/data-viewer#readme) has more about that
+### Apps
+
+1. Head on into [`/website/`](/website/) where you'll find the [README.md](/website#readme) for the main website
+1. We're also working on a [`/data-viewer`](/data-viewer/). This [README.md](/data-viewer#readme) has more about that
+
+### Deployment
+
+- Both apps deploy via Vercel. Here's [a link to the dashboard](https://vercel.com/) in case you have access.
