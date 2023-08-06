@@ -35,7 +35,3 @@ Follow the existing examples
 ### Dev, Test Mode and Prod
 
 When developing a new idea, we can add work in progress to the `dev` file and safely merge this and deploy it. We only release the idea to production when we add it to the `prod` file.
-
-### Deployment
-
-Changes inside this directory will trigger a deployment in [Vercel](https://vercel.com/)https://vercel.com/)
