@@ -38,4 +38,4 @@ When developing a new idea, we can add work in progress to the `dev` file and sa
 
 ### Deployment
 
-**Work in progress** The website app should only deploy when changes within the website directory are made.
+Changes inside this directory will trigger a deployment in [Vercel](https://vercel.com/)https://vercel.com/
