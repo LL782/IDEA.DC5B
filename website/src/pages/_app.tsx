@@ -1,5 +1,6 @@
 import { DefaultSeo } from "next-seo";
 import { AppProps } from "next/app";
+import { Analytics } from '@vercel/analytics/react';
 import { useRouter } from "next/router";
 import SEO from "../../next-seo.config";
 import { BagToolkitProvider } from "../shoppingBag/BagToolkit";
@@ -34,6 +35,7 @@ const MyApp = ({ Component, pageProps }: AppProps) => {
         <Footer />
         <TrustPilotWidget />
       </BagToolkitProvider>
+      <Analytics />
     </>
   );
 };

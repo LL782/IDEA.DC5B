@@ -12,6 +12,7 @@
   },
   "dependencies": {
     "@stripe/stripe-js": "^1.12.1",
+    "@vercel/analytics": "^1.0.1",
     "firebase": "^9.9.4",
     "next": "^13.0.3",
     "next-seo": "^5.5.0",
